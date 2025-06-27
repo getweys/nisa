@@ -1,0 +1,566 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Our Services",
+    "business": "Our Business",
+    "earn": "Earn With NisaDrive",
+    "impact": "Impact",
+    "about": "About",
+    "safety": "Safety",
+    "careers": "Careers",
+    "downloadApp": "Download App"
+  },
+  "hero": {
+    "badge": "Pakistan's First Women-to-Women Service",
+    "title": "Your Journey, Your Way – Safe, Affordable, and Women-Driven",
+    "subtitle": "NisaDrive provides a dignified and culturally respectful transport experience, offering affordable, tech-powered mobility across urban and remote areas of Pakistan.",
+    "downloadApp": "Download NisaDrive App",
+    "watchDemo": "Watch Demo",
+    "availableNow": "Available 24/7",
+    "trustIndicators": {
+      "verified": "Background Verified Drivers",
+      "support": "24/7 Emergency Support",
+      "tracking": "Real-time GPS Tracking",
+      "pricing": "Transparent Pricing"
+    },
+    "stats": {
+      "womenServed": "Women Served",
+      "safeRides": "Safe Rides",
+      "rating": "Rating"
+    }
+  },
+  "whyChoose": {
+    "title": "Why Choose NisaDrive?",
+    "subtitle": "Experience the difference with Pakistan's most trusted women-to-women transportation service",
+    "features": {
+      "femaleDrivers": {
+        "title": "Women-Only Drivers",
+        "description": "Trained and verified female drivers ensuring your peace of mind."
+      },
+      "pricing": {
+        "title": "Transparent & Fair Pricing",
+        "description": "No hidden charges. Standard rates with real-time fare estimates."
+      },
+      "safety": {
+        "title": "Geo-Fenced Safety Zones",
+        "description": "Smart mobility with routes mapped for maximum safety using AI & local intel."
+      },
+      "cultural": {
+        "title": "Culturally Aligned Services",
+        "description": "Tailored for the social and cultural needs of Pakistani women."
+      },
+      "empowerment": {
+        "title": "Empowering Livelihoods",
+        "description": "Enabling thousands of women to earn through driving, delivery, and digital gigs."
+      }
+    },
+    "cta": {
+      "title": "Ready to Experience Safe & Empowering Travel?",
+      "subtitle": "Join thousands of Pakistani women who trust NisaDrive for their daily transportation needs.",
+      "button": "Download NisaDrive App"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive transportation solutions designed specifically for Pakistani women",
+    "items": {
+      "student": {
+        "title": "Student Commutes",
+        "description": "Safe, scheduled school and university drop-offs with background-verified women drivers."
+      },
+      "professional": {
+        "title": "Professional Transport",
+        "description": "Reliable transport for working women with ride history, emergency alert features & live tracking."
+      },
+      "personal": {
+        "title": "Personal Errands",
+        "description": "Easy access to healthcare, markets, salons, and home visits – right from your phone."
+      },
+      "courier": {
+        "title": "Courier Services",
+        "description": "Female-managed last-mile delivery for women-centric businesses and home services."
+      }
+    },
+    "cta": {
+      "title": "Need Any of These Services?",
+      "subtitle": "Download NisaDrive and access all our services with just a few taps.",
+      "button": "Get Started Today"
+    }
+  },
+  "community": {
+    "title": "Join the NisaDrive Community",
+    "subtitle": "Be part of Pakistan's first women-to-women mobility platform. Whether you're looking for safe rides, earning opportunities, or business partnerships.",
+    "roles": {
+      "rider": {
+        "title": "Rider",
+        "description": "Experience safe, reliable transportation with verified female drivers. Book rides, track your journey, and travel with confidence across Pakistan."
+      },
+      "driver": {
+        "title": "Driver (Affiliate)",
+        "description": "Empower yourself with flexible earning opportunities. Join our network of verified female drivers and build your independent business while serving your community."
+      },
+      "partner": {
+        "title": "Partner",
+        "description": "Collaborate with NisaDrive to expand women-centric services. From businesses to organizations, join us in creating safer mobility solutions for Pakistani women."
+      }
+    },
+    "cta": {
+      "title": "Ready to Be Part of the Change?",
+      "subtitle": "Download the NisaDrive app today and join thousands of women creating a safer, more empowered Pakistan.",
+      "button": "Download NisaDrive App"
+    }
+  },
+  "footer": {
+    "description": "Pakistan's first women-to-women ride-hailing service. Safe, reliable, and culturally respectful transportation for women, by women.",
+    "quickLinks": "Quick Links",
+    "business": "Business",
+    "downloadApp": "Download App",
+    "contact": {
+      "email": "hello@nisadrive.com",
+      "phone": "+92 300 1234567",
+      "address": "Karachi, Lahore, Islamabad\nPakistan"
+    },
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "links": {
+      "home": "Home",
+      "about": "About Us",
+      "services": "Our Services",
+      "safety": "Safety First",
+      "impact": "Our Impact",
+      "careers": "Careers",
+      "business": "Our Business",
+      "earn": "Earn with Us",
+      "booking": "Book a Ride",
+      "faq": "Help Center",
+      "contact": "Contact Us",
+      "partners": "Partner With Us"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy",
+      "compliance": "Compliance"
+    },
+    "copyright": "© {year} NisaDrive. All rights reserved.",
+    "disclaimer": "NisaDrive is committed to providing safe, reliable, and culturally respectful transportation services for women across Pakistan. We operate with full compliance to local regulations and maintain the highest standards of safety and security. All rides are tracked, drivers are thoroughly vetted, and 24/7 support is available. By using our services, you agree to our terms and conditions."
+  },
+  "about": {
+    "badge": "Our Story",
+    "title": "About NisaDrive",
+    "story": {
+      "paragraph1": "NisaDrive was born from a deeply personal challenge—one that countless women in Pakistan silently endure every day: the simple act of commuting. Our story began with Tasmia Zehra, a bright and determined AI student, who missed classes and opportunities just because her school van broke down or was unavailable.",
+      "paragraph2": "That frustration turned into inspiration. Guided by her dream to remove barriers to women's mobility, she envisioned NisaDrive—a ride-hailing platform designed by women, for women.",
+      "paragraph3": "What started as an idea has grown into a nationwide movement, nurtured under the umbrella of the Fatima AI Research Institute (FAIRIST)—a forward-looking organization committed to \"AI for All\" and social innovation."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Empowering women through safe, dignified, and reliable transportation across Pakistan"
+    },
+    "values": {
+      "title": "Our Core Values",
+      "subtitle": "NisaDrive is culture-aligned, tech-enabled, and women-led, offering a safe, dignified, and reliable transport alternative for millions of Pakistani women.",
+      "cultureAligned": {
+        "title": "Culture-Aligned",
+        "description": "Respecting Pakistani values while empowering women's mobility"
+      },
+      "techEnabled": {
+        "title": "Tech-Enabled",
+        "description": "Leveraging AI and technology for safer, smarter transportation"
+      },
+      "womenLed": {
+        "title": "Women-Led",
+        "description": "By women, for women - creating opportunities at every level"
+      }
+    },
+    "journey": {
+      "title": "Our Journey",
+      "subtitle": "From Rawalpindi to remote areas, our roadmap aims to empower 10,000+ women over the next five years—whether as riders, drivers, coders, or community builders.",
+      "milestones": {
+        "2023": {
+          "title": "The Inspiration",
+          "description": "Tasmia's personal challenge with unreliable transport sparked the idea"
+        },
+        "2024": {
+          "title": "Foundation",
+          "description": "NisaDrive launched under FAIRIST with initial pilot program"
+        },
+        "2025": {
+          "title": "Growth",
+          "description": "Expanding to multiple cities with 500+ active drivers"
+        },
+        "2027": {
+          "title": "Vision",
+          "description": "Empowering 10,000+ women across Pakistan and beyond"
+        }
+      }
+    },
+    "founder": {
+      "title": "A Word from Our Founder",
+      "quote": "At NisaDrive, we're not just giving women a ride—we're giving them freedom, safety, and opportunity. Whether you're a student, a single mother, or a dreamer like I once was, know that this platform belongs to you. Let's drive forward—together.",
+      "name": "Tasmia Zehra",
+      "title": "Founder & CEO, NisaDrive"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "Beyond Pakistan, we envision NisaDrive reaching other underserved regions where women face similar cultural and mobility barriers. Backed by robust legal compliance, data privacy protection, and a Monitoring, Evaluation & Learning (MEL) framework, NisaDrive is more than a platform—it's a promise to build a safe, inclusive, and accountable future for women in the digital economy."
+    },
+    "cta": {
+      "join": "Join Our Mission",
+      "learn": "Learn More"
+    }
+  },
+  "safety": {
+    "title": "Safety Features",
+    "subtitle": "Trust Rides with Us",
+    "description": "At NisaDrive, safety isn't a promise — it's a system. We've built a multi-layered safety infrastructure aligned with national law and international standards. From registration to destination, every ride is designed to protect, empower, and ensure peace of mind.",
+    "verification": {
+      "title": "Verified Female Drivers",
+      "subtitle": "Every NisaDrive affiliate undergoes comprehensive verification and training",
+      "steps": {
+        "id": {
+          "title": "NADRA-based ID Verification",
+          "description": "Complete identity verification through Pakistan's national database"
+        },
+        "background": {
+          "title": "Police Background Checks",
+          "description": "Thorough background screening under our official Verification Policy"
+        },
+        "training": {
+          "title": "Safety & Anti-Harassment Training",
+          "description": "Mandatory comprehensive training for all driver affiliates"
+        },
+        "certification": {
+          "title": "Safety Management Certification",
+          "description": "Certified under our Safety Management System Policy"
+        }
+      }
+    },
+    "geoFencing": {
+      "title": "Geo-Fenced Operational Zones",
+      "subtitle": "NisaDrive operates only in pre-approved, secure zones for maximum safety",
+      "features": {
+        "secureZones": {
+          "title": "Pre-Approved Secure Zones",
+          "description": "Operations limited to verified safe areas only"
+        },
+        "avoidance": {
+          "title": "Red-Flag Avoidance",
+          "description": "Automatic exclusion of high-risk hotspots"
+        },
+        "dynamic": {
+          "title": "Dynamic Safety Adjustments",
+          "description": "Real-time zone updates based on local safety trends"
+        },
+        "reviews": {
+          "title": "Monthly Zone Reviews",
+          "description": "Regular coordination with local authorities and community input"
+        }
+      }
+    },
+    "inApp": {
+      "title": "In-App Safety Features",
+      "subtitle": "Your safety, digitized and decentralized through advanced technology",
+      "features": {
+        "tracking": {
+          "title": "Live Ride Tracking",
+          "description": "Real-time monitoring of your journey from start to finish"
+        },
+        "location": {
+          "title": "Real-Time Location",
+          "description": "Live driver and passenger location sharing for transparency"
+        },
+        "sos": {
+          "title": "Emergency SOS",
+          "description": "Instant alert to Control Center plus 3 emergency contacts"
+        },
+        "biometric": {
+          "title": "Biometric Verification",
+          "description": "Advanced liveness checks in phased rollout for enhanced security"
+        }
+      }
+    },
+    "training": {
+      "title": "Mandatory Safety Training",
+      "subtitle": "Comprehensive training programs ensuring every driver is prepared for any situation",
+      "programs": {
+        "bootcamp": {
+          "title": "Onboarding Bootcamps",
+          "description": "Intensive training sessions covering all aspects of safe driving and customer service"
+        },
+        "selfDefense": {
+          "title": "Self-Defense Simulations",
+          "description": "Practical self-defense training to handle challenging situations confidently"
+        },
+        "emergency": {
+          "title": "Emergency Response",
+          "description": "First aid and emergency response tutorials for medical and safety emergencies"
+        },
+        "rights": {
+          "title": "Women's Rights Awareness",
+          "description": "Comprehensive sessions on women's rights and respectful interaction protocols"
+        }
+      }
+    },
+    "insurance": {
+      "title": "Ride Insurance Coverage",
+      "subtitle": "Every NisaDrive ride comes with comprehensive insurance protection",
+      "coverage": {
+        "death": {
+          "amount": "PKR 300,000",
+          "title": "Accidental Death Coverage",
+          "description": "Comprehensive coverage for accidental death during your ride"
+        },
+        "injury": {
+          "amount": "PKR 150,000",
+          "title": "Major Injury Coverage",
+          "description": "Protection against major injuries sustained during your journey"
+        }
+      },
+      "note": "This policy does not cover vehicle damage or third-party claims."
+    },
+    "monitoring": {
+      "title": "Monitoring & Quality Control",
+      "subtitle": "Advanced monitoring systems ensuring consistent safety and quality standards",
+      "features": {
+        "audits": {
+          "title": "Periodic Safety Audits",
+          "description": "Regular comprehensive safety assessments to maintain the highest standards"
+        },
+        "behavior": {
+          "title": "Automated Behavior Analysis",
+          "description": "Real-time analysis of ride patterns and driver behavior for safety optimization"
+        },
+        "alerts": {
+          "title": "AI-Assisted Alert Systems",
+          "description": "Smart monitoring for speed violations, route deviations, and unusual idle time"
+        },
+        "feedback": {
+          "title": "Community Feedback Scoring",
+          "description": "Community-led evaluation of drivers on punctuality, hygiene, and conduct"
+        }
+      }
+    },
+    "community": {
+      "title": "Community-Driven Protection",
+      "subtitle": "Building a network of support through strategic partnerships and community collaboration",
+      "partnerships": {
+        "police": {
+          "title": "Traffic Police & Legal Aid",
+          "description": "Direct partnerships with traffic authorities and legal aid organizations for immediate support"
+        },
+        "ngos": {
+          "title": "Women's Shelters & NGOs",
+          "description": "Collaboration with women's support organizations for comprehensive protection services"
+        },
+        "committees": {
+          "title": "Local Safety Committees",
+          "description": "Active engagement with community safety committees for localized protection strategies"
+        }
+      },
+      "support": {
+        "title": "24/7 Support Access",
+        "description": "Riders and Drivers can request legal or emotional support through the app anytime, anywhere — 24/7 assistance guaranteed."
+      }
+    },
+    "trustStatement": {
+      "title": "Your Safety is Our Foundation",
+      "description": "Every policy, every feature, and every decision at NisaDrive is made with your safety as the top priority. We don't just transport you — we protect your journey."
+    }
+  },
+  "careers": {
+    "badge": "Careers at NisaDrive",
+    "title": "Join the Movement. Shape the Future of Inclusive Mobility.",
+    "subtitle": "At NisaDrive, we're building more than just a transport service — we're driving a movement of dignified livelihoods, safety innovation, and gender equity. While our services are designed for women, by women, our team welcomes diverse talent committed to making mobility safer, smarter, and more accessible across Pakistan.",
+    "openPositions": {
+      "title": "🚫 Open Positions",
+      "noVacancies": "No vacancies at the moment.",
+      "description": "We're always evolving — stay in the loop by subscribing to our updates or following us on social media.",
+      "subscribe": "Subscribe to Career Alerts",
+      "follow": "Follow Us for Updates"
+    },
+    "internships": {
+      "title": "🚀 Internship & Fellowship Opportunities",
+      "subtitle": "Are you a changemaker ready to build the future?",
+      "description": "NisaDrive's 3-Month Fellowship & Internship Program is crafted for emerging professionals in:",
+      "areas": {
+        "mobility": {
+          "title": "Mobility Tech & App Development",
+          "description": "Build the next generation of mobility solutions"
+        },
+        "ai": {
+          "title": "Artificial Intelligence / Machine Learning",
+          "description": "Develop AI systems for safer, smarter rides"
+        },
+        "design": {
+          "title": "UI/UX Design",
+          "description": "Design intuitive experiences for women riders"
+        },
+        "research": {
+          "title": "Research, Policy & Data Analytics",
+          "description": "Drive data-informed policy and research"
+        },
+        "media": {
+          "title": "Digital Media & Communications",
+          "description": "Tell our story and amplify our impact"
+        }
+      },
+      "encouragement": "We particularly encourage applications from women, rural youth, and marginalized communities.",
+      "cta": "Join the Internship Waitlist"
+    },
+    "hiring": {
+      "title": "Our Inclusive Hiring Policy",
+      "description": "Although our services cater exclusively to women commuters, our hiring is based on equal opportunity principles. We believe in skill, sincerity, and social commitment — regardless of gender, religion, ethnicity, or background.",
+      "subtitle": "NisaDrive proudly upholds:",
+      "policies": {
+        "equal": "The Equal Opportunity Employment Policy",
+        "antiHarassment": "The Anti-Harassment & Anti-Discrimination Act 2010",
+        "workplace": "Our internal Safe Workplace & Inclusivity Guidelines"
+      }
+    },
+    "application": {
+      "title": "📝 How to Apply",
+      "description": "When positions open, our recruitment follows a secure and transparent process:",
+      "steps": {
+        "online": {
+          "title": "Online Application",
+          "description": "Online Application through our website"
+        },
+        "verification": {
+          "title": "Background Verification",
+          "description": "Mandatory Background & Police Verification"
+        },
+        "virtual": {
+          "title": "Virtual Interview",
+          "description": "Phase 1: Virtual Interview with HR"
+        },
+        "final": {
+          "title": "Final Interview",
+          "description": "Phase 2: Final Interview with Leadership Team"
+        }
+      },
+      "confidentiality": "Every application is treated with confidentiality and respect."
+    },
+    "growth": {
+      "title": "Learning & Growth at NisaDrive",
+      "subtitle": "We don't just hire — we invest in people.",
+      "description": "All team members gain access to:",
+      "benefits": {
+        "mentoring": "On-the-job mentoring by seasoned experts",
+        "workshops": "Safety, compliance & first-aid workshops",
+        "upskilling": "Tech upskilling, webinars & cross-border learning",
+        "coaching": "Career coaching & progression planning"
+      },
+      "motto": "Because when our people grow, so does our impact."
+    },
+    "recognition": {
+      "title": "Celebrating Our People",
+      "description": "Whether you're a front-line affiliate rider or an office-based analyst, your contribution counts.",
+      "subtitle": "We recognize outstanding team members through:",
+      "awards": {
+        "rider": "Affiliate Rider of the Month",
+        "csr": "NisaDrive CSR Fellow Awards",
+        "leadership": "Leadership Track Recognition for Interns"
+      },
+      "message": "Your story could be next. Stay tuned for inspiring employee journeys."
+    },
+    "questions": {
+      "title": "Have More Questions?",
+      "description": "Visit our detailed FAQ Page for answers on:",
+      "topics": {
+        "internships": "Internships",
+        "pathways": "Career Pathways",
+        "diversity": "Diversity Commitments",
+        "process": "Hiring Process"
+      },
+      "cta": "Visit FAQ Page"
+    }
+  },
+  "faq": {
+    "badge": "Frequently Asked Questions",
+    "title": "Got Questions? We've Got Answers.",
+    "subtitle": "Find comprehensive answers to all your questions about NisaDrive - from app functionality and safety features to driver requirements and payment methods.",
+    "categories": {
+      "general": {
+        "title": "General FAQs about NisaDrive",
+        "questions": {
+          "whatIs": {
+            "question": "What is NisaDrive?",
+            "answer": "NisaDrive is a women-centric ride-hailing service designed to provide safe, affordable, and culturally appropriate transportation for women in Pakistan. The platform empowers women both as passengers and as driver-partners (affiliates)."
+          },
+          "whoCanDrive": {
+            "question": "Who can become a NisaDrive driver/affiliate?",
+            "answer": "Any woman who meets the minimum age and licensing requirements and has access to a bike or can purchase one (with or without NisaDrive's support) may register as an affiliate driver."
+          },
+          "availability": {
+            "question": "Is NisaDrive available in my city?",
+            "answer": "NisaDrive is launching pilot operations in Rawalpindi. Expansion to other cities will follow based on demand and feasibility assessments."
+          },
+          "safety": {
+            "question": "How does NisaDrive ensure rider safety?",
+            "answer": "All drivers undergo background verification, safety and customer care training. The app includes emergency SOS, geo-fencing, real-time tracking, and 24/7 support."
+          },
+          "hours": {
+            "question": "What are NisaDrive's working hours?",
+            "answer": "Our working hours include 07 am-07 pm daily, however affiliates manage their own schedules; nevertheless, the app and customer support operate 24/7 to ensure availability and safety."
+          },
+          "fare": {
+            "question": "How is fare calculated on NisaDrive?",
+            "answer": "Fare is calculated based on standard per-kilometer rates. Rates are designed to be affordable for users while offering sustainable income for affiliates."
+          },
+          "refund": {
+            "question": "What if I want to cancel a ride or request a refund?",
+            "answer": "Please refer to our Refund & Cancellation Policy, available in the Legal section of the app or website."
+          },
+          "privacy": {
+            "question": "How does NisaDrive protect my personal data?",
+            "answer": "NisaDrive complies with PECA 2016 and proposed Data Protection Bill guidelines to protect personal information, supported by our Privacy and Data Sharing Policies."
+          },
+          "menUse": {
+            "question": "Can men use NisaDrive?",
+            "answer": "No, NisaDrive is exclusively designed for women passengers and women drivers to maintain cultural and personal comfort."
+          },
+          "internship": {
+            "question": "How can I join the NisaDrive Internship Program?",
+            "answer": "You can sign up for early access to internships by visiting the Careers section of our website and subscribing to updates."
+          }
+        }
+      },
+      "app": {
+        "title": "App Functionality FAQs"
+      },
+      "affiliate": {
+        "title": "Affiliate/Driver FAQs"
+      },
+      "safety": {
+        "title": "Safety & Security FAQs"
+      },
+      "payments": {
+        "title": "Payments, Refunds & Wallet FAQs"
+      }
+    }
+  },
+  "common": {
+    "buttons": {
+      "learnMore": "Learn More",
+      "getStarted": "Get Started",
+      "joinNow": "Join Now",
+      "contactUs": "Contact Us",
+      "readMore": "Read More",
+      "viewAll": "View All",
+      "subscribe": "Subscribe",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "close": "Close",
+      "next": "Next",
+      "previous": "Previous",
+      "back": "Back",
+      "continue": "Continue"
+    },
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "success": "Success!",
+    "comingSoon": "Coming Soon",
+    "notFound": "Page not found"
+  }
+}

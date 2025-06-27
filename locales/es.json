@@ -1,0 +1,48 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Bienvenido a Nuestra Plataforma Moderna",
+    "subtitle": "Experimenta el futuro de la innovación digital con nuestras soluciones de vanguardia",
+    "cta": "Comenzar",
+    "learnMore": "Saber Más"
+  },
+  "about": {
+    "title": "Acerca de Nosotros",
+    "description": "Somos un equipo de desarrolladores apasionados creando experiencias digitales increíbles",
+    "mission": "Nuestra Misión",
+    "missionText": "Entregar soluciones innovadoras que transformen negocios y mejoren las experiencias de usuario"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones integrales para tus necesidades digitales",
+    "webDev": {
+      "title": "Desarrollo Web",
+      "description": "Sitios web modernos y responsivos construidos con las últimas tecnologías"
+    },
+    "mobileApp": {
+      "title": "Aplicaciones Móviles",
+      "description": "Aplicaciones móviles nativas y multiplataforma"
+    },
+    "uiux": {
+      "title": "Diseño UI/UX",
+      "description": "Soluciones de diseño hermosas y centradas en el usuario"
+    }
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "subtitle": "¿Listo para comenzar tu próximo proyecto?",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "followUs": "Síguenos"
+  }
+}
