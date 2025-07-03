@@ -11,6 +11,7 @@ import {
   FiStar,
   FiTrendingUp,
 } from "react-icons/fi";
+
 export default function AboutPage() {
   const milestones = [
     {
@@ -63,7 +64,7 @@ export default function AboutPage() {
 
   const stats = [
     { icon: FiUsers, value: "10,000+", label: "Women to be Empowered" },
-    { icon: FiTarget, value: "50+", label: "Cities Planned" },
+    { icon: FiTarget, value: "15+", label: "Cities Planned" },
     { icon: FiStar, value: "100%", label: "Safety Focused" },
     { icon: FiTrendingUp, value: "5 Years", label: "Growth Roadmap" },
   ];
@@ -71,7 +72,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 overflow-hidden">
+      <section id="nisaDrive" className="relative pt-24 pb-16 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-32 h-32 bg-pink-100 rounded-full opacity-20 blur-3xl" />
@@ -130,9 +131,9 @@ export default function AboutPage() {
               <p className="text-base text-gray-700 leading-relaxed">
                 What started as an idea has grown into a nationwide movement,
                 nurtured under the umbrella of the{" "}
-                <strong className="text-purple-600">
+                <a href="https://fairist.ai/" className="text-purple-600">
                   Fatima AI Research Institute (FAIRIST)
-                </strong>
+                </a>
                 —a forward-looking organization committed to "AI for All" and
                 social innovation.
               </p>
@@ -185,7 +186,10 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section
+        id="values"
+        className="py-16 bg-gradient-to-br from-gray-50 to-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -231,7 +235,7 @@ export default function AboutPage() {
       </section>
 
       {/* Journey Timeline */}
-      <section className="py-16">
+      <section id="journey" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -297,7 +301,10 @@ export default function AboutPage() {
       </section>
 
       {/* Founder Quote */}
-      <section className="py-16 bg-gradient-to-br from-pink-50 via-purple-50 to-rose-50">
+      <section
+        id="founder"
+        className="py-16 bg-gradient-to-br from-pink-50 via-purple-50 to-rose-50"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -340,7 +347,7 @@ export default function AboutPage() {
       </section>
 
       {/* Vision Statement */}
-      <section className="py-16">
+      <section id="vision" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -382,7 +389,10 @@ export default function AboutPage() {
       </section>
 
       {/* Blogs & Newsroom Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section
+        id="blogs"
+        className="py-16 bg-gradient-to-br from-gray-50 to-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -432,7 +442,7 @@ export default function AboutPage() {
       </section>
 
       {/* CSR Initiatives Section */}
-      <section className="py-16">
+      <section id="csr" className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -519,7 +529,10 @@ export default function AboutPage() {
       </section>
 
       {/* Contact Teams Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section
+        id="contact"
+        className="py-16 bg-gradient-to-br from-gray-50 to-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

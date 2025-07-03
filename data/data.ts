@@ -30,6 +30,8 @@ import {
   FiAlertTriangle,
   FiEye,
 } from "react-icons/fi";
+import { FaSchool, FaShoppingBag } from "react-icons/fa";
+import { MdDirectionsBike } from "react-icons/md";
 
 export const navigationItems: NavigationItem[] = [
   { labelKey: "navigation.services", href: "/services" },
@@ -172,7 +174,7 @@ export const socialLinks = [
 
 export const featuredServices = [
   {
-    icon: FiTruck,
+    icon: MdDirectionsBike,
     title: "Women-Only Ride-Hailing",
     description:
       "Whether it's college, work, shopping, or social visits – NisaDrive offers a secure, affordable, and female-only ride option. Our trained affiliates are background-verified, geo-tracked, and follow NisaDrive's strict Safety Management Protocols.",
@@ -199,14 +201,14 @@ export const featuredServices = [
       "Optional signature verification",
     ],
     cta: "Start your delivery today.",
-    color: "from-indigo-500 to-indigo-600",
+    color: "from-pink-500 to-pink-600",
     bgColor: "bg-indigo-50",
   },
   {
-    icon: FiBook,
-    title: "School & College Pick & Drop",
+    icon: FaSchool,
+    title: "School, College & University Pick & Drop",
     description:
-      "NisaDrive understands the challenges mothers and guardians face. Our customized education sector mobility packages cater to: Schools, Colleges, Universities, Coaching Centers, and Female Dormitories.",
+      "NisaDrive understands the challenges parents and guardians face. Our customized education sector mobility packages cater to: Schools, Colleges, Universities, Coaching Centers, and Female Dormitories.",
     features: [
       "Police-verified drivers",
       "Daily check-ins & route tracking",
@@ -214,7 +216,7 @@ export const featuredServices = [
       "Soft behavioral training for affiliates",
     ],
     cta: "Institutions may request customized monthly ride bundles.",
-    color: "from-orange-500 to-orange-600",
+    color: "from-pink-500 to-pink-600",
     bgColor: "bg-orange-50",
     subtitle: "Why Parents Trust Us:",
   },
@@ -222,7 +224,7 @@ export const featuredServices = [
     icon: FiHeart,
     title: "NGO & Health Mobility Support",
     description:
-      "Partner with us to mobilize your field staff, female beneficiaries, or outreach teams. NisaDrive has worked with civil society actors to provide reliable transport in underserved regions.",
+      "Partner with us to mobilize your field staff, female beneficiaries, or outreach teams. NisaDrive offers reliable transport for civil society actors to serve in the underserved regions.",
     features: [
       "Special discounts for registered NGOs",
       "Reliable transport in underserved regions",
@@ -230,7 +232,7 @@ export const featuredServices = [
       "Outreach team support",
     ],
     cta: "Let's move your mission forward — safely.",
-    color: "from-green-500 to-green-600",
+    color: "from-pink-500 to-pink-600",
     bgColor: "bg-green-50",
   },
   {
@@ -245,12 +247,12 @@ export const featuredServices = [
       "Usage analytics dashboard",
     ],
     cta: "Contact us for enterprise quotes.",
-    color: "from-blue-500 to-blue-600",
+    color: "from-pink-500 to-pink-600",
     bgColor: "bg-blue-50",
     subtitle: "Benefits:",
   },
   {
-    icon: FiShoppingBag,
+    icon: FaShoppingBag,
     title: "Marketplace & Errand Rides",
     description:
       "Need a ride for daily errands, market trips, or running a side hustle? NisaDrive enables women to manage their homes, lives, and businesses with mobility that's safe and on-demand.",
@@ -261,7 +263,7 @@ export const featuredServices = [
       "Home and business management",
     ],
     cta: "From groceries to client meetings — we get you there, and back.",
-    color: "from-purple-500 to-purple-600",
+    color: "from-pink-500 to-pink-600",
     bgColor: "bg-purple-50",
     specialCta: "Every ride fuels a woman's freedom.",
   },
@@ -649,7 +651,7 @@ export const stats = [
     label: "Women Drivers",
   },
   {
-    value: "₨35K",
+    value: "₨39K+",
     label: "Avg. Monthly Earning",
   },
   {
@@ -666,7 +668,7 @@ export const whoCanJoin = [
   },
   {
     icon: "🏙️",
-    text: "Residents of Rawalpindi, Islamabad, and major urban centers",
+    text: "Residents of the areas of our operations",
   },
   {
     icon: "🤝",
@@ -888,7 +890,7 @@ export const impactStats = [
   {
     icon: "FiStar",
     label: "Cities Covered",
-    value: "50+",
+    value: "15+",
     color: "indigo",
   },
   {
@@ -1061,7 +1063,7 @@ export const visionItems = [
   },
   {
     title: "Economic Impact",
-    description: "Generate PKR 500M+ in earnings for women",
+    description: "Generate Rs 500M+ in earnings for women",
     icon: "💎",
     color: "purple",
   },

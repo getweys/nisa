@@ -2,10 +2,10 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { FiMenu, FiX, FiArrowRight } from "react-icons/fi";
+import { FiMenu, FiX, FiArrowRight, FiChevronDown } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // Import usePathname
+import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "./language-switcher";
 import { AnimatedButton } from "./animated-button";
 import { useLanguage } from "contexts/language-context";
@@ -16,7 +16,9 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const { isRTL } = useLanguage();
-  const pathname = usePathname(); // Get current pathname
+  const pathname = usePathname();
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] =
+    useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,10 +36,42 @@ export function Navigation() {
     };
   }, [isOpen]);
 
+  // Dropdown items for "About"
+  const aboutSubItems = [
+    {
+      labelKey: "About NisaDrive",
+      href: "/about#nisaDrive",
+      scrollTo: "nisaDrive",
+    },
+    {
+      labelKey: "A Word from Our Founder",
+      href: "/about#founder",
+      scrollTo: "founder",
+    },
+    { labelKey: "Blogs", href: "/about#blogs", scrollTo: "blogs" },
+    { labelKey: "Newsroom", href: "/about#newsroom", scrollTo: "newsroom" },
+    { labelKey: "CSR", href: "/about#csr", scrollTo: "csr" },
+  ];
+
+  // Handle click to scroll to section or navigate
+  const handleNavigation = (href: string, scrollTo?: string) => {
+    if (pathname === "/about" && scrollTo) {
+      const element = document.getElementById(scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.location.href = href;
+    }
+    setIsAboutDropdownOpen(false);
+  };
+
   return (
     <>
       <motion.nav
-        className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm transition-all duration-300"
+        className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
+          isScrolled ? "shadow-sm" : ""
+        }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -55,11 +89,11 @@ export function Navigation() {
             >
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/images/nisa-logo.png"
+                  src="/images/logo.png"
                   alt="Nisa Drive Logo"
                   width={1000}
                   height={1000}
-                  className="size-20 transition-transform hover:scale-105 duration-300"
+                  className="w-28"
                 />
               </Link>
             </motion.div>
@@ -73,34 +107,90 @@ export function Navigation() {
             >
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/images/nisa-logo.png"
+                  src="/images/logo.png"
                   alt="Nisa Drive Logo"
                   width={1000}
                   height={1000}
-                  className="size-16"
+                  className="w-24"
                 />
               </Link>
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-2">
+            <div className="hidden lg:flex items-center space-x-1 relative">
               {navigationItems.map((item, index) => (
                 <motion.div
                   key={item.labelKey}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * index, duration: 0.3 }}
+                  className="relative"
                 >
-                  <Link
-                    href={item.href}
-                    className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
-                      pathname === item.href
-                        ? "text-pink-500 bg-pink-100/50"
-                        : "text-gray-800 hover:text-pink-500 hover:bg-pink-100/50"
-                    }`}
-                  >
-                    <Text path={item.labelKey} />
-                  </Link>
+                  {item.labelKey === "navigation.about" ? (
+                    <div>
+                      <button
+                        onClick={() =>
+                          setIsAboutDropdownOpen(!isAboutDropdownOpen)
+                        }
+                        className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 flex items-center ${
+                          pathname === "/about"
+                            ? "text-pink-500 bg-pink-100/50 border border-pink-500"
+                            : "text-gray-800 hover:text-pink-500 hover:bg-pink-100/50"
+                        }`}
+                      >
+                        <Text path={item.labelKey} />
+                        <FiChevronDown
+                          className={`ml-1 w-4 h-4 transition-transform ${
+                            isAboutDropdownOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {isAboutDropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10, scale: 0.9 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -10, scale: 0.9 }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            className="absolute left-0 mt-2 w-60 bg-white rounded-2xl shadow-xl py-3 z-50 border border-pink-200 overflow-hidden"
+                          >
+                            {aboutSubItems.map((subItem, subIndex) => (
+                              <button
+                                key={subItem.labelKey}
+                                onClick={() =>
+                                  handleNavigation(
+                                    subItem.href,
+                                    subItem.scrollTo
+                                  )
+                                }
+                                className={`w-full text-left px-4 py-3 text-sm text-gray-700 hover:text-pink-600 transition-all duration-200 flex items-center justify-between ${
+                                  pathname === "/about" && subItem.scrollTo
+                                    ? ""
+                                    : ""
+                                }`}
+                              >
+                                <span>
+                                  <Text path={subItem.labelKey} />
+                                </span>
+                                <FiArrowRight className="w-4 h-4 text-pink-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              </button>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
+                        pathname === item.href
+                          ? "text-pink-500 bg-pink-100/50 border border-pink-500"
+                          : "text-gray-800 hover:text-pink-500 hover:bg-pink-100/50"
+                      }`}
+                    >
+                      <Text path={item.labelKey} />
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -170,11 +260,11 @@ export function Navigation() {
                 {/* Mobile Header */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-200">
                   <Image
-                    src="/images/nisa-logo.png"
+                    src="/images/logo.png"
                     alt="Nisa Drive Logo"
-                    width={120}
-                    height={36}
-                    className="h-9 w-auto"
+                    width={1000}
+                    height={1000}
+                    className="w-28"
                   />
                   <motion.button
                     whileTap={{ scale: 0.9 }}
@@ -196,17 +286,72 @@ export function Navigation() {
                       transition={{ delay: 0.1 * index, duration: 0.3 }}
                       className="border-b border-gray-100 last:border-b-0"
                     >
-                      <Link
-                        href={item.href}
-                        onClick={() => setIsOpen(false)}
-                        className={`block py-4 text-lg font-semibold transition-colors duration-200 ${
-                          pathname === item.href
-                            ? "text-pink-500"
-                            : "text-gray-800 hover:text-pink-500"
-                        }`}
-                      >
-                        <Text path={item.labelKey} />
-                      </Link>
+                      {item.labelKey === "navigation.about" ? (
+                        <div>
+                          <button
+                            onClick={() =>
+                              setIsAboutDropdownOpen(!isAboutDropdownOpen)
+                            }
+                            className={`w-full text-left py-4 text-lg font-semibold transition-colors duration-200 flex items-center ${
+                              pathname === "/about"
+                                ? "text-pink-500"
+                                : "text-gray-800 hover:text-pink-500"
+                            }`}
+                          >
+                            <Text path={item.labelKey} />
+                            <FiChevronDown
+                              className={`ml-1 w-5 h-5 transition-transform ${
+                                isAboutDropdownOpen ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                          <AnimatePresence>
+                            {isAboutDropdownOpen && (
+                              <motion.div
+                                initial={{ opacity: 0, y: -10, scale: 0.9 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: -10, scale: 0.9 }}
+                                transition={{ duration: 0.3, ease: "easeOut" }}
+                                className="pl-4 pt-2"
+                              >
+                                {aboutSubItems.map((subItem, subIndex) => (
+                                  <button
+                                    key={subItem.labelKey}
+                                    onClick={() =>
+                                      handleNavigation(
+                                        subItem.href,
+                                        subItem.scrollTo
+                                      )
+                                    }
+                                    className={`w-full text-left px-6 py-3 text-base text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-all duration-200 flex items-center justify-between ${
+                                      pathname === "/about" && subItem.scrollTo
+                                        ? "bg-pink-50 font-medium"
+                                        : ""
+                                    }`}
+                                  >
+                                    <span>
+                                      <Text path={subItem.labelKey} />
+                                    </span>
+                                    <FiArrowRight className="w-4 h-4 text-pink-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                  </button>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className={`block py-4 text-lg font-semibold transition-colors duration-200 ${
+                            pathname === item.href
+                              ? "text-pink-500"
+                              : "text-gray-800 hover:text-pink-500"
+                          }`}
+                        >
+                          <Text path={item.labelKey} />
+                        </Link>
+                      )}
                     </motion.div>
                   ))}
                 </div>

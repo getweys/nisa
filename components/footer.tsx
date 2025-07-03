@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 export function Footer() {
   return (
@@ -137,12 +136,12 @@ export function Footer() {
                       href={social.href}
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.9 }}
-                      className={`w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm border border-gray-200 hover:border-pink-200 group hover:bg-pink-500`}
+                      className="w-10 h-10 bg-pink-100 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm text-pink-500 border-2 border-pink-500 hover:bg-pink-500 hover:border-pink-600 group"
                       aria-label={social.label}
                     >
                       <social.icon
                         size={18}
-                        className="text-gray-600 group-hover:text-white transition-colors"
+                        className="group-hover:text-pink-100 transition-colors"
                       />
                     </motion.a>
                   ))}
