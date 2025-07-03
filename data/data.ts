@@ -29,8 +29,9 @@ import {
   FiMapPin,
   FiAlertTriangle,
   FiEye,
+  FiYoutube,
 } from "react-icons/fi";
-import { FaSchool, FaShoppingBag } from "react-icons/fa";
+import { FaSchool, FaShoppingBag, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { MdDirectionsBike } from "react-icons/md";
 
 export const navigationItems: NavigationItem[] = [
@@ -157,23 +158,40 @@ export const legalLinks = [
 export const socialLinks = [
   {
     icon: FiFacebook,
-    href: "/",
+    href: "https://www.facebook.com/nisadrive/",
     label: "Facebook",
     color: "hover:bg-blue-500",
   },
   {
     icon: FiInstagram,
-    href: "/",
+    href: "https://www.instagram.com/nisadrive/",
     label: "Instagram",
     color: "hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500",
   },
   {
-    icon: FiLinkedin,
-    href: "/",
-    label: "LinkedIn",
+    icon: FiYoutube,
+    href: "https://www.youtube.com/@NisaDrive",
+    label: "YouTube",
     color: "hover:bg-blue-600",
   },
-  { icon: FiTwitter, href: "/", label: "Twitter", color: "hover:bg-sky-500" },
+  {
+    icon: FiTwitter,
+    href: "https://x.com/nisadrivepk ",
+    label: "Twitter",
+    color: "hover:bg-sky-500",
+  },
+  {
+    icon: FaTiktok,
+    href: "www.tiktok.com/@nisadrivepk",
+    label: "Tiktok",
+    color: "hover:bg-sky-500",
+  },
+  {
+    icon: FaWhatsapp,
+    href: "https://wa.me/923235307093",
+    label: "WhatsApp",
+    color: "hover:bg-sky-500",
+  },
 ];
 
 export const featuredServices = [

@@ -77,7 +77,7 @@ export function Footer() {
                         Email us
                       </p>
                       <p className="text-sm sm:font-medium">
-                        hello@nisadrive.com
+                        nisadrivepk@gmail.com{" "}
                       </p>
                     </div>
                   </motion.div>
@@ -95,7 +95,7 @@ export function Footer() {
                       <p className="text-xs sm:text-sm text-gray-500">
                         Call us
                       </p>
-                      <p className="text-sm sm:font-medium">+92 300 1234567</p>
+                      <p className="text-sm sm:font-medium">+92 3235 307093</p>
                     </div>
                   </motion.div>
                   <motion.div
