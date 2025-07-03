@@ -2,6 +2,7 @@
 
 import { roles } from "data/data";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import DriverIllustration from "svgs/DriverIllustration";
 import PartnerIllustration from "svgs/PartnerIllustration";
 import RiderIllustration from "svgs/RiderIllustration";
@@ -63,12 +64,15 @@ export function CommunitySection() {
                     <p className="text-sm text-gray-500 leading-relaxed flex-grow">
                       {role.description}
                     </p>
-                    <a
-                      href="#"
-                      className="mt-4 text-sm font-medium text-pink-500 hover:text-pink-700 hover:underline transition-colors"
-                    >
-                      Join as {role.title}
-                    </a>
+
+                    {role.link && (
+                      <Link
+                        className="mt-4 text-sm font-medium text-pink-500 hover:text-pink-700 hover:underline transition-colors"
+                        href={role.link}
+                      >
+                        Join as {role.title}
+                      </Link>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -95,7 +99,7 @@ export function CommunitySection() {
               creating a safer, more empowered Pakistan.
             </p>
             <motion.a
-              href="#"
+              href="https://nisadrive.com/download" // Replace with actual URL
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-pink-600 font-bold px-8 py-3 rounded-xl text-md shadow-lg hover:shadow-xl transition-all relative z-10"

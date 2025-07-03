@@ -112,16 +112,20 @@ export const roles = [
     title: "Rider",
     description:
       "Experience safe, reliable transportation with verified female drivers. Book rides, track your journey, and travel with confidence across Pakistan.",
+    link: "/RideExperienceForm",
   },
+
   {
     title: "Driver (Affiliate)",
     description:
       "Empower yourself with flexible earning opportunities. Join our network of verified female drivers and build your independent business while serving your community.",
+    link: "/DriverAffiliateForm",
   },
   {
     title: "Partner",
     description:
       "Collaborate with NisaDrive to expand women-centric services. From businesses to organizations, join us in creating safer mobility solutions for Pakistani women.",
+    link: "/PartnerApplicationForm",
   },
 ];
 
