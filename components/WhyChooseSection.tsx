@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 // Why Choose Section Component
 export const WhyChooseSection = () => (
-  <section className="py-24 bg-gray-50">
+  <section className="py-24">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -40,22 +40,21 @@ export const WhyChooseSection = () => (
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-15 rounded-full translate-y-12 -translate-x-12" />
 
             <div className="relative z-10">
-              <div className="flex items-start gap-6">
+              <div className="flex items-start gap-4">
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   className={`flex-shrink-0 w-16 h-16 bg-gradient-to-r ${reason.color} rounded-2xl flex items-center justify-center shadow-lg`}
                 >
                   <reason.icon className="w-8 h-8 text-white" />
                 </motion.div>
-
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-pink-600 transition-colors">
-                    {reason.title}
-                  </h3>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    {reason.description}
-                  </p>
-                </div>
+                <h3 className="text-2xl my-auto font-bold text-gray-900 group-hover:text-pink-600 transition-colors">
+                  {reason.title}
+                </h3>
+              </div>
+              <div className="flex-1 mt-4">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {reason.description}
+                </p>
               </div>
             </div>
           </motion.div>

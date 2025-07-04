@@ -2,6 +2,7 @@
 
 import { AnimatedButton } from "components/animated-button";
 import { AnimatedCard } from "components/animated-card";
+import { aboutMilestones, aboutStats, aboutValues, stats } from "data/data";
 import { motion } from "framer-motion";
 import {
   FiHeart,
@@ -13,62 +14,6 @@ import {
 } from "react-icons/fi";
 
 export default function AboutPage() {
-  const milestones = [
-    {
-      year: "2023",
-      title: "The Inspiration",
-      description:
-        "Tasmia's personal challenge with unreliable transport sparked the idea",
-    },
-    {
-      year: "2024",
-      title: "Foundation",
-      description:
-        "NisaDrive launched under FAIRIST with initial pilot program",
-    },
-    {
-      year: "2025",
-      title: "Growth",
-      description: "Expanding to multiple cities with 500+ active drivers",
-    },
-    {
-      year: "2027",
-      title: "Vision",
-      description: "Empowering 10,000+ women across Pakistan and beyond",
-    },
-  ];
-
-  const values = [
-    {
-      icon: FiHeart,
-      title: "Culture-Aligned",
-      description:
-        "Respecting Pakistani values while empowering women's mobility",
-      color: "from-pink-500 to-rose-500",
-    },
-    {
-      icon: FiShield,
-      title: "Tech-Enabled",
-      description:
-        "Leveraging AI and technology for safer, smarter transportation",
-      color: "from-purple-500 to-indigo-500",
-    },
-    {
-      icon: FiUsers,
-      title: "Women-Led",
-      description:
-        "By women, for women - creating opportunities at every level",
-      color: "from-emerald-500 to-teal-500",
-    },
-  ];
-
-  const stats = [
-    { icon: FiUsers, value: "10,000+", label: "Women to be Empowered" },
-    { icon: FiTarget, value: "15+", label: "Cities Planned" },
-    { icon: FiStar, value: "100%", label: "Safety Focused" },
-    { icon: FiTrendingUp, value: "5 Years", label: "Growth Roadmap" },
-  ];
-
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -96,12 +41,12 @@ export default function AboutPage() {
               Our Story
             </motion.div>
 
-            <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               About{" "}
-              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
-                NisaDrive
+              <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
+                NisaDrive{" "}
               </span>
-            </h1>
+            </motion.h1>
           </motion.div>
 
           {/* Main Story */}
@@ -116,8 +61,10 @@ export default function AboutPage() {
                 NisaDrive was born from a deeply personal challenge—one that
                 countless women in Pakistan silently endure every day: the
                 simple act of commuting. Our story began with{" "}
-                <strong className="text-pink-600">Tasmia Zehra</strong>, a
-                bright and determined AI student, who missed classes and
+                <strong className="text-pink-600 font-semibold">
+                  Tasmia Zehra
+                </strong>
+                , a bright and determined AI student, who missed classes and
                 opportunities just because her school van broke down or was
                 unavailable.
               </p>
@@ -131,7 +78,10 @@ export default function AboutPage() {
               <p className="text-base text-gray-700 leading-relaxed">
                 What started as an idea has grown into a nationwide movement,
                 nurtured under the umbrella of the{" "}
-                <a href="https://fairist.ai/" className="text-purple-600">
+                <a
+                  href="https://fairist.ai/"
+                  className="text-purple-600 font-semibold"
+                >
                   Fatima AI Research Institute (FAIRIST)
                 </a>
                 —a forward-looking organization committed to "AI for All" and
@@ -145,7 +95,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative bg-gradient-to-br from-pink-400 via-rose-400 to-purple-500 rounded-3xl p-8 shadow-2xl">
+              <div className="relative bg-gradient-to-br from-pink-500 via-rose-500 to-pink-500 rounded-3xl p-8 shadow-2xl">
                 <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-3xl" />
                 <div className="relative z-10 text-center text-white">
                   <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -168,7 +118,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
           >
-            {stats.map((stat, index) => (
+            {aboutStats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-8 h-8 text-pink-600" />
@@ -197,12 +147,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               Our Core{" "}
-              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
-                Values
+              <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
+                Values{" "}
               </span>
-            </h1>
+            </motion.h1>
             <p className="text-base text-gray-600 max-w-3xl mx-auto">
               NisaDrive is culture-aligned, tech-enabled, and women-led,
               offering a safe, dignified, and reliable transport alternative for
@@ -211,7 +161,7 @@ export default function AboutPage() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
+            {aboutValues.map((value, index) => (
               <AnimatedCard
                 key={index}
                 delay={index * 0.2}
@@ -243,12 +193,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               Our{" "}
-              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
                 Journey
               </span>
-            </h1>
+            </motion.h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From Rawalpindi to remote areas, our roadmap aims to empower
               10,000+ women over the next five years—whether as riders, drivers,
@@ -261,7 +211,7 @@ export default function AboutPage() {
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-pink-200 via-purple-200 to-pink-200 hidden md:block" />
 
             <div className="space-y-12">
-              {milestones.map((milestone, index) => (
+              {aboutMilestones.map((milestone, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
@@ -312,15 +262,15 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               A Word from{" "}
-              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
                 Our Founder
               </span>
-            </h1>
+            </motion.h1>
             <div className="max-w-4xl mx-auto">
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/20">
-                <div className="w-20 h-20 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-8">
+                <div className="w-20 h-20 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-8">
                   <FiHeart className="w-10 h-10 text-white" />
                 </div>
 
@@ -356,12 +306,12 @@ export default function AboutPage() {
             className="text-center"
           >
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                 Our{" "}
-                <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
                   Vision
                 </span>
-              </h1>
+              </motion.h1>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
                 Beyond Pakistan, we envision NisaDrive reaching other
                 underserved regions where women face similar cultural and
@@ -374,7 +324,7 @@ export default function AboutPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <AnimatedButton
-                  size="sm"
+                  size="md"
                   className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
                 >
                   Join Our Mission
@@ -400,12 +350,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               Blogs{" "}
-              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
                 & Newsroom
               </span>
-            </h1>
+            </motion.h1>
             <div className="max-w-3xl mx-auto">
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100">
                 <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -450,12 +400,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               CSR Initiatives{" "}
-              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
                 & Ventures
               </span>
-            </h1>
+            </motion.h1>
             <p className="text-base text-gray-500 max-w-4xl mx-auto">
               NisaDrive is proud to integrate its Corporate Social
               Responsibility (CSR) vision with real-world action.
@@ -540,12 +490,12 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               Contact{" "}
-              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
                 Our Teams
               </span>
-            </h1>
+            </motion.h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Get in touch with the right department for your specific needs.
               We're here to help!

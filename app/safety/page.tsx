@@ -34,12 +34,12 @@ export default function SafetyPage() {
               <FiShield className="w-10 h-10 text-white" />
             </motion.div>
 
-            <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               Safety{" "}
-              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
                 Features
               </span>
-            </h1>
+            </motion.h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-pink-600 mb-6">
               Trust Rides with Us
             </h2>

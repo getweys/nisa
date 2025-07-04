@@ -8,7 +8,7 @@ import { AnimatedButton } from "./animated-button";
 
 // Hero Section Component
 export const EarnHeroSection = () => (
-  <section className="pt-32 pb-20 bg-gradient-to-br from-white via-pink-50/30 to-white relative overflow-hidden">
+  <section className="pt-32 pb-20 relative overflow-hidden">
     <div className="absolute inset-0 overflow-hidden">
       <div className="absolute top-20 left-10 w-40 h-40 bg-pink-100 rounded-full opacity-20 blur-3xl animate-pulse" />
       <div className="absolute top-40 right-20 w-32 h-32 bg-pink-200 rounded-full opacity-15 blur-2xl" />
@@ -35,17 +35,14 @@ export const EarnHeroSection = () => (
             <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse" />
           </motion.div>
 
-          <motion.h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <span className="bg-gradient-to-r from-pink-500 via-pink-600 to-pink-500 bg-clip-text text-transparent">
-              Drive Your Future.
+          <motion.h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 sm:mb-6 leading-tight">
+            Drive Your{" "}
+            <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
+              Future. Empower
             </span>{" "}
-            <br />
-            Empower Your Life.
+            <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
+              Your Life.
+            </span>
           </motion.h1>
 
           <motion.p

@@ -1,4 +1,5 @@
 import { iconMap } from "data/data";
+import { IconType } from "react-icons";
 
 // Navbar Types
 export interface NavigationItem {
@@ -87,4 +88,10 @@ export interface SafetyCardProps {
 export interface SafetySectionProps {
   section: string;
   items: SafetyData[];
+}
+
+export interface impactStats {
+  icon: IconType;
+  value: string;
+  label: string;
 }

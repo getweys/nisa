@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FiCheckCircle } from "react-icons/fi";
 import { AnimatedButton } from "components/animated-button";
 import { featuredServices } from "data/data";
+import PinkCard from "components/PinkCard";
 
 export default function ServicesPage() {
   return (
@@ -81,16 +82,16 @@ export default function ServicesPage() {
                       <div className="flex items-center gap-2 mb-6">
                         <motion.div
                           whileHover={{ scale: 1.1, rotate: 5 }}
-                          className={`inline-flex items-center justify-center size-14 sm:size-16 bg-gradient-to-r ${service.color} rounded-2xl shadow-lg`}
+                          className={`flex items-center justify-center size-14 sm:size-16 bg-gradient-to-r ${service.color} rounded-2xl shadow-lg`}
                         >
-                          <service.icon className="size-7 sm:size-8 text-white" />
+                          <service.icon className="size-7 sm:size-9 text-white" />
                         </motion.div>
-                        <h3 className="text-xl md:text-4xl font-bold text-gray-900">
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900">
                           {service.title}
                         </h3>
                       </div>
 
-                      <p className="text-sm sm:text-lg text-gray-500 mb-8 leading-relaxed">
+                      <p className="text-sm sm:text-base text-gray-500 mb-8 leading-relaxed">
                         {service.description}
                       </p>
 
@@ -125,12 +126,7 @@ export default function ServicesPage() {
                           </p>
                         )}
                         <div className="flex flex-col sm:flex-row gap-4 items-start">
-                          <AnimatedButton
-                            size="lg"
-                            className={`bg-gradient-to-r ${service.color} hover:shadow-lg text-white font-semibold px-8 py-3`}
-                          >
-                            Get Started
-                          </AnimatedButton>
+                          <AnimatedButton size="md">Get Started</AnimatedButton>
                         </div>
                       </div>
                     </div>
@@ -173,70 +169,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Social Impact Section */}
-      <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <div className="bg-gradient-to-r from-pink-500 to-pink-600 rounded-3xl shadow-2xl p-8 sm:p-10 lg:p-12 max-w-4xl mx-auto text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-y-16 translate-x-16" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-10 rounded-full translate-y-12 -translate-x-12" />
-
-              <motion.h2
-                className="text-xl sm:text-4xl  font-bold mb-6 lg:mb-8 relative z-10"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Not Just A Service —{" "}
-                <span className="text-pink-100">A Social Shift</span>
-              </motion.h2>
-
-              <motion.p
-                className="text-sm sm:text-base mb-6 sm:mb-8 lg:mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed relative z-10"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                Each ride with NisaDrive is a step toward economic
-                participation, digital inclusion, and gender-equity in public
-                spaces. Whether you're a student, mom, entrepreneur, teacher, or
-                health worker — we're here to move you.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex gap-4 sm:gap-6 justify-center flex-col sm:flex-row"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-pink-600 font-bold px-4 sm:px-8 py-4 text-base rounded-xl shadow-lg hover:shadow-xl transition-all relative z-10"
-                >
-                  Join the Movement
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white hover:bg-white hover:text-pink-600 font-bold px-4 sm:px-8 py-4 text-base rounded-xl shadow-lg hover:shadow-xl transition-all relative z-10"
-                >
-                  Download NisaDrive
-                </motion.button>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <div className="pb-12 sm:pb-16 lg:pb-20">
+        <PinkCard
+          heading="Not Just A Service — A Social Shift"
+          description="Each ride with NisaDrive is a step toward economic participation, digital inclusion, and gender-equity in public spaces. Whether you're a student, mom, entrepreneur, teacher, or health worker — we're here to move you."
+          buttonText="Download NisaDrive App"
+        />
+      </div>
     </main>
   );
 }

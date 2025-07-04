@@ -48,7 +48,7 @@ export const TransparencySection = () => (
                 >
                   {policy.icon}
                 </motion.div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 group-hover:text-pink-600 transition-colors leading-tight">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-pink-600 transition-colors leading-tight">
                   {policy.title}
                 </h3>
               </div>

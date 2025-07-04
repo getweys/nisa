@@ -20,7 +20,6 @@ import {
   Lock,
   TrendingUp,
 } from "lucide-react";
-import { Navigation } from "components/navigation";
 import { Card, CardContent } from "components/ui/card";
 import { Button } from "components/ui/button";
 import { Footer } from "components/footer";
@@ -86,17 +85,9 @@ export default function CareersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
-      <Navigation />
-
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 px-4 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-        </div>
-
         <div className="relative max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -104,21 +95,22 @@ export default function CareersPage() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-50 to-purple-50 text-pink-600 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-pink-200"
+            >
               <Briefcase className="w-4 h-4" />
               Careers at NisaDrive
-            </div>
-
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                Join the Movement.
-              </span>
+            </motion.div>
+            <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+              Join the Movement.
               <br />
-              <span className="text-gray-800">
+              <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
                 Shape the Future of Inclusive Mobility.
               </span>
-            </h1>
-
+            </motion.h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               At NisaDrive, we're building more than just a transport service —
               we're driving a movement of dignified livelihoods, safety
@@ -147,10 +139,10 @@ export default function CareersPage() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <Card className="max-w-4xl mx-auto backdrop-blur-sm bg-white/80 border-0 shadow-xl">
+              <Card className="max-w-4xl rounded-xl mx-auto backdrop-blur-sm bg-white/80 border-0 shadow-xl">
                 <CardContent className="p-8 md:p-12 text-center">
                   <div className="mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Briefcase className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800 mb-4">
@@ -163,19 +155,29 @@ export default function CareersPage() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105">
-                      <Bell className="w-4 h-4 mr-2" />
-                      Subscribe to Career Alerts
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="bg-white text-gray-700 border-gray-300 hover:bg-gray-50 px-6 py-3 rounded-full font-medium transition-all duration-300"
+                    <AnimatedButton
+                      size="sm"
+                      className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
                     >
-                      <Users className="w-4 h-4 mr-2" />
+                      <Bell
+                        className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
+                        aria-hidden="true"
+                      />
+                      Subscribe to Career Alerts
+                    </AnimatedButton>
+                    <motion.button
+                      type="button"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-gray-700 bg-white border border-gray-200 rounded-xl hover:border-pink-200 hover:text-pink-600 shadow-sm"
+                    >
+                      <Users
+                        className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
+                        aria-hidden="true"
+                      />
                       Follow Us for Updates
                       <ExternalLink className="w-4 h-4 ml-2" />
-                    </Button>
+                    </motion.button>
                   </div>
                 </CardContent>
               </Card>
@@ -185,7 +187,7 @@ export default function CareersPage() {
       </section>
 
       {/* Internship & Fellowship Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 relative overflow-hidden">
+      <section className="py-16 px-4 bg-pink-500 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-64 h-64 bg-white/10 rounded-full filter blur-3xl"></div>
@@ -220,7 +222,7 @@ export default function CareersPage() {
                   whileHover={{ scale: 1.05 }}
                   className="group"
                 >
-                  <Card className="h-full backdrop-blur-sm bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <Card className="h-full backdrop-blur-sm bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 rounded-xl">
                     <CardContent className="p-6 text-center">
                       <div
                         className={`w-12 h-12 bg-gradient-to-r ${area.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
@@ -240,7 +242,7 @@ export default function CareersPage() {
             </div>
 
             <motion.div variants={itemVariants}>
-              <Card className="max-w-4xl mx-auto backdrop-blur-sm bg-white/10 border-white/20">
+              <Card className="max-w-4xl mx-auto backdrop-blur-sm bg-white/10 border-white/20 rounded-xl">
                 <CardContent className="p-8 text-center">
                   <div className="mb-6">
                     <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -251,15 +253,17 @@ export default function CareersPage() {
                       youth, and marginalized communities.
                     </p>
                   </div>
-                  <AnimatedButton
-                    size="sm"
-                    className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
-                    onClick={() => {
-                      router.push("/InternshipProgramForm");
-                    }}
-                  >
-                    Join the Internship Waitlist
-                  </AnimatedButton>
+                  <div className="flex justify-center items-center">
+                    <AnimatedButton
+                      size="sm"
+                      className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
+                      onClick={() => {
+                        router.push("/InternshipProgramForm");
+                      }}
+                    >
+                      Join the Internship Waitlist
+                    </AnimatedButton>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -277,9 +281,12 @@ export default function CareersPage() {
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                Our Inclusive Hiring Policy
-              </h2>
+              <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                Our Inclusive{" "}
+                <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
+                  Hiring Policy
+                </span>
+              </motion.h1>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 Although our services cater exclusively to women commuters, our
                 hiring is based on equal opportunity principles. We believe in
@@ -289,7 +296,7 @@ export default function CareersPage() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <Card className="max-w-4xl mx-auto backdrop-blur-sm bg-white/80 border-0 shadow-xl">
+              <Card className="max-w-4xl mx-auto backdrop-blur-sm bg-white/80 border-0 shadow-xl rounded-xl">
                 <CardContent className="p-8 md:p-12">
                   <div className="text-center mb-8">
                     <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">

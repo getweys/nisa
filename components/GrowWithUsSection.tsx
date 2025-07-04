@@ -6,7 +6,7 @@ import GrowthIllustration from "svgs/GrowthIllustration";
 
 // Grow With Us Section Component
 export const GrowWithUsSection = () => (
-  <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-pink-50/20">
+  <section className="py-24 m-0 sm:m-4">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -27,7 +27,7 @@ export const GrowWithUsSection = () => (
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <div className="grid lg:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -87,7 +87,9 @@ export const GrowWithUsSection = () => (
             </p>
           </motion.div>
         </motion.div>
-        <GrowthIllustration />
+        <div className="mb-12">
+          <GrowthIllustration />
+        </div>
       </div>
     </div>
   </section>

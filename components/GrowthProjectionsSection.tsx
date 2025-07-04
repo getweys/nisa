@@ -213,8 +213,7 @@ export default function GrowthProjectionsSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <AnimatedButton
-                size="lg"
-                className="bg-pink-600 text-white hover:bg-pink-700 font-semibold px-8 py-3 rounded-full"
+                size="md"
                 onClick={() =>
                   window.open(
                     "https://forms.google.com/franchise-application-placeholder",
@@ -224,11 +223,7 @@ export default function GrowthProjectionsSection() {
               >
                 <span className="mr-2">🚀</span> Apply for Franchise
               </AnimatedButton>
-              <AnimatedButton
-                size="lg"
-                variant="outline"
-                className="border-2 border-pink-600 text-pink-600 hover:bg-pink-50 font-semibold px-8 py-3 rounded-full"
-              >
+              <AnimatedButton size="md" variant="outline">
                 <span className="mr-2">📊</span> Download Business Plan
               </AnimatedButton>
             </div>
@@ -239,7 +234,7 @@ export default function GrowthProjectionsSection() {
                   href="mailto:support@fairist.ai"
                   className="hover:text-pink-600 transition-colors"
                 >
-                  support@fairist.ai
+                  nisadrivepk@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -248,7 +243,7 @@ export default function GrowthProjectionsSection() {
                   href="tel:+925154304820"
                   className="hover:text-pink-600 transition-colors"
                 >
-                  +92 51 543 0482
+                  +92 323 5307093
                 </a>
               </div>
             </div>

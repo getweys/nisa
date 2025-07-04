@@ -5,7 +5,7 @@ import { FiTrendingUp, FiAward, FiDollarSign } from "react-icons/fi";
 
 export default function WinWinModelSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-white">
+    <section className="py-12 sm:py-16 lg:py-24 bg-white m-5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -7,7 +7,7 @@ import { FiTarget } from "react-icons/fi";
 
 export default function StrategicInvestmentSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-pink-50/20">
+    <section className="py-12 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div
@@ -175,17 +175,10 @@ export default function StrategicInvestmentSection() {
 
                   {/* Call-to-Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center">
-                    <AnimatedButton
-                      size="lg"
-                      className={`bg-gradient-to-r ${card.cta.primaryColor} text-white font-semibold px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-base`}
-                    >
+                    <AnimatedButton size="md">
                       {card.cta.primary}
                     </AnimatedButton>
-                    <AnimatedButton
-                      size="lg"
-                      variant="outline"
-                      className={`border-2 ${card.cta.secondaryColor} font-semibold px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-base`}
-                    >
+                    <AnimatedButton size="md" variant="outline">
                       {card.cta.secondary}
                     </AnimatedButton>
                   </div>

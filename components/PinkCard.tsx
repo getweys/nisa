@@ -1,9 +1,12 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function HomeExperienceCard() {
+export default function PinkCard({
+  heading = "Ready to Experience Safe & Empowering Travel?",
+  description = "Join thousands of Pakistani women who trust NisaDrive for their daily transportation needs.",
+  buttonText = "Download NisaDrive App",
+}) {
   return (
     <div className="mx-2">
       <motion.div
@@ -24,7 +27,7 @@ export default function HomeExperienceCard() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Ready to Experience Safe & Empowering Travel?
+            {heading}
           </motion.h3>
           <motion.p
             className="text-sm sm:text-lg mb-8 opacity-90 relative z-10"
@@ -33,19 +36,15 @@ export default function HomeExperienceCard() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Join thousands of Pakistani women who trust NisaDrive for their
-            daily transportation needs.
+            {description}
           </motion.p>
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-pink-600 font-bold px-8 py-3 rounded-xl text-md shadow-lg hover:shadow-xl transition-all relative z-10"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            className="bg-white text-pink-600 font-bold px-4 sm:px-8 py-4 text-base rounded-xl shadow-lg hover:shadow-xl transition-all relative z-10"
           >
-            Download NisaDrive App
+            {buttonText}
           </motion.button>
         </div>
       </motion.div>

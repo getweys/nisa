@@ -6,6 +6,7 @@ import Link from "next/link";
 import DriverIllustration from "svgs/DriverIllustration";
 import PartnerIllustration from "svgs/PartnerIllustration";
 import RiderIllustration from "svgs/RiderIllustration";
+import PinkCard from "./PinkCard";
 
 const illustrations = [
   RiderIllustration,
@@ -79,36 +80,12 @@ export function CommunitySection() {
             );
           })}
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-pink-500 to-pink-600 rounded-3xl shadow-2xl p-12 max-w-4xl mx-auto text-white relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-y-16 translate-x-16" />
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-10 rounded-full translate-y-12 -translate-x-12" />
-            <h3 className="text-2xl lg:text-3xl font-bold mb-6 relative z-10">
-              Ready to Be Part of the Change?
-            </h3>
-            <p className="text-lg mb-8 opacity-90 relative z-10">
-              Download the NisaDrive app today and join thousands of women
-              creating a safer, more empowered Pakistan.
-            </p>
-            <motion.a
-              href="https://nisadrive.com/download" // Replace with actual URL
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-pink-600 font-bold px-8 py-3 rounded-xl text-md shadow-lg hover:shadow-xl transition-all relative z-10"
-            >
-              Download NisaDrive App
-            </motion.a>
-          </div>
-        </motion.div>
       </div>
+      <PinkCard
+        heading="Ready to Be Part of the Change?"
+        description="Download the NisaDrive app today and join thousands of women creating a safer, more empowered Pakistan."
+        buttonText="Download NisaDrive App"
+      />
     </section>
   );
 }

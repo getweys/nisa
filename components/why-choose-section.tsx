@@ -2,12 +2,12 @@
 
 import { features } from "data/data";
 import { motion } from "framer-motion";
-import HomeExperienceCard from "./homeExperienceCard";
 import Feature1Illustration from "svgs/feature1Illustration";
 import Feature2Illustration from "svgs/feature2Illustration";
 import Feature3Illustration from "svgs/feature3Illustration";
 import Feature4Illustration from "svgs/feature4Illustration";
 import Feature5Illustration from "svgs/feature5Illustration";
+import PinkCard from "./PinkCard";
 
 const illustrations = [
   Feature1Illustration,
@@ -93,7 +93,11 @@ export function WhyChooseSection() {
         </div>
       </div>
 
-      <HomeExperienceCard />
+      <PinkCard
+        heading="Ready to Experience Safe & Empowering Travel?"
+        description="Experience reliable and empowering Join thousands of Pakistani women who trust NisaDrive for their daily transportation needs. with NisaDrive across Pakistan."
+        buttonText="Download NisaDrive App"
+      />
     </section>
   );
 }

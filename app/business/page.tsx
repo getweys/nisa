@@ -11,7 +11,7 @@ import { HeroIllustration } from "svgs/HeroIllustration";
 
 export default function BusinessPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white m-5">
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-br from-white via-pink-50/30 to-white relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
@@ -39,19 +39,12 @@ export default function BusinessPage() {
                 Transforming Mobility in Pakistan
                 <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse" />
               </motion.div>
-
-              <motion.h1
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
-                <span className="bg-gradient-to-r from-pink-500 via-pink-600 to-pink-500 bg-clip-text text-transparent">
-                  Redefining Mobility,
+              <motion.h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                Redefining Mobility,{" "}
+                <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
+                  Empowering Women,
                 </span>{" "}
-                <br />
-                Empowering Women, <br />
-                <span className="bg-gradient-to-r from-pink-500 via-pink-600 to-pink-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
                   Scaling Impact
                 </span>
               </motion.h1>

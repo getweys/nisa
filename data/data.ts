@@ -1210,3 +1210,57 @@ export const geoFeatures = [
       "Regular coordination with local authorities and community input",
   },
 ];
+
+export const aboutMilestones = [
+  {
+    year: "2023",
+    title: "The Inspiration",
+    description:
+      "Tasmia's personal challenge with unreliable transport sparked the idea",
+  },
+  {
+    year: "2024",
+    title: "Foundation",
+    description: "NisaDrive launched under FAIRIST with initial pilot program",
+  },
+  {
+    year: "2025",
+    title: "Growth",
+    description: "Expanding to multiple cities with 500+ active drivers",
+  },
+  {
+    year: "2027",
+    title: "Vision",
+    description: "Empowering 10,000+ women across Pakistan and beyond",
+  },
+];
+
+export const aboutValues = [
+  {
+    icon: FiHeart,
+    title: "Culture-Aligned",
+    description:
+      "Respecting Pakistani values while empowering women's mobility",
+    color: "from-pink-500 to-rose-500",
+  },
+  {
+    icon: FiShield,
+    title: "Tech-Enabled",
+    description:
+      "Leveraging AI and technology for safer, smarter transportation",
+    color: "from-purple-500 to-indigo-500",
+  },
+  {
+    icon: FiUsers,
+    title: "Women-Led",
+    description: "By women, for women - creating opportunities at every level",
+    color: "from-emerald-500 to-teal-500",
+  },
+];
+
+export const aboutStats = [
+  { icon: FiUsers, value: "10,000+", label: "Women to be Empowered" },
+  { icon: FiTarget, value: "15+", label: "Cities Planned" },
+  { icon: FiStar, value: "100%", label: "Safety Focused" },
+  { icon: FiTrendingUp, value: "5 Years", label: "Growth Roadmap" },
+];
