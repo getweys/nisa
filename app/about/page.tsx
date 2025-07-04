@@ -4,6 +4,7 @@ import { AnimatedButton } from "components/animated-button";
 import { AnimatedCard } from "components/animated-card";
 import { aboutMilestones, aboutStats, aboutValues, stats } from "data/data";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   FiHeart,
   FiUsers,
@@ -271,7 +272,13 @@ export default function AboutPage() {
             <div className="max-w-4xl mx-auto">
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/20">
                 <div className="w-20 h-20 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-8">
-                  <FiHeart className="w-10 h-10 text-white" />
+                  <Image
+                    src={"/images/owner.jpeg"}
+                    alt="Founder Image"
+                    width={1000}
+                    height={1000}
+                    className="size-20 rounded-full object-cover"
+                  />
                 </div>
 
                 <blockquote className="text-xl text-gray-700 leading-relaxed mb-8 italic">
