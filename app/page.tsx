@@ -6,7 +6,7 @@ import { CommunitySection } from "components/community-section";
 
 export default function Home() {
   return (
-    <main className="mt-5">
+    <main className="m-5">
       <HeroSection />
       <WhyChooseSection />
       <ServicesSection />

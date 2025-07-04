@@ -235,8 +235,13 @@ export function Footer() {
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center bg-white hover:bg-gray-50 rounded-lg sm:rounded-xl p-3 sm:p-4 transition-all duration-300 border border-gray-200 hover:border-pink-200 hover:shadow-md group"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 group-hover:scale-105 transition-transform">
-                    <Download className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 group-hover:scale-105 transition-transform">
+                    <Image
+                      src={"/images/app_store.png"}
+                      alt="App Store"
+                      height={1000}
+                      width={1000}
+                    />
                   </div>
                   <div>
                     <div className="text-xs text-gray-500 leading-tight">
@@ -253,8 +258,13 @@ export function Footer() {
                   whileTap={{ scale: 0.95 }}
                   className="flex items-center bg-white hover:bg-gray-50 rounded-lg sm:rounded-xl p-3 sm:p-4 transition-all duration-300 border border-gray-200 hover:border-pink-200 hover:shadow-md group"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 group-hover:scale-105 transition-transform">
-                    <Download className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 group-hover:scale-105 transition-transform">
+                    <Image
+                      src={"/images/play_store.png"}
+                      alt="App Store"
+                      height={1000}
+                      width={1000}
+                    />{" "}
                   </div>
                   <div>
                     <div className="text-xs text-gray-500 leading-tight">
