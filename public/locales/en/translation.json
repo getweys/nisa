@@ -1,0 +1,21 @@
+{
+  "app.name": "Nisa Drive",
+  "profile.title": "Profile",
+  "language.select": "Select Language",
+  "language.save": "Save",
+  "language.english": "English",
+  "language.urdu": "Urdu",
+  "navigation.home": "Home",
+  "navigation.about": "About",
+  "navigation.services": "Services",
+  "navigation.contact": "Contact",
+  "navigation.downloadApp": "Download App",
+  "navigation.closeMenu": "Close menu",
+  "navigation.openMenu": "Open menu",
+  "navigation.mobileMenu": "Mobile menu",
+  "navigation.about.nisaDrive": "About Nisa Drive",
+  "navigation.about.founder": "A Word from Our Founder",
+  "navigation.about.blogs": "Blogs",
+  "navigation.about.newsroom": "Newsroom",
+  "navigation.about.csr": "CSR"
+}

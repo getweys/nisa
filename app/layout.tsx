@@ -1,13 +1,17 @@
-import type React from "react";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "contexts/language-context";
 import { Navigation } from "components/navigation";
 import { Footer } from "components/footer";
+import ClientLayout from "components/ui/ClientLayout";
+// import { LanguageProvider } from "@/contexts/language-context";
+// import { Navigation } from "@/components/navigation";
+// import { Footer } from "@/components/footer";
+// import ClientLayout from "@/components/ClientLayout"; // New Client Component
 
 const openSans = Open_Sans({
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin", "latin-ext"], // Added arabic subset for Urdu
   weight: ["300", "400", "500", "600", "700"],
 });
 
@@ -31,14 +35,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={openSans.className}>
-        <LanguageProvider>
+    <LanguageProvider>
+      <ClientLayout>
+        <body className={openSans.className}>
           <Navigation />
           {children}
           <Footer />
-        </LanguageProvider>
-      </body>
-    </html>
+        </body>
+      </ClientLayout>
+    </LanguageProvider>
   );
 }
