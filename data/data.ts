@@ -34,7 +34,7 @@ import {
 import { FaSchool, FaShoppingBag, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { MdDirectionsBike } from "react-icons/md";
 
-export const navigationItems: NavigationItem[] = [
+export const navigationItems = [
   { labelKey: "navigation.services", href: "/services" },
   { labelKey: "navigation.business", href: "/business" },
   { labelKey: "navigation.earn", href: "/earn" },
