@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion"
 import { FiUsers, FiShield, FiDollarSign, FiClock } from "react-icons/fi"
-import { Text } from "./text"
+import { useLanguage } from "contexts/language-context"
 import { AnimatedCard } from "./animated-card"
 
 export function FeaturesSection() {
+  const { t } = useLanguage();
   const features = [
     {
       icon: FiUsers,
@@ -44,10 +45,10 @@ export function FeaturesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            <Text path="features.title" />
+            {t("features.title")}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            <Text path="features.subtitle" />
+            {t("features.subtitle")}
           </p>
         </motion.div>
 
@@ -63,11 +64,11 @@ export function FeaturesSection() {
                 </motion.div>
 
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  <Text path={feature.titleKey} />
+                  {t(feature.titleKey)}
                 </h3>
 
                 <p className="text-gray-600 leading-relaxed">
-                  <Text path={feature.descriptionKey} />
+                  {t(feature.descriptionKey)}
                 </p>
               </div>
             </AnimatedCard>

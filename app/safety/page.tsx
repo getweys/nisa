@@ -147,7 +147,7 @@ export default function SafetyPage() {
                     </div>
                   </AnimatedCard>
                 ))}
-              </div>
+            </div>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <motion.div
