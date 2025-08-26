@@ -1174,53 +1174,50 @@ export const geoFeatures = [
 export const aboutMilestones = [
   {
     year: "2023",
-    title: "The Inspiration",
-    description:
-      "Tasmia's personal challenge with unreliable transport sparked the idea",
+    titleKey: "about.milestones.2023.title",
+    descriptionKey: "about.milestones.2023.description",
   },
   {
     year: "2024",
-    title: "Foundation",
-    description: "NisaDrive launched under FAIRIST with initial pilot program",
+    titleKey: "about.milestones.2024.title",
+    descriptionKey: "about.milestones.2024.description",
   },
   {
     year: "2025",
-    title: "Growth",
-    description: "Expanding to multiple cities with 500+ active drivers",
+    titleKey: "about.milestones.2025.title",
+    descriptionKey: "about.milestones.2025.description",
   },
   {
     year: "2027",
-    title: "Vision",
-    description: "Empowering 10,000+ women across Pakistan and beyond",
+    titleKey: "about.milestones.2027.title",
+    descriptionKey: "about.milestones.2027.description",
   },
 ];
 
 export const aboutValues = [
   {
     icon: FiHeart,
-    title: "Culture-Aligned",
-    description:
-      "Respecting Pakistani values while empowering women's mobility",
+    titleKey: "about.values.culture.title",
+    descriptionKey: "about.values.culture.description",
     color: "from-pink-500 to-rose-500",
   },
   {
     icon: FiShield,
-    title: "Tech-Enabled",
-    description:
-      "Leveraging AI and technology for safer, smarter transportation",
+    titleKey: "about.values.tech.title",
+    descriptionKey: "about.values.tech.description",
     color: "from-purple-500 to-indigo-500",
   },
   {
     icon: FiUsers,
-    title: "Women-Led",
-    description: "By women, for women - creating opportunities at every level",
+    titleKey: "about.values.women.title",
+    descriptionKey: "about.values.women.description",
     color: "from-emerald-500 to-teal-500",
   },
 ];
 
 export const aboutStats = [
-  { icon: FiUsers, value: "10,000+", label: "Women to be Empowered" },
-  { icon: FiTarget, value: "15+", label: "Cities Planned" },
-  { icon: FiStar, value: "100%", label: "Safety Focused" },
-  { icon: FiTrendingUp, value: "5 Years", label: "Growth Roadmap" },
+  { icon: FiUsers, value: "10,000+", labelKey: "about.stats.womenEmpowered.label" },
+  { icon: FiTarget, value: "15+", labelKey: "about.stats.cities.label" },
+  { icon: FiStar, value: "100%", labelKey: "about.stats.safety.label" },
+  { icon: FiTrendingUp, value: "5 Years", labelKey: "about.stats.growth.label" },
 ];

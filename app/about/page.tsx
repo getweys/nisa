@@ -122,7 +122,7 @@ export default function AboutPage() {
                   {stat.value}
                 </div>
                 <div className="text-sm md:text-base text-gray-600 font-medium">
-                  {t(`about.stats.${stat.label.toLowerCase().replace(/\s+/g, '')}.label`)}
+                  {t(stat.labelKey)}
                 </div>
               </div>
             ))}
@@ -166,10 +166,10 @@ export default function AboutPage() {
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  {t(`about.values.${value.title.toLowerCase().replace(/\s+/g, '')}.title`)}
+                  {t(value.titleKey)}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  {t(`about.values.${value.title.toLowerCase().replace(/\s+/g, '')}.description`)}
+                  {t(value.descriptionKey)}
                 </p>
               </AnimatedCard>
             ))}
@@ -223,9 +223,9 @@ export default function AboutPage() {
                         {milestone.year}
                       </div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                        {t(`about.milestones.${milestone.year}.title`)}
+                        {t(milestone.titleKey)}
                       </h3>
-                      <p className="text-gray-600">{t(`about.milestones.${milestone.year}.description`)}</p>
+                      <p className="text-gray-600">{t(milestone.descriptionKey)}</p>
                     </div>
                   </div>
 
@@ -276,9 +276,9 @@ export default function AboutPage() {
                 </blockquote>
 
                 <div className="border-t border-gray-200 pt-6">
-                  <div className="text-lg font-semibold text-gray-900">
-                    Tasmia Zehra
-                  </div>
+                                  <div className="text-lg font-semibold text-gray-900">
+                  {t("about.founder.name")}
+                </div>
                   <div className="text-pink-600 font-medium">
                     {t("about.founder.role")}
                   </div>

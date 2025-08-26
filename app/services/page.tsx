@@ -97,7 +97,7 @@ export default function ServicesPage() {
                       {/* Features */}
                       <div className="mb-8">
                         <h4 className="text-xl font-semibold text-gray-900 mb-4">
-                          {service.subtitleKey ? t(service.subtitleKey) : "Features:"}
+                          {service.subtitleKey ? t(service.subtitleKey) : t("services.page.features.title")}
                         </h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {service.features.map((feature, featureIndex) => (
@@ -153,7 +153,7 @@ export default function ServicesPage() {
                               {t(service.titleKey)}
                             </h4>
                             <p className="text-gray-600">
-                              Safe • Reliable • Professional
+                              {t("services.page.serviceQualities")}
                             </p>
                           </div>
                         </div>
