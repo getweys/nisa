@@ -13,8 +13,11 @@ import {
   FiStar,
   FiTrendingUp,
 } from "react-icons/fi";
+import { useLanguage } from "contexts/language-context";
 
 export default function AboutPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -39,11 +42,11 @@ export default function AboutPage() {
               className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-50 to-purple-50 text-pink-600 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-pink-200"
             >
               <FiHeart className="w-4 h-4" />
-              Our Story
+              {t("about.ourStory")}
             </motion.div>
 
             <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              About{" "}
+              {t("about.title")}{" "}
               <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
                 NisaDrive{" "}
               </span>
@@ -59,34 +62,26 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <p className="text-base text-gray-700 leading-relaxed">
-                NisaDrive was born from a deeply personal challenge—one that
-                countless women in Pakistan silently endure every day: the
-                simple act of commuting. Our story began with{" "}
+                {t("about.story.part1")}{" "}
                 <strong className="text-pink-600 font-semibold">
                   Tasmia Zehra
                 </strong>
-                , a bright and determined AI student, who missed classes and
-                opportunities just because her school van broke down or was
-                unavailable.
+                {t("about.story.part2")}
               </p>
 
               <p className="text-base text-gray-700 leading-relaxed">
-                That frustration turned into inspiration. Guided by her dream to
-                remove barriers to women's mobility, she envisioned NisaDrive—a
-                ride-hailing platform designed by women, for women.
+                {t("about.story.part3")}
               </p>
 
               <p className="text-base text-gray-700 leading-relaxed">
-                What started as an idea has grown into a nationwide movement,
-                nurtured under the umbrella of the{" "}
+                {t("about.story.part4")}{" "}
                 <a
                   href="https://fairist.ai/"
                   className="text-purple-600 font-semibold"
                 >
-                  Fatima AI Research Institute (FAIRIST)
+                  {t("about.story.fairist")}
                 </a>
-                —a forward-looking organization committed to "AI for All" and
-                social innovation.
+                {t("about.story.part5")}
               </p>
             </motion.div>
 
@@ -102,10 +97,9 @@ export default function AboutPage() {
                   <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                     <FiHeart className="w-10 h-10" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+                  <h3 className="text-2xl font-bold mb-4">{t("about.mission.title")}</h3>
                   <p className="text-lg opacity-90">
-                    Empowering women through safe, dignified, and reliable
-                    transportation across Pakistan
+                    {t("about.mission.description")}
                   </p>
                 </div>
               </div>
@@ -128,7 +122,7 @@ export default function AboutPage() {
                   {stat.value}
                 </div>
                 <div className="text-sm md:text-base text-gray-600 font-medium">
-                  {stat.label}
+                  {t(`about.stats.${stat.label.toLowerCase().replace(/\s+/g, '')}.label`)}
                 </div>
               </div>
             ))}
@@ -149,15 +143,13 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Our Core{" "}
+              {t("about.values.title")}{" "}
               <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                Values{" "}
+                {t("about.values.title2")}{" "}
               </span>
             </motion.h1>
             <p className="text-base text-gray-600 max-w-3xl mx-auto">
-              NisaDrive is culture-aligned, tech-enabled, and women-led,
-              offering a safe, dignified, and reliable transport alternative for
-              millions of Pakistani women.
+              {t("about.values.description")}
             </p>
           </motion.div>
 
@@ -174,10 +166,10 @@ export default function AboutPage() {
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  {value.title}
+                  {t(`about.values.${value.title.toLowerCase().replace(/\s+/g, '')}.title`)}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  {value.description}
+                  {t(`about.values.${value.title.toLowerCase().replace(/\s+/g, '')}.description`)}
                 </p>
               </AnimatedCard>
             ))}
@@ -195,15 +187,13 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Our{" "}
+              {t("about.journey.title")}{" "}
               <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                Journey
+                {t("about.journey.title2")}
               </span>
             </motion.h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From Rawalpindi to remote areas, our roadmap aims to empower
-              10,000+ women over the next five years—whether as riders, drivers,
-              coders, or community builders.
+              {t("about.journey.description")}
             </p>
           </motion.div>
 
@@ -233,9 +223,9 @@ export default function AboutPage() {
                         {milestone.year}
                       </div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                        {milestone.title}
+                        {t(`about.milestones.${milestone.year}.title`)}
                       </h3>
-                      <p className="text-gray-600">{milestone.description}</p>
+                      <p className="text-gray-600">{t(`about.milestones.${milestone.year}.description`)}</p>
                     </div>
                   </div>
 
@@ -264,9 +254,9 @@ export default function AboutPage() {
             className="text-center"
           >
             <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              A Word from{" "}
+              {t("about.founder.title")}{" "}
               <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                Our Founder
+                {t("about.founder.title2")}
               </span>
             </motion.h1>
             <div className="max-w-4xl mx-auto">
@@ -282,11 +272,7 @@ export default function AboutPage() {
                 </div>
 
                 <blockquote className="text-xl text-gray-700 leading-relaxed mb-8 italic">
-                  "At NisaDrive, we're not just giving women a ride—we're giving
-                  them freedom, safety, and opportunity. Whether you're a
-                  student, a single mother, or a dreamer like I once was, know
-                  that this platform belongs to you. Let's drive
-                  forward—together."
+                  {t("about.founder.quote")}
                 </blockquote>
 
                 <div className="border-t border-gray-200 pt-6">
@@ -294,7 +280,7 @@ export default function AboutPage() {
                     Tasmia Zehra
                   </div>
                   <div className="text-pink-600 font-medium">
-                    Founder & CEO, NisaDrive
+                    {t("about.founder.role")}
                   </div>
                 </div>
               </div>
@@ -314,19 +300,13 @@ export default function AboutPage() {
           >
             <div className="max-w-4xl mx-auto">
               <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                Our{" "}
+                {t("about.vision.title")}{" "}
                 <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                  Vision
+                  {t("about.vision.title2")}
                 </span>
               </motion.h1>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                Beyond Pakistan, we envision NisaDrive reaching other
-                underserved regions where women face similar cultural and
-                mobility barriers. Backed by robust legal compliance, data
-                privacy protection, and a Monitoring, Evaluation & Learning
-                (MEL) framework, NisaDrive is more than a platform—it's a
-                promise to build a safe, inclusive, and accountable future for
-                women in the digital economy.
+                {t("about.vision.description")}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -334,10 +314,10 @@ export default function AboutPage() {
                   size="md"
                   className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
                 >
-                  Join Our Mission
+                  {t("about.vision.cta.primary")}
                 </AnimatedButton>
                 <AnimatedButton size="md" variant="outline">
-                  Learn More
+                  {t("about.vision.cta.secondary")}
                 </AnimatedButton>
               </div>
             </div>
@@ -358,9 +338,9 @@ export default function AboutPage() {
             className="text-center"
           >
             <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Blogs{" "}
+              {t("about.blogs.title")}{" "}
               <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                & Newsroom
+                {t("about.blogs.title2")}
               </span>
             </motion.h1>
             <div className="max-w-3xl mx-auto">
@@ -370,12 +350,10 @@ export default function AboutPage() {
                 </div>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Coming Soon!
+                  {t("about.blogs.comingSoon")}
                 </h3>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Sign up to receive inspiring rider stories, safety
-                  innovations, and social impact highlights. Want to contribute?
-                  Write to us at:{" "}
+                  {t("about.blogs.description")}{" "}
                   <a
                     href="mailto:blog@nisadrive.com"
                     className="text-pink-600 hover:text-pink-700 font-semibold"
@@ -389,7 +367,7 @@ export default function AboutPage() {
                     size="sm"
                     className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
                   >
-                    Subscribe for Updates
+                    {t("about.blogs.cta")}
                   </AnimatedButton>
                 </div>
               </div>
@@ -408,14 +386,13 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              CSR Initiatives{" "}
+              {t("about.csr.title")}{" "}
               <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                & Ventures
+                {t("about.csr.title2")}
               </span>
             </motion.h1>
             <p className="text-base text-gray-500 max-w-4xl mx-auto">
-              NisaDrive is proud to integrate its Corporate Social
-              Responsibility (CSR) vision with real-world action.
+              {t("about.csr.description")}
             </p>
           </motion.div>
 
@@ -425,11 +402,10 @@ export default function AboutPage() {
                 <FiStar className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                The Nisa Awards
+                {t("about.csr.initiatives.awards.title")}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Recognizing talented girls in the tech and transport sectors,
-                celebrating innovation and achievement.
+                {t("about.csr.initiatives.awards.description")}
               </p>
             </AnimatedCard>
 
@@ -438,11 +414,10 @@ export default function AboutPage() {
                 <FiUsers className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Scholarships & Skills Programs
+                {t("about.csr.initiatives.scholarships.title")}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Empowering rural and underserved women to enter the digital
-                economy through education and training.
+                {t("about.csr.initiatives.scholarships.description")}
               </p>
             </AnimatedCard>
 
@@ -451,11 +426,10 @@ export default function AboutPage() {
                 <FiHeart className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Livelihood Support
+                {t("about.csr.initiatives.livelihood.title")}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Helping women in fragile areas gain flexible, dignified income
-                through mobility opportunities.
+                {t("about.csr.initiatives.livelihood.description")}
               </p>
             </AnimatedCard>
           </div>
@@ -466,20 +440,19 @@ export default function AboutPage() {
             className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-8 text-center border border-pink-100"
           >
             <p className="text-gray-700 leading-relaxed">
-              All CSR programs are governed under our official policies
-              including the{" "}
+              {t("about.csr.policies.description")}{" "}
               <strong className="text-pink-600">
-                CSR Commitment Statement
+                {t("about.csr.policies.commitment")}
               </strong>
               ,{" "}
               <strong className="text-purple-600">
-                Scholarship Disbursement Policy
+                {t("about.csr.policies.scholarship")}
               </strong>
               , and{" "}
               <strong className="text-rose-600">
-                Sponsorship & Donations Policy
+                {t("about.csr.policies.sponsorship")}
               </strong>
-              , ensuring accountability and transparency at every step.
+              , {t("about.csr.policies.ensuring")}
             </p>
           </motion.div>
         </div>
@@ -498,45 +471,44 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Contact{" "}
+              {t("about.contact.title")}{" "}
               <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                Our Teams
+                {t("about.contact.title2")}
               </span>
             </motion.h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Get in touch with the right department for your specific needs.
-              We're here to help!
+              {t("about.contact.description")}
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
               {
-                dept: "General Queries",
+                dept: t("about.contact.teams.general.dept"),
                 email: "support@nisadrive.com",
                 icon: FiUsers,
                 color: "from-blue-500 to-cyan-500",
               },
               {
-                dept: "Affiliates/Drivers",
+                dept: t("about.contact.teams.affiliates.dept"),
                 email: "affiliates@nisadrive.com",
                 icon: FiTarget,
                 color: "from-green-500 to-emerald-500",
               },
               {
-                dept: "Investment & Franchise",
+                dept: t("about.contact.teams.investment.dept"),
                 email: "invest@nisadrive.com",
                 icon: FiTrendingUp,
                 color: "from-purple-500 to-indigo-500",
               },
               {
-                dept: "CSR & Media",
+                dept: t("about.contact.teams.csr.dept"),
                 email: "impact@nisadrive.com",
                 icon: FiHeart,
                 color: "from-pink-500 to-rose-500",
               },
               {
-                dept: "Legal & Privacy",
+                dept: t("about.contact.teams.legal.dept"),
                 email: "compliance@nisadrive.com",
                 icon: FiShield,
                 color: "from-gray-500 to-slate-500",

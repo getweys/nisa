@@ -2,7 +2,11 @@
 
 import { coreValues } from "data/data";
 import { motion } from "framer-motion";
+import { useLanguage } from "contexts/language-context";
+
 export default function CoreValuesSection() {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,14 +18,13 @@ export default function CoreValuesSection() {
           className="text-center mb-20"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our{" "}
+            {t("business.page.coreValues.title.part1")}
             <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-              Core Values
+              {t("business.page.coreValues.title.coreValues")}
             </span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            The principles that guide every decision and drive our mission to
-            transform mobility in Pakistan
+            {t("business.page.coreValues.description")}
           </p>
         </motion.div>
 
@@ -50,11 +53,11 @@ export default function CoreValuesSection() {
                   </motion.div>
 
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 group-hover:text-pink-600 transition-colors">
-                    {value.title}
+                    {t(value.titleKey)}
                   </h3>
 
                   <p className="text-base text-gray-500 leading-relaxed">
-                    {value.description}
+                    {t(value.descriptionKey)}
                   </p>
                 </div>
               </div>

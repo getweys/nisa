@@ -5,8 +5,11 @@ import { FiCheckCircle } from "react-icons/fi";
 import { AnimatedButton } from "components/animated-button";
 import { featuredServices } from "data/data";
 import PinkCard from "components/PinkCard";
+import { useLanguage } from "contexts/language-context";
 
 export default function ServicesPage() {
+  const { t } = useLanguage();
+  
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -31,9 +34,9 @@ export default function ServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Our{" "}
+              {t("services.page.title")}{" "}
               <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                Services
+                {t("services.page.title")}
               </span>
             </motion.h1>
 
@@ -44,14 +47,10 @@ export default function ServicesPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <h2 className="text-xl md:text-3xl font-semibold text-gray-800 mb-6">
-                NisaDrive – Designed for Women, Driven by Purpose
+                {t("services.page.subtitle")}
               </h2>
               <p className="text-md sm:text-lg text-gray-500 leading-relaxed">
-                At NisaDrive, we go beyond ride-hailing. We offer safe,
-                culturally-sensitive, and tech-enabled mobility services,
-                created exclusively for women by women – empowering riders,
-                drivers, and communities across Pakistan. Our services are
-                tailored for convenience, dignity, and peace of mind.
+                {t("services.page.description")}
               </p>
             </motion.div>
           </motion.div>
@@ -87,47 +86,46 @@ export default function ServicesPage() {
                           <service.icon className="size-7 sm:size-9 text-white" />
                         </motion.div>
                         <h3 className="text-xl md:text-2xl font-bold text-gray-900">
-                          {service.title}
+                          {t(service.titleKey)}
                         </h3>
                       </div>
 
                       <p className="text-sm sm:text-base text-gray-500 mb-8 leading-relaxed">
-                        {service.description}
+                        {t(service.descriptionKey)}
                       </p>
 
                       {/* Features */}
                       <div className="mb-8">
                         <h4 className="text-xl font-semibold text-gray-900 mb-4">
-                          {service.subtitle || "Features:"}
+                          {service.subtitleKey ? t(service.subtitleKey) : "Features:"}
                         </h4>
-                        <div className="grid sm:grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {service.features.map((feature, featureIndex) => (
                             <div
                               key={featureIndex}
-                              className="flex items-center gap-3"
+                              className="flex items-center gap-3 text-sm text-gray-600"
                             >
-                              <FiCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                              <span className="text-gray-500 font-medium text-sm sm:text-base">
-                                {feature}
-                              </span>
+                              <FiCheckCircle className="size-5 text-green-500 flex-shrink-0" />
+                              <span>{t(feature)}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
                       {/* CTA */}
-                      <div className="flex flex-col gap-4">
-                        <p className="text-sm sm:text-lg font-semibold text-gray-800 italic">
-                          {service.cta}
-                        </p>
-                        {service.specialCta && (
-                          <p className="text-xl font-bold text-pink-600 italic">
-                            {service.specialCta}
-                          </p>
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <AnimatedButton
+                          className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-pink-600 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        >
+                          {t(service.ctaKey)}
+                        </AnimatedButton>
+                        {service.specialCtaKey && (
+                          <div className="text-center sm:text-left">
+                            <p className="text-sm text-pink-600 font-medium italic">
+                              {t(service.specialCtaKey)}
+                            </p>
+                          </div>
                         )}
-                        <div className="flex flex-col sm:flex-row gap-4 items-start">
-                          <AnimatedButton size="md">Get Started</AnimatedButton>
-                        </div>
                       </div>
                     </div>
 
@@ -152,7 +150,7 @@ export default function ServicesPage() {
                               <service.icon className="w-12 h-12 text-white" />
                             </motion.div>
                             <h4 className="text-xl font-bold text-gray-800 mb-2 px-2">
-                              {service.title}
+                              {t(service.titleKey)}
                             </h4>
                             <p className="text-gray-600">
                               Safe • Reliable • Professional
@@ -171,9 +169,9 @@ export default function ServicesPage() {
 
       <div className="pb-12 sm:pb-16 lg:pb-20">
         <PinkCard
-          heading="Not Just A Service — A Social Shift"
-          description="Each ride with NisaDrive is a step toward economic participation, digital inclusion, and gender-equity in public spaces. Whether you're a student, mom, entrepreneur, teacher, or health worker — we're here to move you."
-          buttonText="Download NisaDrive App"
+          heading={t("services.page.pinkCard.heading")}
+          description={t("services.page.pinkCard.description")}
+          buttonText={t("services.page.pinkCard.buttonText")}
         />
       </div>
     </main>

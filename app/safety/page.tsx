@@ -13,8 +13,11 @@ import {
 } from "react-icons/fi";
 import { AnimatedCard } from "components/animated-card";
 import { geoFeatures, verificationSteps } from "data/data";
+import { useLanguage } from "contexts/language-context";
 
 export default function SafetyPage() {
+  const { t } = useLanguage();
+  
   return (
     <main className="min-h-screen bg-white">
       <div className="pt-24 pb-16">
@@ -35,20 +38,16 @@ export default function SafetyPage() {
             </motion.div>
 
             <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Safety{" "}
+              {t("safety.page.hero.title.part1")}
               <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                Features
+                {t("safety.page.hero.title.part2")}
               </span>
             </motion.h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-pink-600 mb-6">
-              Trust Rides with Us
+              {t("safety.page.hero.subtitle")}
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              At NisaDrive, safety isn't a promise — it's a system. We've built
-              a multi-layered safety infrastructure aligned with national law
-              and international standards. From registration to destination,
-              every ride is designed to protect, empower, and ensure peace of
-              mind.
+              {t("safety.page.hero.description")}
             </p>
           </motion.div>
 
@@ -65,11 +64,10 @@ export default function SafetyPage() {
                   <FiUsers className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Verified Female Drivers
+                  {t("safety.page.verifiedDrivers.title")}
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Every NisaDrive affiliate undergoes comprehensive verification
-                  and training
+                  {t("safety.page.verifiedDrivers.description")}
                 </p>
               </div>
 
@@ -84,10 +82,10 @@ export default function SafetyPage() {
                         <step.icon className="w-7 h-7 text-pink-500" />
                       </motion.div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                        {step.title}
+                        {t(step.titleKey)}
                       </h3>
                       <p className="text-gray-600 text-sm leading-relaxed">
-                        {step.description}
+                        {t(step.descriptionKey)}
                       </p>
                     </div>
                   </AnimatedCard>
@@ -102,9 +100,7 @@ export default function SafetyPage() {
                 className="mt-8 p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-pink-100"
               >
                 <p className="text-gray-700 text-center">
-                  <strong>Additional Safety Measures:</strong> Drivers wear ID
-                  badges, use designated gadgets, and are evaluated periodically
-                  to maintain our high safety standards.
+                  <strong>{t("safety.page.verifiedDrivers.additionalMeasures")}</strong>
                 </p>
               </motion.div>
             </div>
@@ -123,11 +119,10 @@ export default function SafetyPage() {
                   <FiMapPin className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Geo-Fenced Operational Zones
+                  {t("safety.page.geoFencing.title")}
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  NisaDrive operates only in pre-approved, secure zones for
-                  maximum safety
+                  {t("safety.page.geoFencing.description")}
                 </p>
               </div>
 
@@ -143,10 +138,10 @@ export default function SafetyPage() {
                       </motion.div>
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                          {feature.title}
+                          {t(feature.titleKey)}
                         </h3>
                         <p className="text-gray-600 leading-relaxed">
-                          {feature.description}
+                          {t(feature.descriptionKey)}
                         </p>
                       </div>
                     </div>
@@ -162,27 +157,27 @@ export default function SafetyPage() {
                   className="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-blue-100"
                 >
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    Designated Safe Locations
+                    {t("safety.page.geoFencing.designatedSafe.title")}
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Our operational zones are specifically designed for:
+                    {t("safety.page.geoFencing.designatedSafe.description")}
                   </p>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center">
                       <FiCheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                      Schools and educational institutions
+                      {t("safety.page.geoFencing.designatedSafe.schools")}
                     </li>
                     <li className="flex items-center">
                       <FiCheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                      Office complexes and business districts
+                      {t("safety.page.geoFencing.designatedSafe.offices")}
                     </li>
                     <li className="flex items-center">
                       <FiCheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                      Hospitals and healthcare facilities
+                      {t("safety.page.geoFencing.designatedSafe.hospitals")}
                     </li>
                     <li className="flex items-center">
                       <FiCheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                      Shopping centers and marketplaces
+                      {t("safety.page.geoFencing.designatedSafe.shopping")}
                     </li>
                   </ul>
                 </motion.div>
@@ -194,14 +189,10 @@ export default function SafetyPage() {
                   className="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-blue-100"
                 >
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    Future-Safe Initiatives
+                    {t("safety.page.geoFencing.futureSafe.title")}
                   </h3>
                   <p className="text-gray-600">
-                    Our geo-fencing system is future-ready for specialized
-                    transport initiatives, including schoolgirl transport
-                    programs linked with our Child & Vulnerable Persons
-                    Protection Policy, ensuring the highest safety standards for
-                    all passengers.
+                    {t("safety.page.geoFencing.futureSafe.description")}
                   </p>
                 </motion.div>
               </div>
@@ -221,11 +212,10 @@ export default function SafetyPage() {
                   <FiShield className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  In-App Safety Features
+                  {t("safety.page.inAppFeatures.title")}
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Your safety, digitized and decentralized through advanced
-                  technology
+                  {t("safety.page.inAppFeatures.description")}
                 </p>
               </div>
 
@@ -239,10 +229,10 @@ export default function SafetyPage() {
                       <FiMapPin className="w-7 h-7 text-purple-500" />
                     </motion.div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                      Live Ride Tracking
+                      {t("safety.page.inAppFeatures.liveTracking.title")}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Real-time monitoring of your journey from start to finish
+                      {t("safety.page.inAppFeatures.liveTracking.description")}
                     </p>
                   </div>
                 </AnimatedCard>
@@ -256,11 +246,10 @@ export default function SafetyPage() {
                       <FiEye className="w-7 h-7 text-purple-500" />
                     </motion.div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                      Real-Time Location
+                      {t("safety.page.inAppFeatures.realTimeLocation.title")}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Live driver and passenger location sharing for
-                      transparency
+                      {t("safety.page.inAppFeatures.realTimeLocation.description")}
                     </p>
                   </div>
                 </AnimatedCard>
@@ -274,10 +263,10 @@ export default function SafetyPage() {
                       <FiAlertTriangle className="w-7 h-7 text-red-500" />
                     </motion.div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                      Emergency SOS
+                      {t("safety.page.inAppFeatures.emergencySOS.title")}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Instant alert to Control Center plus 3 emergency contacts
+                      {t("safety.page.inAppFeatures.emergencySOS.description")}
                     </p>
                   </div>
                 </AnimatedCard>
@@ -291,11 +280,10 @@ export default function SafetyPage() {
                       <FiUsers className="w-7 h-7 text-purple-500" />
                     </motion.div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                      Biometric Verification
+                      {t("safety.page.inAppFeatures.biometricVerification.title")}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Advanced liveness checks in phased rollout for enhanced
-                      security
+                      {t("safety.page.inAppFeatures.biometricVerification.description")}
                     </p>
                   </div>
                 </AnimatedCard>
@@ -316,11 +304,10 @@ export default function SafetyPage() {
                   <FiUsers className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Mandatory Safety Training
+                  {t("safety.page.mandatoryTraining.title")}
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Comprehensive training programs ensuring every driver is
-                  prepared for any situation
+                  {t("safety.page.mandatoryTraining.description")}
                 </p>
               </div>
 
@@ -335,11 +322,10 @@ export default function SafetyPage() {
                     </motion.div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        Onboarding Bootcamps
+                        {t("safety.page.mandatoryTraining.bootcamps.title")}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Intensive training sessions covering all aspects of safe
-                        driving and customer service
+                        {t("safety.page.mandatoryTraining.bootcamps.description")}
                       </p>
                     </div>
                   </div>
@@ -355,11 +341,10 @@ export default function SafetyPage() {
                     </motion.div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        Self-Defense Simulations
+                        {t("safety.page.mandatoryTraining.selfDefense.title")}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Practical self-defense training to handle challenging
-                        situations confidently
+                        {t("safety.page.mandatoryTraining.selfDefense.description")}
                       </p>
                     </div>
                   </div>
@@ -375,11 +360,10 @@ export default function SafetyPage() {
                     </motion.div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        Emergency Response
+                        {t("safety.page.mandatoryTraining.emergencyResponse.title")}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
-                        First aid and emergency response tutorials for medical
-                        and safety emergencies
+                        {t("safety.page.mandatoryTraining.emergencyResponse.description")}
                       </p>
                     </div>
                   </div>
@@ -395,11 +379,10 @@ export default function SafetyPage() {
                     </motion.div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        Women's Rights Awareness
+                        {t("safety.page.mandatoryTraining.womensRights.title")}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Comprehensive sessions on women's rights and respectful
-                        interaction protocols
+                        {t("safety.page.mandatoryTraining.womensRights.description")}
                       </p>
                     </div>
                   </div>
@@ -414,9 +397,7 @@ export default function SafetyPage() {
                 className="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-green-100"
               >
                 <p className="text-gray-700 text-center">
-                  <strong>Certification & Compliance:</strong> Training is
-                  certified, refreshed every 6 months, and aligned with PECA
-                  2016 and workplace safety acts.
+                  <strong>{t("safety.page.mandatoryTraining.certification")}</strong>
                 </p>
               </motion.div>
             </div>
@@ -435,11 +416,10 @@ export default function SafetyPage() {
                   <FiShield className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Ride Insurance Coverage
+                  {t("safety.page.insurance.title")}
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Every NisaDrive ride comes with comprehensive insurance
-                  protection
+                  {t("safety.page.insurance.description")}
                 </p>
               </div>
 
@@ -450,14 +430,13 @@ export default function SafetyPage() {
                       <FiAlertTriangle className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      PKR 300,000
+                      {t("safety.page.insurance.accidentalDeath.amount")}
                     </h3>
                     <p className="text-lg font-semibold text-gray-700 mb-2">
-                      Accidental Death Coverage
+                      {t("safety.page.insurance.accidentalDeath.title")}
                     </p>
                     <p className="text-gray-600 text-sm">
-                      Comprehensive coverage for accidental death during your
-                      ride
+                      {t("safety.page.insurance.accidentalDeath.description")}
                     </p>
                   </div>
                 </AnimatedCard>
@@ -468,14 +447,13 @@ export default function SafetyPage() {
                       <FiShield className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      PKR 150,000
+                      {t("safety.page.insurance.majorInjury.amount")}
                     </h3>
                     <p className="text-lg font-semibold text-gray-700 mb-2">
-                      Major Injury Coverage
+                      {t("safety.page.insurance.majorInjury.title")}
                     </p>
                     <p className="text-gray-600 text-sm">
-                      Protection against major injuries sustained during your
-                      journey
+                      {t("safety.page.insurance.majorInjury.description")}
                     </p>
                   </div>
                 </AnimatedCard>
@@ -491,12 +469,11 @@ export default function SafetyPage() {
                   <div className="flex items-center mb-3">
                     <FiCheckCircle className="w-5 h-5 text-green-500 mr-3" />
                     <h4 className="text-lg font-semibold text-gray-900">
-                      Coverage Active During Ride
+                      {t("safety.page.insurance.coverageActive.title")}
                     </h4>
                   </div>
                   <p className="text-gray-600">
-                    Insurance coverage is automatically active from the moment
-                    your ride begins until you reach your destination safely.
+                    {t("safety.page.insurance.coverageActive.description")}
                   </p>
                 </motion.div>
 
@@ -511,16 +488,15 @@ export default function SafetyPage() {
                     <FiAlertTriangle className="w-5 h-5 text-amber-500 mr-3 mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                        Important Note
+                        {t("safety.page.insurance.importantNote.title")}
                       </h4>
                       <p className="text-gray-600 mb-3">
-                        This policy does not cover vehicle damage or third-party
-                        claims.
+                        {t("safety.page.insurance.importantNote.description")}
                       </p>
                       <div className="flex items-center">
-                        <span className="text-gray-700 mr-2">See:</span>
+                        <span className="text-gray-700 mr-2">{t("safety.page.insurance.importantNote.see")}</span>
                         <button className="text-orange-600 hover:text-orange-700 font-medium underline transition-colors">
-                          Insurance Coverage Policy
+                          {t("safety.page.insurance.importantNote.policy")}
                         </button>
                       </div>
                     </div>
@@ -543,11 +519,10 @@ export default function SafetyPage() {
                   <FiEye className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Monitoring & Quality Control
+                  {t("safety.page.monitoring.title")}
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Advanced monitoring systems ensuring consistent safety and
-                  quality standards
+                  {t("safety.page.monitoring.description")}
                 </p>
               </div>
 
@@ -562,11 +537,10 @@ export default function SafetyPage() {
                     </motion.div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        Periodic Safety Audits
+                        {t("safety.page.monitoring.safetyAudits.title")}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Regular comprehensive safety assessments to maintain the
-                        highest standards
+                        {t("safety.page.monitoring.safetyAudits.description")}
                       </p>
                     </div>
                   </div>
@@ -582,11 +556,10 @@ export default function SafetyPage() {
                     </motion.div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        Automated Behavior Analysis
+                        {t("safety.page.monitoring.behaviorAnalysis.title")}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Real-time analysis of ride patterns and driver behavior
-                        for safety optimization
+                        {t("safety.page.monitoring.behaviorAnalysis.description")}
                       </p>
                     </div>
                   </div>
@@ -602,11 +575,10 @@ export default function SafetyPage() {
                     </motion.div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        AI-Assisted Alert Systems
+                        {t("safety.page.monitoring.aiAlerts.title")}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Smart monitoring for speed violations, route deviations,
-                        and unusual idle time
+                        {t("safety.page.monitoring.aiAlerts.description")}
                       </p>
                     </div>
                   </div>
@@ -622,11 +594,10 @@ export default function SafetyPage() {
                     </motion.div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                        Community Feedback Scoring
+                        {t("safety.page.monitoring.communityFeedback.title")}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Community-led evaluation of drivers on punctuality,
-                        hygiene, and conduct
+                        {t("safety.page.monitoring.communityFeedback.description")}
                       </p>
                     </div>
                   </div>
@@ -641,9 +612,7 @@ export default function SafetyPage() {
                 className="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-teal-100"
               >
                 <p className="text-gray-700 text-center">
-                  <strong>Transparency & Accountability:</strong> Reports are
-                  shared with oversight partners under our MEL Framework for
-                  continuous improvement.
+                  <strong>{t("safety.page.monitoring.transparency")}</strong>
                 </p>
               </motion.div>
             </div>
@@ -662,11 +631,10 @@ export default function SafetyPage() {
                   <FiUsers className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Community-Driven Protection
+                  {t("safety.page.community.title")}
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Building a network of support through strategic partnerships
-                  and community collaboration
+                  {t("safety.page.community.description")}
                 </p>
               </div>
 
@@ -680,11 +648,10 @@ export default function SafetyPage() {
                       <FiShield className="w-8 h-8 text-white" />
                     </motion.div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                      Traffic Police & Legal Aid
+                      {t("safety.page.community.trafficPolice.title")}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Direct partnerships with traffic authorities and legal aid
-                      organizations for immediate support
+                      {t("safety.page.community.trafficPolice.description")}
                     </p>
                   </div>
                 </AnimatedCard>
@@ -698,11 +665,10 @@ export default function SafetyPage() {
                       <FiUsers className="w-8 h-8 text-white" />
                     </motion.div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                      Women's Shelters & NGOs
+                      {t("safety.page.community.womensShelters.title")}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Collaboration with women's support organizations for
-                      comprehensive protection services
+                      {t("safety.page.community.womensShelters.description")}
                     </p>
                   </div>
                 </AnimatedCard>
@@ -716,11 +682,10 @@ export default function SafetyPage() {
                       <FiMapPin className="w-8 h-8 text-white" />
                     </motion.div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                      Local Safety Committees
+                      {t("safety.page.community.localCommittees.title")}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Active engagement with community safety committees for
-                      localized protection strategies
+                      {t("safety.page.community.localCommittees.description")}
                     </p>
                   </div>
                 </AnimatedCard>
@@ -737,12 +702,10 @@ export default function SafetyPage() {
                   <FiClock className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  24/7 Support Access
+                  {t("safety.page.community.support.title")}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Riders and Drivers can request legal or emotional support
-                  through the app anytime, anywhere — 24/7 assistance
-                  guaranteed.
+                  {t("safety.page.community.support.description")}
                 </p>
               </motion.div>
 
@@ -756,10 +719,10 @@ export default function SafetyPage() {
               >
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    Coming Soon
+                    {t("safety.page.community.comingSoon.title")}
                   </h3>
                   <p className="text-gray-600">
-                    Exciting new features to enhance community safety
+                    {t("safety.page.community.comingSoon.description")}
                   </p>
                 </div>
 
@@ -769,10 +732,10 @@ export default function SafetyPage() {
                       <FiStar className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      Safety Badges
+                      {t("safety.page.community.comingSoon.safetyBadges.title")}
                     </h4>
                     <p className="text-sm text-gray-600">
-                      5-Star Verified Driver recognition system
+                      {t("safety.page.community.comingSoon.safetyBadges.description")}
                     </p>
                   </div>
 
@@ -781,10 +744,10 @@ export default function SafetyPage() {
                       <FiCheckCircle className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      Safety Rankings
+                      {t("safety.page.community.comingSoon.safetyRankings.title")}
                     </h4>
                     <p className="text-sm text-gray-600">
-                      Monthly Community Safety Rankings
+                      {t("safety.page.community.comingSoon.safetyRankings.description")}
                     </p>
                   </div>
 
@@ -793,10 +756,10 @@ export default function SafetyPage() {
                       <FiEye className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="font-semibold text-gray-900 mb-2">
-                      Watch Groups
+                      {t("safety.page.community.comingSoon.watchGroups.title")}
                     </h4>
                     <p className="text-sm text-gray-600">
-                      Regional Watch Groups with Local Authorities
+                      {t("safety.page.community.comingSoon.watchGroups.description")}
                     </p>
                   </div>
                 </div>
@@ -813,12 +776,10 @@ export default function SafetyPage() {
           >
             <FiShield className="w-16 h-16 mx-auto mb-6 opacity-90" />
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Your Safety is Our Foundation
+              {t("safety.page.trust.title")}
             </h2>
             <p className="text-lg opacity-90 max-w-3xl mx-auto">
-              Every policy, every feature, and every decision at NisaDrive is
-              made with your safety as the top priority. We don't just transport
-              you — we protect your journey.
+              {t("safety.page.trust.description")}
             </p>
           </motion.div>
         </div>

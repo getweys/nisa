@@ -14,9 +14,11 @@ import {
   CreditCard,
 } from "lucide-react";
 import { Card, CardContent } from "components/ui/card";
+import { useLanguage } from "contexts/language-context";
 
 export default function FAQPage() {
   const [openItems, setOpenItems] = useState<number[]>([]);
+  const { t } = useLanguage();
 
   const toggleItem = (index: number) => {
     setOpenItems((prev) =>
@@ -26,108 +28,97 @@ export default function FAQPage() {
 
   const faqCategories = [
     {
-      title: "General FAQs about NisaDrive",
+      titleKey: "faq.page.categories.general.title",
       icon: HelpCircle,
       color: "from-blue-500 to-purple-500",
       questions: [
         {
-          question: "What is NisaDrive?",
-          answer:
-            "NisaDrive is a women-centric ride-hailing service designed to provide safe, affordable, and culturally appropriate transportation for women in Pakistan. The platform empowers women both as passengers and as driver-partners (affiliates).",
+          questionKey: "faq.page.questions.whatIsNisaDrive.question",
+          answerKey: "faq.page.questions.whatIsNisaDrive.answer",
         },
         {
-          question: "Who can become a NisaDrive driver/affiliate?",
-          answer:
-            "Any woman who meets the minimum age and licensing requirements and has access to a bike or can purchase one (with or without NisaDrive's support) may register as an affiliate driver.",
+          questionKey: "faq.page.questions.whoCanBecomeDriver.question",
+          answerKey: "faq.page.questions.whoCanBecomeDriver.answer",
         },
         {
-          question: "Is NisaDrive available in my city?",
-          answer:
-            "NisaDrive is launching pilot operations in Rawalpindi. Expansion to other cities will follow based on demand and feasibility assessments.",
+          questionKey: "faq.page.questions.availableCities.question",
+          answerKey: "faq.page.questions.availableCities.answer",
         },
         {
-          question: "How does NisaDrive ensure rider safety?",
-          answer:
-            "All drivers undergo background verification, safety and customer care training. The app includes emergency SOS, geo-fencing, real-time tracking, and 24/7 support.",
+          questionKey: "faq.page.questions.howEnsureSafety.question",
+          answerKey: "faq.page.questions.howEnsureSafety.answer",
         },
         {
-          question: "What are NisaDrive's working hours?",
-          answer:
-            "Our working hours include 07 am-07 pm daily, however affiliates manage their own schedules; nevertheless, the app and customer support operate 24/7 to ensure availability and safety.",
+          questionKey: "faq.page.questions.workingHours.question",
+          answerKey: "faq.page.questions.workingHours.answer",
         },
         {
-          question: "How is fare calculated on NisaDrive?",
-          answer:
-            "Fare is calculated based on standard per-kilometer rates. Rates are designed to be affordable for users while offering sustainable income for affiliates.",
+          questionKey: "faq.page.questions.howFareCalculated.question",
+          answerKey: "faq.page.questions.howFareCalculated.answer",
         },
         {
-          question: "What if I want to cancel a ride or request a refund?",
-          answer:
-            "Please refer to our Refund & Cancellation Policy, available in the Legal section of the app or website.",
+          questionKey: "faq.page.questions.cancelRideRefund.question",
+          answerKey: "faq.page.questions.cancelRideRefund.answer",
         },
         {
-          question: "How does NisaDrive protect my personal data?",
-          answer:
-            "NisaDrive complies with PECA 2016 and proposed Data Protection Bill guidelines to protect personal information, supported by our Privacy and Data Sharing Policies.",
+          questionKey: "faq.page.questions.howProtectData.question",
+          answerKey: "faq.page.questions.howProtectData.answer",
         },
         {
-          question: "Can men use NisaDrive?",
-          answer:
-            "No, NisaDrive is exclusively designed for women passengers and women drivers to maintain cultural and personal comfort.",
+          questionKey: "faq.page.questions.canMenUse.question",
+          answerKey: "faq.page.questions.canMenUse.answer",
         },
         {
-          question: "How can I join the NisaDrive Internship Program?",
-          answer:
-            "You can sign up for early access to internships by visiting the Careers section of our website and subscribing to updates.",
+          questionKey: "faq.page.questions.howJoinInternship.question",
+          answerKey: "faq.page.questions.howJoinInternship.answer",
         },
       ],
     },
     {
-      title: "App Functionality FAQs",
+      titleKey: "faq.page.categories.app.title",
       icon: Smartphone,
       color: "from-green-500 to-teal-500",
       questions: [
-        { question: "How do I download and register on the NisaDrive app?" },
-        { question: "Can I choose my driver or schedule a ride in advance?" },
-        { question: "How do geo-fenced zones work?" },
-        { question: "How do I use promo codes or coupons?" },
+        { questionKey: "faq.page.questions.downloadRegister.question" },
+        { questionKey: "faq.page.questions.chooseDriver.question" },
+        { questionKey: "faq.page.questions.geoFencedZones.question" },
+        { questionKey: "faq.page.questions.promoCodes.question" },
       ],
     },
     {
-      title: "Affiliate/Driver FAQs",
+      titleKey: "faq.page.categories.driver.title",
       icon: Car,
       color: "from-purple-500 to-pink-500",
       questions: [
         {
-          question:
-            "What are the eligibility requirements to become a NisaDrive affiliate?",
+          questionKey: "faq.page.questions.eligibilityRequirements.question",
         },
-        { question: "What kind of training will I receive?" },
-        { question: "How is ride income calculated and disbursed?" },
-        { question: "Can I work part-time or only on weekends?" },
-        { question: "Is there any cost for joining as a driver?" },
+        { questionKey: "faq.page.questions.whatTraining.question" },
+        { questionKey: "faq.page.questions.rideIncome.question" },
+        { questionKey: "faq.page.questions.partTime.question" },
+        { questionKey: "faq.page.questions.costForJoining.question" },
       ],
     },
     {
-      title: "Safety & Security FAQs",
+      titleKey: "faq.page.categories.safety.title",
       icon: Shield,
       color: "from-red-500 to-pink-500",
       questions: [
-        { question: "How does NisaDrive ensure my safety during the ride?" },
-        { question: "What should I do if I feel unsafe during a ride?" },
-        { question: "Are all rides tracked and recorded?" },
-        { question: "How do I report an emergency or file a complaint?" },
+        { questionKey: "faq.page.questions.howEnsureSafety.question" },
+        { questionKey: "faq.page.questions.feelUnsafe.question" },
+        { questionKey: "faq.page.questions.ridesTracked.question" },
+        { questionKey: "faq.page.questions.reportEmergency.question" },
       ],
     },
     {
-      title: "Payments, Refunds & Wallet FAQs",
+      titleKey: "faq.page.categories.payments.title",
       icon: CreditCard,
       color: "from-orange-500 to-red-500",
       questions: [
-        { question: "Which payment methods are accepted?" },
-        { question: "Can I pay with JazzCash/Easypaisa?" },
-        { question: "What is the refund process for canceled rides?" },
-        { question: "Are there service charges or hidden fees?" },
+        { questionKey: "faq.page.questions.paymentMethods.question" },
+        { questionKey: "faq.page.questions.jazzCashEasypaisa.question" },
+        { questionKey: "faq.page.questions.refundProcess.question" },
+        { questionKey: "faq.page.questions.serviceCharges.question" },
       ],
     },
   ];
@@ -174,21 +165,19 @@ export default function FAQPage() {
           >
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               <HelpCircle className="w-4 h-4" />
-              Frequently Asked Questions
+              {t("faq.page.hero.tagline")}
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Got Questions?
+                {t("faq.page.hero.title.part1")}
               </span>
               <br />
-              <span className="text-gray-800">We've Got Answers.</span>
+              <span className="text-gray-800">{t("faq.page.hero.title.part2")}</span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Find comprehensive answers to all your questions about NisaDrive -
-              from app functionality and safety features to driver requirements
-              and payment methods.
+              {t("faq.page.hero.description")}
             </p>
           </motion.div>
         </div>
@@ -205,7 +194,7 @@ export default function FAQPage() {
           >
             {faqCategories.map((category, categoryIndex) => (
               <motion.div
-                key={category.title}
+                key={category.titleKey}
                 variants={itemVariants}
                 className="mb-12"
               >
@@ -214,7 +203,7 @@ export default function FAQPage() {
                     className={`inline-flex items-center gap-3 bg-gradient-to-r ${category.color} text-white px-6 py-3 rounded-full mb-4`}
                   >
                     <category.icon className="w-5 h-5" />
-                    <h2 className="text-xl font-bold">{category.title}</h2>
+                    <h2 className="text-xl font-bold">{t(category.titleKey)}</h2>
                   </div>
                 </div>
 
@@ -234,7 +223,7 @@ export default function FAQPage() {
                             className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50/50 transition-colors duration-200"
                           >
                             <h3 className="text-lg font-semibold text-gray-800 pr-4">
-                              {faq.question}
+                              {t(faq.questionKey)}
                             </h3>
                             {isOpen ? (
                               <ChevronUp className="w-5 h-5 text-gray-500 flex-shrink-0" />
@@ -253,9 +242,7 @@ export default function FAQPage() {
                             >
                               <div className="border-t border-gray-200 pt-4">
                                 <p className="text-gray-600 leading-relaxed">
-                                  {
-                                    "This question is still being answered. Please check back later."
-                                  }
+                                  {faq.answerKey ? t(faq.answerKey) : t("faq.page.placeholder.answer")}
                                 </p>
                               </div>
                             </motion.div>

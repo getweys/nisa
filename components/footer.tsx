@@ -12,8 +12,11 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "contexts/language-context";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-gradient-to-br from-gray-50 via-pink-50 to-gray-50 border-t border-pink-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +46,7 @@ export function Footer() {
                       Nisa Drive
                     </h2>
                     <p className="text-xs sm:text-sm text-pink-600 font-medium">
-                      Safe • Reliable • Affordable
+                      {t("footer.tagline")}
                     </p>
                   </div>
                 </div>
@@ -57,9 +60,7 @@ export function Footer() {
                 className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm border border-pink-100 mb-6 sm:mb-8"
               >
                 <p className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">
-                  Your trusted ride-sharing partner across Pakistan. Experience
-                  safe, comfortable, and affordable transportation with women
-                  drivers for women passengers.
+                  {t("footer.description")}
                 </p>
                 <div className="space-y-3 sm:space-y-4">
                   <motion.div
@@ -74,7 +75,7 @@ export function Footer() {
                     </div>
                     <div>
                       <p className="text-xs sm:text-sm text-gray-500">
-                        Email us
+                        {t("footer.contact.email.label")}
                       </p>
                       <p className="text-sm sm:font-medium">
                         nisadrivepk@gmail.com{" "}
@@ -93,7 +94,7 @@ export function Footer() {
                     </div>
                     <div>
                       <p className="text-xs sm:text-sm text-gray-500">
-                        Call us
+                        {t("footer.contact.phone.label")}
                       </p>
                       <p className="text-sm sm:font-medium">+92 3235 307093</p>
                     </div>
@@ -110,10 +111,10 @@ export function Footer() {
                     </div>
                     <div>
                       <p className="text-xs sm:text-sm text-gray-500">
-                        Available in
+                        {t("footer.contact.location.label")}
                       </p>
                       <p className="text-sm sm:font-medium">
-                        Karachi, Lahore, Islamabad & Rawalpindi
+                        {t("footer.contact.location.cities")}
                       </p>
                     </div>
                   </motion.div>
@@ -127,7 +128,7 @@ export function Footer() {
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
                 <h4 className="text-gray-900 font-semibold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wide">
-                  Connect With Us
+                  {t("footer.social.title")}
                 </h4>
                 <div className="flex space-x-2 sm:space-x-3">
                   {socialLinks.map((social) => (
@@ -137,7 +138,7 @@ export function Footer() {
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.9 }}
                       className="w-10 h-10 bg-pink-100 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm text-pink-500 border-2 border-pink-500 hover:bg-pink-500 hover:border-pink-600 group"
-                      aria-label={social.label}
+                      aria-label={t(social.labelKey)}
                     >
                       <social.icon
                         size={18}
@@ -157,13 +158,13 @@ export function Footer() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <h3 className="text-gray-900 font-bold mb-4 sm:mb-6 text-base sm:text-lg relative">
-                Quick Links
+                {t("footer.quickLinks.title")}
                 <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-6 sm:w-8 h-1 bg-gradient-to-r from-pink-500 to-pink-400 rounded-full"></div>
               </h3>
               <ul className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link) => (
                   <motion.li
-                    key={link.title}
+                    key={link.titleKey}
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -175,7 +176,7 @@ export function Footer() {
                     >
                       <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all text-pink-500" />
                       <span className="group-hover:font-medium transition-all">
-                        {link.title}
+                        {t(link.titleKey)}
                       </span>
                     </Link>
                   </motion.li>
@@ -191,13 +192,13 @@ export function Footer() {
               transition={{ duration: 0.5, delay: 0.8 }}
             >
               <h3 className="text-gray-900 font-bold mb-4 sm:mb-6 text-base sm:text-lg relative">
-                Business
+                {t("footer.business.title")}
                 <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-6 sm:w-8 h-1 bg-gradient-to-r from-pink-500 to-pink-400 rounded-full"></div>
               </h3>
               <ul className="space-y-2 sm:space-y-3">
                 {businessLinks.map((link) => (
                   <motion.li
-                    key={link.title}
+                    key={link.titleKey}
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -209,7 +210,7 @@ export function Footer() {
                     >
                       <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all text-pink-500" />
                       <span className="group-hover:font-medium transition-all">
-                        {link.title}
+                        {t(link.titleKey)}
                       </span>
                     </Link>
                   </motion.li>
@@ -225,7 +226,7 @@ export function Footer() {
               transition={{ duration: 0.5, delay: 1.0 }}
             >
               <h3 className="text-gray-900 font-bold mb-4 sm:mb-6 text-base sm:text-lg relative">
-                Get Our App
+                {t("footer.app.title")}
                 <div className="absolute -bottom-1 sm:-bottom-2 left-0 w-6 sm:w-8 h-1 bg-gradient-to-r from-pink-500 to-pink-400 rounded-full"></div>
               </h3>
               <div className="space-y-3 sm:space-y-4">
@@ -245,10 +246,10 @@ export function Footer() {
                   </div>
                   <div>
                     <div className="text-xs text-gray-500 leading-tight">
-                      Download on the
+                      {t("footer.app.appStore.label")}
                     </div>
                     <div className="text-sm sm:text-base font-bold text-gray-900">
-                      App Store
+                      {t("footer.app.appStore.name")}
                     </div>
                   </div>
                 </motion.a>
@@ -268,10 +269,10 @@ export function Footer() {
                   </div>
                   <div>
                     <div className="text-xs text-gray-500 leading-tight">
-                      Get it on
+                      {t("footer.app.googlePlay.label")}
                     </div>
                     <div className="text-sm sm:text-base font-bold text-gray-900">
-                      Google Play
+                      {t("footer.app.googlePlay.name")}
                     </div>
                   </div>
                 </motion.a>
@@ -292,19 +293,19 @@ export function Footer() {
                 className="text-gray-600 text-xs sm:text-sm text-center sm:text-left flex items-center flex-wrap justify-center sm:justify-start gap-1 sm:gap-2"
               >
                 <span>
-                  © {new Date().getFullYear()} Nisa Drive. All rights reserved.
+                  {t("footer.copyright", { year: new Date().getFullYear() })}
                 </span>
                 <span className="text-pink-400">•</span>
                 <span className="flex items-center">
-                  Made with{" "}
+                  {t("footer.madeWith")}{" "}
                   <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-pink-500 mx-1 fill-current" />{" "}
-                  in Pakistan
+                  {t("footer.madeIn")}
                 </span>
               </motion.div>
               <div className="flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-4 text-xs sm:text-sm">
                 {legalLinks.map((link, index) => (
                   <motion.div
-                    key={link.title}
+                    key={link.titleKey}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -315,7 +316,7 @@ export function Footer() {
                       href={link.href}
                       className="text-gray-600 hover:text-pink-600 transition-colors duration-200 hover:underline"
                     >
-                      {link.title}
+                      {t(link.titleKey)}
                     </Link>
                     {index < legalLinks.length - 1 && (
                       <span className="text-pink-300 mx-2 sm:mx-3">•</span>

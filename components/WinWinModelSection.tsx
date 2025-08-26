@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { FiTrendingUp, FiAward, FiDollarSign } from "react-icons/fi";
+import { useLanguage } from "contexts/language-context";
 
 export default function WinWinModelSection() {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-white m-5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,16 +18,14 @@ export default function WinWinModelSection() {
           className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            A{" "}
+            {t("business.page.winWinModel.title.part1")}
             <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-              Win-Win Model
-            </span>{" "}
-            for Everyone
+              {t("business.page.winWinModel.title.winWin")}
+            </span>
+            {t("business.page.winWinModel.title.part2")}
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our three-tiered income model ensures mutual benefit for female
-            affiliates, franchise owners, and investors, while remaining
-            affordable for riders.
+            {t("business.page.winWinModel.description")}
           </p>
         </motion.div>
 
@@ -45,14 +46,14 @@ export default function WinWinModelSection() {
                     <FiDollarSign className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
-                    Revenue Breakdown
+                    {t("business.page.winWinModel.revenueBreakdown.title")}
                   </h3>
                 </div>
 
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex justify-between items-center p-3 sm:p-4 bg-white/60 rounded-xl border border-pink-200">
                     <span className="font-semibold text-gray-700 text-sm sm:text-base">
-                      Average Fare
+                      {t("business.page.winWinModel.revenueBreakdown.averageFare")}
                     </span>
                     <span className="text-base sm:text-xl font-bold text-pink-600">
                       PKR 150
@@ -64,7 +65,7 @@ export default function WinWinModelSection() {
 
                   <div className="flex justify-between items-center p-3 sm:p-4 bg-white/60 rounded-xl border border-pink-200">
                     <span className="font-semibold text-gray-700 text-sm sm:text-base">
-                      Avg Rides/Day
+                      {t("business.page.winWinModel.revenueBreakdown.avgRidesPerDay")}
                     </span>
                     <span className="text-base sm:text-xl font-bold text-pink-600">
                       10 per affiliate
@@ -73,7 +74,7 @@ export default function WinWinModelSection() {
 
                   <div className="flex justify-between items-center p-3 sm:p-4 bg-white/60 rounded-xl border border-pink-200">
                     <span className="font-semibold text-gray-700 text-sm sm:text-base">
-                      Monthly Income
+                      {t("business.page.winWinModel.revenueBreakdown.monthlyIncome")}
                     </span>
                     <span className="text-base sm:text-xl font-bold text-pink-600">
                       PKR 39,000
@@ -83,14 +84,14 @@ export default function WinWinModelSection() {
 
                 <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-white rounded-2xl shadow-sm border border-pink-200">
                   <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-4">
-                    Revenue Split
+                    {t("business.page.winWinModel.revenueBreakdown.revenueSplit.title")}
                   </h4>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full"></div>
                         <span className="font-medium text-gray-700 text-sm sm:text-base">
-                          Affiliate Share
+                          {t("business.page.winWinModel.revenueBreakdown.revenueSplit.affiliateShare")}
                         </span>
                       </div>
                       <div className="text-right">
@@ -106,7 +107,7 @@ export default function WinWinModelSection() {
                       <div className="flex items-center gap-3">
                         <div className="w-3 h-3 sm:w-4 sm:h-4 bg-pink-500 rounded-full"></div>
                         <span className="font-medium text-gray-700 text-sm sm:text-base">
-                          Platform Share
+                          {t("business.page.winWinModel.revenueBreakdown.revenueSplit.platformShare")}
                         </span>
                       </div>
                       <div className="text-right">
@@ -140,7 +141,7 @@ export default function WinWinModelSection() {
                     <FiTrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
-                    Platform Growth
+                    {t("business.page.winWinModel.platformGrowth.title")}
                   </h3>
                 </div>
 
@@ -151,10 +152,10 @@ export default function WinWinModelSection() {
                         PKR 35.1M
                       </div>
                       <div className="text-base sm:text-lg font-semibold text-gray-700">
-                        Year 1 Platform Revenue
+                        {t("business.page.winWinModel.platformGrowth.year1Revenue")}
                       </div>
                       <div className="text-xs sm:text-sm text-gray-500 mt-2">
-                        Projected annual revenue
+                        {t("business.page.winWinModel.platformGrowth.projectedAnnualRevenue")}
                       </div>
                     </div>
                   </div>
@@ -165,10 +166,10 @@ export default function WinWinModelSection() {
                         900
                       </div>
                       <div className="text-base sm:text-lg font-semibold text-gray-700">
-                        Active Riders
+                        {t("business.page.winWinModel.platformGrowth.activeRiders")}
                       </div>
                       <div className="text-xs sm:text-sm text-gray-500 mt-2">
-                        Platform break-even point
+                        {t("business.page.winWinModel.platformGrowth.breakEvenPoint")}
                       </div>
                     </div>
                   </div>
@@ -179,7 +180,7 @@ export default function WinWinModelSection() {
                         85%
                       </div>
                       <div className="text-xs sm:text-sm font-medium text-gray-700">
-                        Driver Retention
+                        {t("business.page.winWinModel.platformGrowth.driverRetention")}
                       </div>
                     </div>
                     <div className="p-3 sm:p-4 bg-white/60 rounded-xl border border-blue-200 text-center">
@@ -187,7 +188,7 @@ export default function WinWinModelSection() {
                         4.9★
                       </div>
                       <div className="text-xs sm:text-sm font-medium text-gray-700">
-                        Avg Rating
+                        {t("business.page.winWinModel.platformGrowth.avgRating")}
                       </div>
                     </div>
                   </div>
@@ -197,12 +198,11 @@ export default function WinWinModelSection() {
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <FiAward className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span className="font-bold text-sm sm:text-base">
-                      Sustainable Growth Model
+                      {t("business.page.winWinModel.platformGrowth.sustainableGrowth.title")}
                     </span>
                   </div>
                   <div className="text-xs sm:text-sm opacity-90">
-                    Profitable for all stakeholders while maintaining
-                    affordability
+                    {t("business.page.winWinModel.platformGrowth.sustainableGrowth.description")}
                   </div>
                 </div>
               </div>

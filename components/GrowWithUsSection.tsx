@@ -3,9 +3,13 @@
 import { growthRoles } from "data/data";
 import { motion } from "framer-motion";
 import GrowthIllustration from "svgs/GrowthIllustration";
+import { useLanguage } from "contexts/language-context";
 
 // Grow With Us Section Component
-export const GrowWithUsSection = () => (
+export const GrowWithUsSection = () => {
+  const { t } = useLanguage();
+  
+  return (
   <section className="py-24 m-0 sm:m-4">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
@@ -17,13 +21,12 @@ export const GrowWithUsSection = () => (
       >
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
           <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-            Grow With Us:
+            {t("growWithUs.title")}
           </span>{" "}
-          Not Just a Job, a Journey
+          {t("growWithUs.subtitle")}
         </h2>
         <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          Your ride today could be your startup tomorrow. NisaDrive is more than
-          a gig—it's a growth platform.
+          {t("growWithUs.description")}
         </p>
       </motion.div>
 
@@ -41,7 +44,7 @@ export const GrowWithUsSection = () => (
 
             <div className="relative z-10">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8">
-                Through our internal training, riders can become:
+                {t("growWithUs.rolesTitle")}
               </h3>
               <div className="space-y-4 sm:space-y-6">
                 {growthRoles.map((role, index) => (
@@ -61,10 +64,10 @@ export const GrowWithUsSection = () => (
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2 group-hover:text-pink-600 transition-colors">
-                          {role.title}
+                          {t(role.titleKey)}
                         </h4>
                         <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                          {role.description}
+                          {t(role.descriptionKey)}
                         </p>
                       </div>
                     </div>
@@ -82,8 +85,7 @@ export const GrowWithUsSection = () => (
             className="mt-6 sm:mt-8 p-4 sm:p-6 bg-gradient-to-r from-pink-50 to-pink-100 rounded-2xl border border-pink-200"
           >
             <p className="text-sm sm:text-base font-semibold text-pink-700 text-center">
-              As part of our Manpower Development Plan, we're building leaders,
-              not just riders.
+              {t("growWithUs.manpowerPlan")}
             </p>
           </motion.div>
         </motion.div>
@@ -93,4 +95,5 @@ export const GrowWithUsSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};

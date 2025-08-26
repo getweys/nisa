@@ -6,8 +6,11 @@ import { AnimatedButton } from "components/animated-button";
 import { FormFileInput } from "components/ui/FormFileInput";
 import { FormRadioGroup } from "components/ui/FormRadioGroup";
 import { FormCheckboxGroup } from "components/ui/FormCheckboxGroup";
+import { useLanguage } from "contexts/language-context";
 
 export default function InternshipProgramForm() {
+  const { t } = useLanguage();
+  
   return (
     <div className="pt-32">
       {/* Heading */}
@@ -23,9 +26,9 @@ export default function InternshipProgramForm() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          INTERNSHIP PROGRAM{" "}
+          {t("internshipForm.title")}{" "}
           <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-            SIGN-UP FORM
+            {t("internshipForm.subtitle")}
           </span>
         </motion.h1>
       </motion.div>
@@ -35,52 +38,56 @@ export default function InternshipProgramForm() {
         {/* Section A: Applicant Details */}
         <div className="bg-white p-6 rounded-xl shadow-lg">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Applicant Details
+            {t("internshipForm.sections.applicantDetails.title")}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <FormInput
-              label="Full Name"
+              label={t("internshipForm.sections.applicantDetails.fullName")}
               name="fullName"
-              placeholder="Your name"
+              placeholder={t("internshipForm.sections.applicantDetails.fullNamePlaceholder")}
               required
             />
             <FormInput
-              label="Date of Birth (MM-DD-YY)"
+              label={t("internshipForm.sections.applicantDetails.dateOfBirth")}
               name="dob"
               type="date"
-              placeholder="MM-DD-YY"
+              placeholder={t("internshipForm.sections.applicantDetails.dateOfBirthPlaceholder")}
               required
             />
             <FormInput
-              label="Mobile Number (WhatsApp preferred)"
+              label={t("internshipForm.sections.applicantDetails.mobileNumber")}
               name="mobileNumber"
               type="tel"
-              placeholder="Your mobile number"
+              placeholder={t("internshipForm.sections.applicantDetails.mobileNumberPlaceholder")}
               required
             />
             <FormInput
-              label="Email Address"
+              label={t("internshipForm.sections.applicantDetails.emailAddress")}
               name="email"
               type="email"
-              placeholder="Your email"
+              placeholder={t("internshipForm.sections.applicantDetails.emailAddressPlaceholder")}
               required
             />
             <FormInput
-              label="City of Residence"
+              label={t("internshipForm.sections.applicantDetails.cityOfResidence")}
               name="city"
-              placeholder="Your city"
+              placeholder={t("internshipForm.sections.applicantDetails.cityOfResidencePlaceholder")}
               required
             />
             <FormInput
-              label="CNIC / B-Form Number"
+              label={t("internshipForm.sections.applicantDetails.cnicNumber")}
               name="cnicNumber"
-              placeholder="XXXXX-XXXXXXX-X"
+              placeholder={t("internshipForm.sections.applicantDetails.cnicNumberPlaceholder")}
               required
             />
             <FormRadioGroup
-              label="Gender"
+              label={t("internshipForm.sections.applicantDetails.gender")}
               name="gender"
-              options={["Male", "Female", "Prefer not to say"]}
+              options={[
+                t("internshipForm.sections.applicantDetails.genderOptions.male"),
+                t("internshipForm.sections.applicantDetails.genderOptions.female"),
+                t("internshipForm.sections.applicantDetails.genderOptions.preferNotToSay")
+              ]}
               required
             />
           </div>
@@ -89,46 +96,51 @@ export default function InternshipProgramForm() {
         {/* Section B: Education & Skills */}
         <div className="bg-white p-6 rounded-xl shadow-lg">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Education & Skills
+            {t("internshipForm.sections.educationSkills.title")}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <FormInput
-              label="Other"
+              label={t("internshipForm.sections.educationSkills.other")}
               name="educationLevelOther"
-              placeholder="Specify education level"
+              placeholder={t("internshipForm.sections.educationSkills.otherPlaceholder")}
             />
             <FormInput
-              label="Area of Study / Field"
+              label={t("internshipForm.sections.educationSkills.areaOfStudy")}
               name="studyField"
-              placeholder="Your field of study"
+              placeholder={t("internshipForm.sections.educationSkills.areaOfStudyPlaceholder")}
               required
             />
             <FormInput
-              label="Current Institution (if any)"
+              label={t("internshipForm.sections.educationSkills.currentInstitution")}
               name="institution"
-              placeholder="Your institution"
+              placeholder={t("internshipForm.sections.educationSkills.currentInstitutionPlaceholder")}
             />
             <FormInput
-              label="Other"
+              label={t("internshipForm.sections.educationSkills.skillsOther")}
               name="skillsOther"
-              placeholder="Specify other skills"
+              placeholder={t("internshipForm.sections.educationSkills.skillsOtherPlaceholder")}
             />
             <FormRadioGroup
-              label="Current Education Level"
+              label={t("internshipForm.sections.educationSkills.currentEducationLevel")}
               name="educationLevel"
-              options={["Matric", "Intermediate", "Graduate", "Other"]}
+              options={[
+                t("internshipForm.sections.educationSkills.educationLevelOptions.matric"),
+                t("internshipForm.sections.educationSkills.educationLevelOptions.intermediate"),
+                t("internshipForm.sections.educationSkills.educationLevelOptions.graduate"),
+                t("internshipForm.sections.educationSkills.educationLevelOptions.other")
+              ]}
               required
             />
             <FormCheckboxGroup
-              label="Technical or Digital Skills"
+              label={t("internshipForm.sections.educationSkills.technicalSkills")}
               name="skills"
               options={[
-                "MS Office",
-                "Social Media Management",
-                "Graphic Design",
-                "Web/App Development",
-                "Research & Writing",
-                "Other",
+                t("internshipForm.sections.educationSkills.skillsOptions.msOffice"),
+                t("internshipForm.sections.educationSkills.skillsOptions.socialMediaManagement"),
+                t("internshipForm.sections.educationSkills.skillsOptions.graphicDesign"),
+                t("internshipForm.sections.educationSkills.skillsOptions.webAppDevelopment"),
+                t("internshipForm.sections.educationSkills.skillsOptions.researchWriting"),
+                t("internshipForm.sections.educationSkills.skillsOptions.other"),
               ]}
             />
           </div>
@@ -137,40 +149,43 @@ export default function InternshipProgramForm() {
         {/* Section C: Internship Preferences */}
         <div className="bg-white p-6 rounded-xl shadow-lg">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Internship Preferences
+            {t("internshipForm.sections.internshipPreferences.title")}
           </h2>
           <div className="space-y-6">
             <FormInput
-              label="Available Hours per Week"
+              label={t("internshipForm.sections.internshipPreferences.availableHours")}
               name="hoursPerWeek"
-              placeholder="Enter hours"
+              placeholder={t("internshipForm.sections.internshipPreferences.availableHoursPlaceholder")}
               required
             />
             <FormRadioGroup
-              label="Preferred Internship Department"
+              label={t("internshipForm.sections.internshipPreferences.preferredDepartment")}
               name="department"
               options={[
-                "Marketing & social media",
-                "Technology & App Development",
-                "Operations & Logistics",
-                "Research & Impact",
-                "Customer Experience",
-                "CSR & Outreach",
+                t("internshipForm.sections.internshipPreferences.departmentOptions.marketing"),
+                t("internshipForm.sections.internshipPreferences.departmentOptions.technology"),
+                t("internshipForm.sections.internshipPreferences.departmentOptions.operations"),
+                t("internshipForm.sections.internshipPreferences.departmentOptions.research"),
+                t("internshipForm.sections.internshipPreferences.departmentOptions.customerExperience"),
+                t("internshipForm.sections.internshipPreferences.departmentOptions.csr"),
               ]}
             />
             <FormRadioGroup
-              label="Preferred Mode of Internship"
+              label={t("internshipForm.sections.internshipPreferences.preferredMode")}
               name="internshipMode"
               options={[
-                "On-site (Rawalpindi/Islamabad Office)",
-                "Remote (Online)",
-                "Hybrid",
+                t("internshipForm.sections.internshipPreferences.modeOptions.onSite"),
+                t("internshipForm.sections.internshipPreferences.modeOptions.remote"),
+                t("internshipForm.sections.internshipPreferences.modeOptions.hybrid"),
               ]}
             />
             <FormRadioGroup
-              label="Will you allow police verification?"
+              label={t("internshipForm.sections.internshipPreferences.policeVerification")}
               name="policeVerification"
-              options={["Yes", "No"]}
+              options={[
+                t("internshipForm.sections.internshipPreferences.policeVerificationOptions.yes"),
+                t("internshipForm.sections.internshipPreferences.policeVerificationOptions.no")
+              ]}
               required
             />
           </div>
@@ -179,39 +194,46 @@ export default function InternshipProgramForm() {
         {/* Section D: Motivation & Declaration */}
         <div className="bg-white p-6 rounded-xl shadow-lg">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            Motivation & Declaration
+            {t("internshipForm.sections.motivationDeclaration.title")}
           </h2>
           <div className="space-y-6">
             <FormInput
-              label="Why do you want to intern with NisaDrive? (Max 150-250 words)"
+              label={t("internshipForm.sections.motivationDeclaration.motivation")}
               name="motivation"
-              placeholder="Your motivation (150-250 words)"
+              placeholder={t("internshipForm.sections.motivationDeclaration.motivationPlaceholder")}
               required
             />
             <FormFileInput
-              label="Please upload your brief resume"
+              label={t("internshipForm.sections.motivationDeclaration.resume")}
               name="resume"
               accept=".pdf,.doc,.docx"
               required
             />
             <FormCheckboxGroup
-              label="Preferred Working Hours"
+              label={t("internshipForm.sections.motivationDeclaration.preferredWorkingHours")}
               name="workingHours"
-              options={["Morning", "Afternoon", "Evening", "Flexible"]}
+              options={[
+                t("internshipForm.sections.motivationDeclaration.workingHoursOptions.morning"),
+                t("internshipForm.sections.motivationDeclaration.workingHoursOptions.afternoon"),
+                t("internshipForm.sections.motivationDeclaration.workingHoursOptions.evening"),
+                t("internshipForm.sections.motivationDeclaration.workingHoursOptions.flexible")
+              ]}
             />
             <FormRadioGroup
-              label="Do you agree to NisaDrive’s Affiliate Terms & Conditions and Code of Conduct?"
+              label={t("internshipForm.sections.motivationDeclaration.termsAgreement")}
               name="termsAgreement"
-              options={["Yes – Required to proceed"]}
+              options={[
+                t("internshipForm.sections.motivationDeclaration.termsAgreementOptions.yes")
+              ]}
               required
             />
             <FormCheckboxGroup
-              label="Acknowledgment"
+              label={t("internshipForm.sections.motivationDeclaration.acknowledgment")}
               name="acknowledgment"
               options={[
-                "I confirm that all information provided is accurate.",
-                "I understand this is an unpaid internship, but it may include certification, mentorship, and growth opportunities.",
-                "I consent to the use of my data under NisaDrive's Privacy Policy.",
+                t("internshipForm.sections.motivationDeclaration.acknowledgmentOptions.accurateInfo"),
+                t("internshipForm.sections.motivationDeclaration.acknowledgmentOptions.unpaidInternship"),
+                t("internshipForm.sections.motivationDeclaration.acknowledgmentOptions.privacyPolicy"),
               ]}
             />
           </div>
@@ -222,7 +244,7 @@ export default function InternshipProgramForm() {
             size="sm"
             className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
           >
-            Submit Application
+            {t("internshipForm.submitButton")}
           </AnimatedButton>
         </div>
       </form>

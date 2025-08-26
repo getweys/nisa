@@ -7,6 +7,7 @@ import PersonalIllustration from "svgs/PersonalIllustration";
 import ProfessionalIllustration from "svgs/ProfessionalIllustration";
 import StudentIllustration from "svgs/StudentIllustration";
 import { AnimatedButton } from "./animated-button";
+import { useLanguage } from "contexts/language-context";
 
 const illustrations = [
   StudentIllustration,
@@ -16,6 +17,8 @@ const illustrations = [
 ];
 
 export function ServicesSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-pink-50/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,10 +31,10 @@ export function ServicesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-pink-600">Services</span>
+            {t("services.title")} <span className="text-pink-600">{t("services.subtitle")}</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Empowering Pakistani women with tailored transportation solutions
+            {t("services.subtitle")}
           </p>
         </motion.div>
 
@@ -62,10 +65,10 @@ export function ServicesSection() {
 
                     {/* Content */}
                     <h3 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors">
-                      {service.title}
+                      {t(service.titleKey)}
                     </h3>
                     <p className="text-sm text-gray-500 leading-relaxed flex-grow">
-                      {service.description}
+                      {t(service.descriptionKey)}
                     </p>
                     <a
                       href="#"
@@ -92,18 +95,17 @@ export function ServicesSection() {
         >
           <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-12 max-w-2xl mx-auto shadow">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Explore Our Services?
+              {t("services.cta.title")}
             </h3>
             <p className="text-gray-600 mb-6">
-              Download NisaDrive and access safe, women-centric transportation
-              with ease.
+              {t("services.cta.description")}
             </p>
             <div className="flex justify-center">
               <AnimatedButton
                 size="sm"
                 className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
               >
-                Get Started Today
+                {t("services.cta.button")}
               </AnimatedButton>
             </div>
           </div>

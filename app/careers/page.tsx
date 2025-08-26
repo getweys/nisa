@@ -25,41 +25,43 @@ import { Button } from "components/ui/button";
 import { Footer } from "components/footer";
 import { AnimatedButton } from "components/animated-button";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "contexts/language-context";
 
 export default function CareersPage() {
   const [email, setEmail] = useState("");
   const router = useRouter();
+  const { t } = useLanguage();
 
   const internshipAreas = [
     {
-      title: "Mobility Tech & App Development",
+      titleKey: "careers.page.internship.areas.mobilityTech.title",
       icon: Code,
       color: "from-purple-500 to-pink-500",
-      description: "Build the next generation of mobility solutions",
+      descriptionKey: "careers.page.internship.areas.mobilityTech.description",
     },
     {
-      title: "Artificial Intelligence / Machine Learning",
+      titleKey: "careers.page.internship.areas.ai.title",
       icon: Brain,
       color: "from-blue-500 to-purple-500",
-      description: "Develop AI systems for safer, smarter rides",
+      descriptionKey: "careers.page.internship.areas.ai.description",
     },
     {
-      title: "UI/UX Design",
+      titleKey: "careers.page.internship.areas.design.title",
       icon: Palette,
       color: "from-pink-500 to-rose-500",
-      description: "Design intuitive experiences for women riders",
+      descriptionKey: "careers.page.internship.areas.design.description",
     },
     {
-      title: "Research, Policy & Data Analytics",
+      titleKey: "careers.page.internship.areas.research.title",
       icon: BarChart3,
       color: "from-green-500 to-teal-500",
-      description: "Drive data-informed policy and research",
+      descriptionKey: "careers.page.internship.areas.research.description",
     },
     {
-      title: "Digital Media & Communications",
+      titleKey: "careers.page.internship.areas.media.title",
       icon: MessageSquare,
       color: "from-orange-500 to-red-500",
-      description: "Tell our story and amplify our impact",
+      descriptionKey: "careers.page.internship.areas.media.description",
     },
   ];
 
@@ -96,28 +98,23 @@ export default function CareersPage() {
             className="mb-8"
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-50 to-purple-50 text-pink-600 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-pink-200"
             >
               <Briefcase className="w-4 h-4" />
-              Careers at NisaDrive
+              {t("careers.page.hero.tagline")}
             </motion.div>
             <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              Join the Movement.
+              {t("careers.page.hero.title.part1")}
               <br />
               <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                Shape the Future of Inclusive Mobility.
+                {t("careers.page.hero.title.part2")}
               </span>
             </motion.h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              At NisaDrive, we're building more than just a transport service —
-              we're driving a movement of dignified livelihoods, safety
-              innovation, and gender equity. While our services are designed for
-              women, by women, our team welcomes diverse talent committed to
-              making mobility safer, smarter, and more accessible across
-              Pakistan.
+              {t("careers.page.hero.description")}
             </p>
           </motion.div>
         </div>
@@ -134,7 +131,7 @@ export default function CareersPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                🚫 Open Positions
+                {t("careers.page.openPositions.title")}
               </h2>
             </motion.div>
 
@@ -146,11 +143,10 @@ export default function CareersPage() {
                       <Briefcase className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                      No vacancies at the moment.
+                      {t("careers.page.openPositions.noVacancies")}
                     </h3>
                     <p className="text-gray-600 mb-8">
-                      We're always evolving — stay in the loop by subscribing to
-                      our updates or following us on social media.
+                      {t("careers.page.openPositions.description")}
                     </p>
                   </div>
 
@@ -163,7 +159,7 @@ export default function CareersPage() {
                         className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
                         aria-hidden="true"
                       />
-                      Subscribe to Career Alerts
+                      {t("careers.page.openPositions.subscribeButton")}
                     </AnimatedButton>
                     <motion.button
                       type="button"
@@ -175,7 +171,7 @@ export default function CareersPage() {
                         className="w-4 h-4 sm:w-5 sm:h-5 mr-2"
                         aria-hidden="true"
                       />
-                      Follow Us for Updates
+                      {t("careers.page.openPositions.followButton")}
                       <ExternalLink className="w-4 h-4 ml-2" />
                     </motion.button>
                   </div>
@@ -203,21 +199,20 @@ export default function CareersPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                🚀 Internship & Fellowship Opportunities
+                {t("careers.page.internship.title")}
               </h2>
               <p className="text-xl text-white/90 mb-2">
-                Are you a changemaker ready to build the future?
+                {t("careers.page.internship.subtitle")}
               </p>
               <p className="text-lg text-white/80 max-w-3xl mx-auto">
-                NisaDrive's 3-Month Fellowship & Internship Program is crafted
-                for emerging professionals in:
+                {t("careers.page.internship.description")}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {internshipAreas.map((area, index) => (
                 <motion.div
-                  key={area.title}
+                  key={area.titleKey}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
                   className="group"
@@ -230,10 +225,10 @@ export default function CareersPage() {
                         <area.icon className="w-6 h-6 text-white" />
                       </div>
                       <h3 className="text-lg font-bold text-white mb-2">
-                        {area.title}
+                        {t(area.titleKey)}
                       </h3>
                       <p className="text-white/80 text-sm">
-                        {area.description}
+                        {t(area.descriptionKey)}
                       </p>
                     </CardContent>
                   </Card>
@@ -249,8 +244,7 @@ export default function CareersPage() {
                       <Heart className="w-8 h-8 text-white" />
                     </div>
                     <p className="text-white/90 mb-6">
-                      We particularly encourage applications from women, rural
-                      youth, and marginalized communities.
+                      {t("careers.page.internship.encouragement")}
                     </p>
                   </div>
                   <div className="flex justify-center items-center">
@@ -261,7 +255,7 @@ export default function CareersPage() {
                         router.push("/InternshipProgramForm");
                       }}
                     >
-                      Join the Internship Waitlist
+                      {t("careers.page.internship.joinButton")}
                     </AnimatedButton>
                   </div>
                 </CardContent>
@@ -282,16 +276,13 @@ export default function CareersPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
               <motion.h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                Our Inclusive{" "}
+                {t("careers.page.hiringPolicy.title.part1")}{" "}
                 <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                  Hiring Policy
+                  {t("careers.page.hiringPolicy.title.part2")}
                 </span>
               </motion.h1>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                Although our services cater exclusively to women commuters, our
-                hiring is based on equal opportunity principles. We believe in
-                skill, sincerity, and social commitment — regardless of gender,
-                religion, ethnicity, or background.
+                {t("careers.page.hiringPolicy.description")}
               </p>
             </motion.div>
 
@@ -303,7 +294,7 @@ export default function CareersPage() {
                       <Users className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                      NisaDrive proudly upholds:
+                      {t("careers.page.hiringPolicy.proudlyUpholds")}
                     </h3>
                   </div>
 
@@ -313,7 +304,7 @@ export default function CareersPage() {
                         <Users className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-bold text-gray-800 mb-2">
-                        The Equal Opportunity Employment Policy
+                        {t("careers.page.hiringPolicy.equalOpportunity.title")}
                       </h4>
                     </div>
                     <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl">
@@ -321,7 +312,7 @@ export default function CareersPage() {
                         <Shield className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-bold text-gray-800 mb-2">
-                        The Anti-Harassment & Anti-Discrimination Act 2010
+                        {t("careers.page.hiringPolicy.antiHarassment.title")}
                       </h4>
                     </div>
                     <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
@@ -329,7 +320,7 @@ export default function CareersPage() {
                         <Heart className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-bold text-gray-800 mb-2">
-                        Our internal Safe Workplace & Inclusivity Guidelines
+                        {t("careers.page.hiringPolicy.safeWorkplace.title")}
                       </h4>
                     </div>
                   </div>
@@ -351,41 +342,40 @@ export default function CareersPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                📝 How to Apply
+                {t("careers.page.howToApply.title")}
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                When positions open, our recruitment follows a secure and
-                transparent process:
+                {t("careers.page.howToApply.description")}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               {[
                 {
-                  step: "1",
-                  title: "Online Application",
-                  description: "Online Application through our website",
+                  step: t("careers.page.howToApply.steps.onlineApplication.step"),
+                  titleKey: "careers.page.howToApply.steps.onlineApplication.title",
+                  descriptionKey: "careers.page.howToApply.steps.onlineApplication.description",
                   icon: Globe,
                   color: "from-blue-500 to-blue-600",
                 },
                 {
-                  step: "2",
-                  title: "Background Verification",
-                  description: "Mandatory Background & Police Verification",
+                  step: t("careers.page.howToApply.steps.backgroundVerification.step"),
+                  titleKey: "careers.page.howToApply.steps.backgroundVerification.title",
+                  descriptionKey: "careers.page.howToApply.steps.backgroundVerification.description",
                   icon: Shield,
                   color: "from-green-500 to-green-600",
                 },
                 {
-                  step: "3",
-                  title: "Virtual Interview",
-                  description: "Phase 1: Virtual Interview with HR",
+                  step: t("careers.page.howToApply.steps.virtualInterview.step"),
+                  titleKey: "careers.page.howToApply.steps.virtualInterview.title",
+                  descriptionKey: "careers.page.howToApply.steps.virtualInterview.description",
                   icon: Video,
                   color: "from-purple-500 to-purple-600",
                 },
                 {
-                  step: "4",
-                  title: "Final Interview",
-                  description: "Phase 2: Final Interview with Leadership Team",
+                  step: t("careers.page.howToApply.steps.finalInterview.step"),
+                  titleKey: "careers.page.howToApply.steps.finalInterview.title",
+                  descriptionKey: "careers.page.howToApply.steps.finalInterview.description",
                   icon: Users,
                   color: "from-pink-500 to-pink-600",
                 },
@@ -407,10 +397,10 @@ export default function CareersPage() {
                         {step.step}
                       </div>
                       <h3 className="text-lg font-bold text-gray-800 mb-2">
-                        {step.title}
+                        {t(step.titleKey)}
                       </h3>
                       <p className="text-gray-600 text-sm">
-                        {step.description}
+                        {t(step.descriptionKey)}
                       </p>
                     </CardContent>
                   </Card>
@@ -425,8 +415,7 @@ export default function CareersPage() {
                     <Lock className="w-6 h-6 text-white" />
                   </div>
                   <p className="text-gray-700 font-medium">
-                    Every application is treated with confidentiality and
-                    respect.
+                    {t("careers.page.howToApply.confidentiality")}
                   </p>
                 </CardContent>
               </Card>
@@ -452,41 +441,41 @@ export default function CareersPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Learning & Growth at NisaDrive
+                {t("careers.page.learning.title")}
               </h2>
               <p className="text-xl text-white/90 mb-6">
-                We don't just hire — we invest in people.
+                {t("careers.page.learning.subtitle")}
               </p>
               <p className="text-lg text-white/80 max-w-3xl mx-auto">
-                All team members gain access to:
+                {t("careers.page.learning.description")}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               {[
                 {
-                  title: "On-the-job mentoring by seasoned experts",
+                  titleKey: "careers.page.learning.items.mentoring.title",
                   icon: Users,
                   color: "from-blue-400 to-blue-500",
                 },
                 {
-                  title: "Safety, compliance & first-aid workshops",
+                  titleKey: "careers.page.learning.items.safety.title",
                   icon: Shield,
                   color: "from-green-400 to-green-500",
                 },
                 {
-                  title: "Tech upskilling, webinars & cross-border learning",
+                  titleKey: "careers.page.learning.items.tech.title",
                   icon: Code,
                   color: "from-purple-400 to-purple-500",
                 },
                 {
-                  title: "Career coaching & progression planning",
+                  titleKey: "careers.page.learning.items.coaching.title",
                   icon: TrendingUp,
                   color: "from-pink-400 to-pink-500",
                 },
               ].map((item, index) => (
                 <motion.div
-                  key={item.title}
+                  key={item.titleKey}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
                   className="group"
@@ -501,7 +490,7 @@ export default function CareersPage() {
                         </div>
                         <div>
                           <h3 className="text-lg font-bold text-white mb-2">
-                            {item.title}
+                            {t(item.titleKey)}
                           </h3>
                         </div>
                       </div>
@@ -518,7 +507,7 @@ export default function CareersPage() {
                     <TrendingUp className="w-8 h-8 text-white" />
                   </div>
                   <p className="text-xl text-white font-medium">
-                    Because when our people grow, so does our impact.
+                    {t("careers.page.learning.impact")}
                   </p>
                 </CardContent>
               </Card>
@@ -538,11 +527,10 @@ export default function CareersPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                Celebrating Our People
+                {t("careers.page.celebrating.title")}
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Whether you're a front-line affiliate rider or an office-based
-                analyst, your contribution counts.
+                {t("careers.page.celebrating.description")}
               </p>
             </motion.div>
 
@@ -554,7 +542,7 @@ export default function CareersPage() {
                       <Heart className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                      We recognize outstanding team members through:
+                      {t("careers.page.celebrating.recognition")}
                     </h3>
                   </div>
 
@@ -564,7 +552,7 @@ export default function CareersPage() {
                         <Users className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-bold text-gray-800 mb-2">
-                        Affiliate Rider of the Month
+                        {t("careers.page.celebrating.awards.affiliateRider.title")}
                       </h4>
                     </div>
                     <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-xl border border-orange-200">
@@ -572,7 +560,7 @@ export default function CareersPage() {
                         <Heart className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-bold text-gray-800 mb-2">
-                        NisaDrive CSR Fellow Awards
+                        {t("careers.page.celebrating.awards.csrFellow.title")}
                       </h4>
                     </div>
                     <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border border-purple-200">
@@ -580,17 +568,17 @@ export default function CareersPage() {
                         <TrendingUp className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="font-bold text-gray-800 mb-2">
-                        Leadership Track Recognition for Interns
+                        {t("careers.page.celebrating.awards.leadership.title")}
                       </h4>
                     </div>
                   </div>
 
                   <div className="text-center">
                     <p className="text-lg font-medium text-gray-800 mb-2">
-                      Your story could be next.
+                      {t("careers.page.celebrating.nextStory")}
                     </p>
                     <p className="text-gray-600">
-                      Stay tuned for inspiring employee journeys.
+                      {t("careers.page.celebrating.stayTuned")}
                     </p>
                   </div>
                 </CardContent>
@@ -611,7 +599,7 @@ export default function CareersPage() {
           >
             <motion.div variants={itemVariants} className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                Have More Questions?
+                {t("careers.page.questions.title")}
               </h2>
             </motion.div>
 
@@ -623,27 +611,27 @@ export default function CareersPage() {
                       <MessageSquare className="w-8 h-8 text-white" />
                     </div>
                     <p className="text-lg text-gray-600 mb-6">
-                      Visit our detailed FAQ Page for answers on:
+                      {t("careers.page.questions.description")}
                     </p>
                   </div>
 
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                     <div className="p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
-                      <p className="font-medium text-gray-800">Internships</p>
+                      <p className="font-medium text-gray-800">{t("careers.page.questions.topics.internships")}</p>
                     </div>
                     <div className="p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
                       <p className="font-medium text-gray-800">
-                        Career Pathways
+                        {t("careers.page.questions.topics.careerPathways")}
                       </p>
                     </div>
                     <div className="p-4 bg-gradient-to-br from-pink-50 to-pink-100 rounded-lg">
                       <p className="font-medium text-gray-800">
-                        Diversity Commitments
+                        {t("careers.page.questions.topics.diversityCommitments")}
                       </p>
                     </div>
                     <div className="p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
                       <p className="font-medium text-gray-800">
-                        Hiring Process
+                        {t("careers.page.questions.topics.hiringProcess")}
                       </p>
                     </div>
                   </div>
@@ -653,7 +641,7 @@ export default function CareersPage() {
                     onClick={() => (window.location.href = "/faq")}
                   >
                     <MessageSquare className="w-5 h-5 mr-2" />
-                    Visit FAQ Page
+                    {t("careers.page.questions.visitFaqButton")}
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
                   <div className="mt-4">
@@ -661,7 +649,7 @@ export default function CareersPage() {
                       href="/faq"
                       className="text-blue-600 hover:text-blue-800 underline font-medium transition-colors duration-300"
                     >
-                      FAQ
+                      {t("careers.page.questions.faq")}
                     </a>
                   </div>
                 </CardContent>
@@ -685,7 +673,7 @@ export default function CareersPage() {
               style={{ animationDelay: "0.4s" }}
             ></div>
             <span className="text-gray-600 mx-4 font-medium">
-              Building Tomorrow's Mobility, Today
+              {t("careers.page.divider")}
             </span>
             <div
               className="w-2 h-2 bg-rose-400 rounded-full animate-pulse"

@@ -7,6 +7,26 @@ export interface NavigationItem {
   href: string;
 }
 
+// Footer Types
+export interface FooterLink {
+  titleKey: string;
+  href: string;
+}
+
+export interface SocialLink {
+  icon: any;
+  href: string;
+  labelKey: string;
+  color: string;
+}
+
+export interface GrowthRole {
+  icon: string;
+  titleKey: string;
+  descriptionKey: string;
+  color: string;
+}
+
 // Language Switcher Types
 export interface LanguageOption {
   code: "en" | "ar";
@@ -16,35 +36,35 @@ export interface LanguageOption {
 
 export interface Benefit {
   icon: string;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   color: string;
 }
 
 export interface TargetAudience {
   icon: string;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
 }
 
 export interface Cta {
-  primary: string;
-  secondary: string;
+  primaryKey: string;
+  secondaryKey: string;
   primaryColor: string;
   secondaryColor: string;
 }
 
 export interface AdditionalLink {
   icon: keyof typeof iconMap;
-  title: string;
-  text: string;
+  titleKey: string;
+  textKey: string;
   color: string;
 }
 
 export interface InvestmentCard {
-  title: string;
-  subtitle: string;
-  description: string;
+  titleKey: string;
+  subtitleKey: string;
+  descriptionKey: string;
   icon: keyof typeof iconMap;
   color: string;
   borderColor: string;
@@ -55,11 +75,23 @@ export interface InvestmentCard {
 }
 
 export interface CoreValue {
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   icon: any;
   color: string;
   bgColor: string;
+}
+
+export interface FeaturedService {
+  icon: any;
+  titleKey: string;
+  descriptionKey: string;
+  features: string[];
+  ctaKey: string;
+  color: string;
+  bgColor: string;
+  subtitleKey?: string;
+  specialCtaKey?: string;
 }
 
 // TypeScript interfaces
@@ -95,3 +127,5 @@ export interface impactStats {
   value: string;
   label: string;
 }
+
+

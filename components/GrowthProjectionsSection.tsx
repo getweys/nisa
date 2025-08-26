@@ -3,8 +3,11 @@
 import { AnimatedButton } from "components/animated-button";
 import { motion } from "framer-motion";
 import { FiTrendingUp, FiHeart, FiMail, FiPhone } from "react-icons/fi";
+import { useLanguage } from "contexts/language-context";
 
 export default function GrowthProjectionsSection() {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-16 bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,12 +20,11 @@ export default function GrowthProjectionsSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
-            Growth Projections &{" "}
-            <span className="text-pink-600">Impact Forecast</span>
+            {t("business.page.growthProjections.title.part1")}
+            <span className="text-pink-600">{t("business.page.growthProjections.title.impactForecast")}</span>
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Our 5-year roadmap to transform Pakistan's mobility landscape and
-            empower thousands of women
+            {t("business.page.growthProjections.description")}
           </p>
         </motion.div>
 
@@ -41,7 +43,7 @@ export default function GrowthProjectionsSection() {
                 <FiTrendingUp className="w-6 h-6 text-pink-600" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">
-                5-Year Growth Trajectory
+                {t("business.page.growthProjections.growthTrajectory.title")}
               </h3>
             </div>
 
@@ -67,10 +69,10 @@ export default function GrowthProjectionsSection() {
                     </div>
                     <div>
                       <div className="text-gray-900 font-semibold">
-                        Year {data.year}
+                        {t("business.page.growthProjections.growthTrajectory.year")}{data.year}
                       </div>
                       <div className="text-gray-600 text-sm">
-                        {data.riders} Active Riders
+                        {data.riders} {t("business.page.growthProjections.growthTrajectory.activeRiders")}
                       </div>
                     </div>
                   </div>
@@ -79,7 +81,7 @@ export default function GrowthProjectionsSection() {
                       PKR {data.revenue}
                     </div>
                     <div className="text-gray-600 text-sm">
-                      Cumulative Revenue
+                      {t("business.page.growthProjections.growthTrajectory.cumulativeRevenue")}
                     </div>
                   </div>
                 </motion.div>
@@ -89,7 +91,7 @@ export default function GrowthProjectionsSection() {
             <div className="mt-6 p-4 bg-white rounded-lg shadow-sm border border-pink-100">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-gray-900 font-semibold">
-                  Revenue Growth
+                  {t("business.page.growthProjections.growthTrajectory.revenueGrowth")}
                 </span>
                 <span className="text-gray-600 text-sm">PKR (Millions)</span>
               </div>
@@ -128,7 +130,7 @@ export default function GrowthProjectionsSection() {
                 <FiHeart className="w-6 h-6 text-pink-600" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900">
-                Impact Forecast
+                {t("business.page.growthProjections.impactForecast.title")}
               </h3>
             </div>
 
@@ -137,20 +139,20 @@ export default function GrowthProjectionsSection() {
                 {
                   icon: "👩",
                   metric: "10,000+",
-                  label: "Women Empowered",
-                  description: "Direct economic opportunities created",
+                  label: t("business.page.growthProjections.impactForecast.womenEmpowered"),
+                  description: t("business.page.growthProjections.impactForecast.womenEmpoweredDescription"),
                 },
                 {
                   icon: "🚗",
                   metric: "4.5M+",
-                  label: "Safe Rides",
-                  description: "Secure transportation journeys completed",
+                  label: t("business.page.growthProjections.impactForecast.safeRides"),
+                  description: t("business.page.growthProjections.impactForecast.safeRidesDescription"),
                 },
                 {
                   icon: "💰",
                   metric: "PKR 500M+",
-                  label: "Ecosystem Value",
-                  description: "Total economic impact generated",
+                  label: t("business.page.growthProjections.impactForecast.ecosystemValue"),
+                  description: t("business.page.growthProjections.impactForecast.ecosystemValueDescription"),
                 },
               ].map((impact, index) => (
                 <motion.div
@@ -184,11 +186,11 @@ export default function GrowthProjectionsSection() {
             <div className="mt-6 grid grid-cols-2 gap-4">
               <div className="text-center p-4 bg-white rounded-lg shadow-sm border border-pink-100">
                 <div className="text-xl font-bold text-gray-900">50+</div>
-                <div className="text-gray-600 text-sm">Cities Covered</div>
+                <div className="text-gray-600 text-sm">{t("business.page.growthProjections.impactForecast.citiesCovered")}</div>
               </div>
               <div className="text-center p-4 bg-white rounded-lg shadow-sm border border-pink-100">
                 <div className="text-xl font-bold text-gray-900">95%</div>
-                <div className="text-gray-600 text-sm">Safety Rating</div>
+                <div className="text-gray-600 text-sm">{t("business.page.growthProjections.impactForecast.safetyRating")}</div>
               </div>
             </div>
           </motion.div>
@@ -204,12 +206,11 @@ export default function GrowthProjectionsSection() {
         >
           <div className="bg-pink-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-pink-200">
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Join Pakistan's First{" "}
-              <span className="text-pink-600">Women-Owned Ride Revolution</span>
+              {t("business.page.growthProjections.cta.title.part1")}
+              <span className="text-pink-600">{t("business.page.growthProjections.cta.title.womenOwnedRideRevolution")}</span>
             </h3>
             <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-              Be part of something historic. Franchise Licenses are limited —
-              secure your territory and join our mission.
+              {t("business.page.growthProjections.cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <AnimatedButton
@@ -221,10 +222,10 @@ export default function GrowthProjectionsSection() {
                   )
                 }
               >
-                <span className="mr-2">🚀</span> Apply for Franchise
+                <span className="mr-2">🚀</span> {t("business.page.growthProjections.cta.applyForFranchise")}
               </AnimatedButton>
               <AnimatedButton size="md" variant="outline">
-                <span className="mr-2">📊</span> Download Business Plan
+                <span className="mr-2">📊</span> {t("business.page.growthProjections.cta.downloadBusinessPlan")}
               </AnimatedButton>
             </div>
             <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center text-gray-600">
@@ -250,7 +251,7 @@ export default function GrowthProjectionsSection() {
             <div className="mt-6 flex items-center justify-center gap-2 text-pink-600">
               <div className="w-2 h-2 bg-pink-600 rounded-full animate-pulse" />
               <span className="font-semibold">
-                Limited Franchise Territories Available
+                {t("business.page.growthProjections.cta.limitedFranchise")}
               </span>
               <div className="w-2 h-2 bg-pink-600 rounded-full animate-pulse" />
             </div>

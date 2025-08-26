@@ -1,12 +1,15 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "contexts/language-context";
 
 export default function PinkCard({
   heading = "Ready to Experience Safe & Empowering Travel?",
   description = "Join thousands of Pakistani women who trust NisaDrive for their daily transportation needs.",
   buttonText = "Download NisaDrive App",
 }) {
+  const { t } = useLanguage();
+
   return (
     <div className="mx-2">
       <motion.div

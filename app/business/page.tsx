@@ -8,8 +8,11 @@ import WinWinModelSection from "components/WinWinModelSection";
 import { motion } from "framer-motion";
 import { FiTrendingUp, FiBarChart } from "react-icons/fi";
 import { HeroIllustration } from "svgs/HeroIllustration";
+import { useLanguage } from "contexts/language-context";
 
 export default function BusinessPage() {
+  const { t } = useLanguage();
+  
   return (
     <main className="min-h-screen bg-white m-5">
       {/* Hero Section */}
@@ -36,16 +39,16 @@ export default function BusinessPage() {
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-50 to-pink-100 text-pink-600 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-pink-200 shadow-sm"
               >
                 <FiTrendingUp className="w-4 h-4" />
-                Transforming Mobility in Pakistan
+                {t("business.page.hero.tagline")}
                 <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse" />
               </motion.div>
               <motion.h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 sm:mb-6 leading-tight">
-                Redefining Mobility,{" "}
+                {t("business.page.hero.title.part1")}
                 <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                  Empowering Women,
+                  {t("business.page.hero.title.empoweringWomen")}
                 </span>{" "}
                 <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-                  Scaling Impact
+                  {t("business.page.hero.title.scalingImpact")}
                 </span>
               </motion.h1>
 
@@ -55,10 +58,7 @@ export default function BusinessPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                At NisaDrive, we're not just offering a ride—we're launching a
-                movement. Rooted in culture-aligned, tech-enabled, and women-led
-                principles, our business model delivers dignity, safety, and
-                income to women across Pakistan.
+                {t("business.page.hero.description")}
               </motion.p>
 
               <motion.div
@@ -69,11 +69,11 @@ export default function BusinessPage() {
               >
                 <AnimatedButton size="md">
                   <FiBarChart className="w-5 h-5" />
-                  View Our Impact
+                  {t("business.page.hero.cta.viewImpact")}
                 </AnimatedButton>
 
                 <AnimatedButton size="md" variant="outline">
-                  Partner With Us
+                  {t("business.page.hero.cta.partnerWithUs")}
                 </AnimatedButton>
               </motion.div>
 
@@ -88,7 +88,7 @@ export default function BusinessPage() {
                     10K+
                   </div>
                   <div className="text-sm text-gray-600 font-medium">
-                    Women Empowered
+                    {t("business.page.hero.stats.womenEmpowered")}
                   </div>
                 </div>
                 <div>
@@ -96,7 +96,7 @@ export default function BusinessPage() {
                     15+
                   </div>
                   <div className="text-sm text-gray-600 font-medium">
-                    Cities Served
+                    {t("business.page.hero.stats.citiesServed")}
                   </div>
                 </div>
                 <div>
@@ -104,7 +104,7 @@ export default function BusinessPage() {
                     ₨175M+
                   </div>
                   <div className="text-sm text-gray-600 font-medium">
-                    Income Generated
+                    {t("business.page.hero.stats.incomeGenerated")}
                   </div>
                 </div>
               </motion.div>

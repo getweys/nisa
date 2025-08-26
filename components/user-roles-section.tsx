@@ -2,20 +2,27 @@
 
 import { motion } from "framer-motion"
 import { FiSmartphone, FiCar, FiUsers, FiArrowRight, FiShield, FiDollarSign, FiTrendingUp } from "react-icons/fi"
+import { useLanguage } from "contexts/language-context"
 
 export function UserRolesSection() {
+  const { t } = useLanguage();
+  
   const roles = [
     {
       id: "rider",
-      title: "Rider",
-      subtitle: "Safe & Reliable",
-      description:
-        "Experience safe, reliable transportation with verified female drivers. Book rides, track your journey, and travel with confidence across Pakistan.",
-      features: ["Verified female drivers", "Real-time tracking", "24/7 safety support", "Flexible booking"],
+      titleKey: "userRoles.roles.rider.title",
+      subtitleKey: "userRoles.roles.rider.subtitle",
+      descriptionKey: "userRoles.roles.rider.description",
+      features: [
+        "userRoles.roles.rider.features.verifiedDrivers",
+        "userRoles.roles.rider.features.realTimeTracking", 
+        "userRoles.roles.rider.features.safetySupport",
+        "userRoles.roles.rider.features.flexibleBooking"
+      ],
       icon: FiSmartphone,
       gradient: "from-blue-500 to-blue-600",
       lightGradient: "from-blue-50 to-blue-100",
-      buttonText: "Join as Rider",
+      buttonTextKey: "userRoles.roles.rider.buttonText",
       illustration: (
         <div className="relative w-24 h-24 mx-auto mb-6">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl rotate-3 opacity-20"></div>
@@ -30,22 +37,26 @@ export function UserRolesSection() {
     },
     {
       id: "driver",
-      title: "Driver",
-      subtitle: "Earn & Empower",
-      description:
-        "Empower yourself with flexible earning opportunities. Join our network of verified female drivers and build your independent business while serving your community.",
-      features: ["Flexible working hours", "Competitive earnings", "Safety training provided", "Community support"],
+      titleKey: "userRoles.roles.driver.title",
+      subtitleKey: "userRoles.roles.driver.subtitle",
+      descriptionKey: "userRoles.roles.driver.description",
+      features: [
+        "userRoles.roles.driver.features.flexibleHours",
+        "userRoles.roles.driver.features.competitiveEarnings",
+        "userRoles.roles.driver.features.safetyTraining",
+        "userRoles.roles.driver.features.communitySupport"
+      ],
       icon: FiCar,
       gradient: "from-pink-500 to-pink-600",
       lightGradient: "from-pink-50 to-pink-100",
-      buttonText: "Join as Driver",
+      buttonTextKey: "userRoles.roles.driver.buttonText",
       illustration: (
         <div className="relative w-24 h-24 mx-auto mb-6">
           <div className="absolute inset-0 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl rotate-3 opacity-20"></div>
           <div className="relative bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl p-4 shadow-lg">
             <FiCar className="w-16 h-16 text-white mx-auto" />
             <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center">
-              <FiDollarSign className="w-3 h-3 text-white" />
+              <FiDollarSign className="w-6 h-6 text-white" />
             </div>
           </div>
         </div>
@@ -53,22 +64,26 @@ export function UserRolesSection() {
     },
     {
       id: "partner",
-      title: "Partner",
-      subtitle: "Collaborate & Grow",
-      description:
-        "Collaborate with NisaDrive to expand women-centric services. From businesses to organizations, join us in creating safer mobility solutions for Pakistani women.",
-      features: ["Business partnerships", "Custom solutions", "Shared growth model", "Community impact"],
+      titleKey: "userRoles.roles.partner.title",
+      subtitleKey: "userRoles.roles.partner.subtitle",
+      descriptionKey: "userRoles.roles.partner.description",
+      features: [
+        "userRoles.roles.partner.features.businessPartnerships",
+        "userRoles.roles.partner.features.customSolutions",
+        "userRoles.roles.partner.features.sharedGrowth",
+        "userRoles.roles.partner.features.communityImpact"
+      ],
       icon: FiUsers,
       gradient: "from-purple-500 to-purple-600",
       lightGradient: "from-purple-50 to-purple-100",
-      buttonText: "Join as Partner",
+      buttonTextKey: "userRoles.roles.partner.buttonText",
       illustration: (
         <div className="relative w-24 h-24 mx-auto mb-6">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl rotate-3 opacity-20"></div>
           <div className="relative bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-4 shadow-lg">
             <FiUsers className="w-16 h-16 text-white mx-auto" />
             <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-              <FiTrendingUp className="w-3 h-3 text-white" />
+              <FiTrendingUp className="w-6 h-6 text-white" />
             </div>
           </div>
         </div>
@@ -88,10 +103,10 @@ export function UserRolesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Choose Your <span className="text-pink-500">Journey</span>
+            {t("userRoles.title")}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Join thousands of women who are already part of Pakistan's safest transportation network
+            {t("userRoles.subtitle")}
           </p>
         </motion.div>
 
@@ -132,16 +147,16 @@ export function UserRolesSection() {
                 <div className="relative z-10">
                   {/* Title & Subtitle */}
                   <div className="text-center mb-6">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{role.title}</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{t(role.titleKey)}</h3>
                     <p
                       className={`text-sm font-semibold bg-gradient-to-r ${role.gradient} bg-clip-text text-transparent uppercase tracking-wider`}
                     >
-                      {role.subtitle}
+                      {t(role.subtitleKey)}
                     </p>
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-center mb-6 leading-relaxed">{role.description}</p>
+                  <p className="text-gray-600 text-center mb-6 leading-relaxed">{t(role.descriptionKey)}</p>
 
                   {/* Features */}
                   <div className="space-y-3 mb-8">
@@ -160,7 +175,7 @@ export function UserRolesSection() {
                         <div
                           className={`w-2 h-2 bg-gradient-to-r ${role.gradient} rounded-full mr-3 flex-shrink-0`}
                         ></div>
-                        <span>{feature}</span>
+                        <span>{t(feature)}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -171,7 +186,7 @@ export function UserRolesSection() {
                     whileTap={{ scale: 0.98 }}
                     className={`w-full bg-gradient-to-r ${role.gradient} hover:shadow-lg text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 group-hover:shadow-xl flex items-center justify-center space-x-2`}
                   >
-                    <span>{role.buttonText}</span>
+                    <span>{t(role.buttonTextKey)}</span>
                     <motion.div whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
                       <FiArrowRight className="w-5 h-5" />
                     </motion.div>
@@ -196,16 +211,16 @@ export function UserRolesSection() {
           className="text-center mt-16"
         >
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100 max-w-2xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Ready to Get Started?</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{t("userRoles.bottomCta.title")}</h3>
             <p className="text-gray-600 mb-6 text-lg">
-              Download the NisaDrive app and join Pakistan's safest transportation network today.
+              {t("userRoles.bottomCta.description")}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-pink-500 to-pink-600 hover:shadow-lg text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 inline-flex items-center space-x-2"
             >
-              <span>Download App</span>
+              <span>{t("userRoles.bottomCta.buttonText")}</span>
               <FiArrowRight className="w-5 h-5" />
             </motion.button>
           </div>

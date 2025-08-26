@@ -7,6 +7,7 @@ import DriverIllustration from "svgs/DriverIllustration";
 import PartnerIllustration from "svgs/PartnerIllustration";
 import RiderIllustration from "svgs/RiderIllustration";
 import PinkCard from "./PinkCard";
+import { useLanguage } from "contexts/language-context";
 
 const illustrations = [
   RiderIllustration,
@@ -15,6 +16,8 @@ const illustrations = [
 ];
 
 export function CommunitySection() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-pink-50/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,11 +30,10 @@ export function CommunitySection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Join the <span className="text-pink-600">NisaDrive Community</span>
+            {t("community.title")} <span className="text-pink-600">NisaDrive</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Be part of Pakistan's first women-to-women mobility platform,
-            whether as a rider, driver, or partner.
+            {t("community.subtitle")}
           </p>
         </motion.div>
 
@@ -82,9 +84,9 @@ export function CommunitySection() {
         </div>
       </div>
       <PinkCard
-        heading="Ready to Be Part of the Change?"
-        description="Download the NisaDrive app today and join thousands of women creating a safer, more empowered Pakistan."
-        buttonText="Download NisaDrive App"
+        heading={t("community.readyToJoin")}
+        description={t("community.downloadDescription")}
+        buttonText={t("hero.downloadApp")}
       />
     </section>
   );
