@@ -4,17 +4,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMapPin, FiClock, FiCamera } from "react-icons/fi";
 import { Navigation } from "components/navigation";
-import { Text } from "components/text";
 import { AnimatedCard } from "components/animated-card";
 import { AnimatedButton } from "components/animated-button";
 import { Footer } from "components/footer";
-// import { Navigation } from "@/components/navigation"
-// import { Footer } from "@/components/footer"
-// import { Text } from "@/components/text"
-// import { AnimatedButton } from "@/components/animated-button"
-// import { AnimatedCard } from "@/components/animated-card"
+import { useLanguage } from "contexts/language-context";
 
 export default function BookingPage() {
+  const { t } = useLanguage();
   const [bookingData, setBookingData] = useState({
     pickup: "",
     destination: "",
@@ -49,7 +45,7 @@ export default function BookingPage() {
             className="text-center mb-12"
           >
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-              <Text path="booking.title" />
+              {t("booking.title")}
             </h1>
           </motion.div>
 
@@ -61,7 +57,7 @@ export default function BookingPage() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     <FiMapPin className="inline w-4 h-4 mr-2" />
-                    <Text path="booking.pickupLocation" />
+                    {t("booking.pickupLocation")}
                   </label>
                   <input
                     type="text"
@@ -78,7 +74,7 @@ export default function BookingPage() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     <FiMapPin className="inline w-4 h-4 mr-2" />
-                    <Text path="booking.destination" />
+                    {t("booking.destination")}
                   </label>
                   <input
                     type="text"
@@ -95,7 +91,7 @@ export default function BookingPage() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     <FiClock className="inline w-4 h-4 mr-2" />
-                    <Text path="booking.selectTime" />
+                    {t("booking.selectTime")}
                   </label>
                   <div className="grid grid-cols-2 gap-4">
                     <button
@@ -106,7 +102,7 @@ export default function BookingPage() {
                           : "border-gray-300 hover:border-gray-400"
                       }`}
                     >
-                      <Text path="booking.now" />
+                      {t("booking.now")}
                     </button>
                     <button
                       onClick={() => handleInputChange("time", "later")}
@@ -116,7 +112,7 @@ export default function BookingPage() {
                           : "border-gray-300 hover:border-gray-400"
                       }`}
                     >
-                      <Text path="booking.later" />
+                      {t("booking.later")}
                     </button>
                   </div>
                 </div>
@@ -125,7 +121,7 @@ export default function BookingPage() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     <FiCamera className="inline w-4 h-4 mr-2" />
-                    <Text path="booking.rideType" />
+                    {t("booking.rideType")}
                   </label>
                   <div className="space-y-3">
                     {rideTypes.map((type) => (
@@ -141,7 +137,7 @@ export default function BookingPage() {
                         <div className="flex justify-between items-center">
                           <div>
                             <div className="font-medium capitalize">
-                              <Text path={`booking.${type.id}`} />
+                              {t(`booking.${type.id}`)}
                             </div>
                             <div className="text-sm text-gray-500">
                               {type.time}
@@ -161,7 +157,7 @@ export default function BookingPage() {
                   className="w-full"
                   size="lg"
                 >
-                  <Text path="booking.bookRide" />
+                  {t("booking.bookRide")}
                 </AnimatedButton>
               </div>
             </AnimatedCard>
@@ -171,9 +167,9 @@ export default function BookingPage() {
               <div className="h-96 bg-gray-200 rounded-lg flex items-center justify-center">
                 <div className="text-center text-gray-500">
                   <FiMapPin className="w-12 h-12 mx-auto mb-4" />
-                  <p>Interactive Map</p>
+                  <p>{t("booking.interactiveMap")}</p>
                   <p className="text-sm">
-                    Route visualization will appear here
+                    {t("booking.routeVisualization")}
                   </p>
                 </div>
               </div>

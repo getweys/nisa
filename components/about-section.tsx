@@ -7,9 +7,9 @@ import { AnimatedCard } from "./animated-card"
 
 export function AboutSection() {
   const features = [
-    { icon: FiUsers, title: "Expert Team", description: "Skilled professionals with years of experience" },
-    { icon: FiTarget, title: "Focused Approach", description: "Strategic solutions tailored to your needs" },
-    { icon: FiAward, title: "Quality Results", description: "Delivering excellence in every project" },
+    { icon: FiUsers, titleKey: "about.section.features.expertTeam.title", descriptionKey: "about.section.features.expertTeam.description" },
+    { icon: FiTarget, titleKey: "about.section.features.focusedApproach.title", descriptionKey: "about.section.features.focusedApproach.description" },
+    { icon: FiAward, titleKey: "about.section.features.qualityResults.title", descriptionKey: "about.section.features.qualityResults.description" },
   ]
 
   return (
@@ -23,10 +23,10 @@ export function AboutSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            <Text path="about.title" />
+            <Text path="about.section.title" />
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            <Text path="about.description" />
+            <Text path="about.section.description" />
           </p>
         </motion.div>
 
@@ -38,10 +38,10 @@ export function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              <Text path="about.mission" />
+              <Text path="about.section.mission" />
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg">
-              <Text path="about.missionText" />
+              <Text path="about.section.missionText" />
             </p>
           </motion.div>
 
@@ -71,8 +71,12 @@ export function AboutSection() {
                 >
                   <feature.icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                 </motion.div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  <Text path={feature.titleKey} />
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  <Text path={feature.descriptionKey} />
+                </p>
               </div>
             </AnimatedCard>
           ))}

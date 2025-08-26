@@ -8,6 +8,7 @@ import Feature3Illustration from "svgs/feature3Illustration";
 import Feature4Illustration from "svgs/feature4Illustration";
 import Feature5Illustration from "svgs/feature5Illustration";
 import PinkCard from "./PinkCard";
+import { useLanguage } from "contexts/language-context";
 
 const illustrations = [
   Feature1Illustration,
@@ -18,6 +19,8 @@ const illustrations = [
 ];
 
 export function WhyChooseSection() {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-pink-50/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,7 +39,7 @@ export function WhyChooseSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Why Choose{" "}
+            {t("whyChoose.section.title")}{" "}
             <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
               NisaDrive
             </span>
@@ -49,8 +52,7 @@ export function WhyChooseSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Experience the difference with Pakistan's most trusted
-            women-to-women transportation service
+            {t("whyChoose.section.subtitle")}
           </motion.p>
         </motion.div>
 
@@ -80,10 +82,10 @@ export function WhyChooseSection() {
 
                     {/* Content */}
                     <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-pink-600 transition-colors">
-                      {feature.title}
+                      {t(feature.titleKey)}
                     </h3>
                     <p className="text-gray-500 leading-relaxed text-sm">
-                      {feature.description}
+                      {t(feature.descriptionKey)}
                     </p>
                   </div>
                 </div>
@@ -94,9 +96,9 @@ export function WhyChooseSection() {
       </div>
 
       <PinkCard
-        heading="Ready to Experience Safe & Empowering Travel?"
-        description="Experience reliable and empowering Join thousands of Pakistani women who trust NisaDrive for their daily transportation needs. with NisaDrive across Pakistan."
-        buttonText="Download NisaDrive App"
+        heading={t("whyChoose.section.pinkCard.heading")}
+        description={t("whyChoose.section.pinkCard.description")}
+        buttonText={t("whyChoose.section.pinkCard.buttonText")}
       />
     </section>
   );

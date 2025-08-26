@@ -4,8 +4,11 @@ import { AnimatedButton } from "components/animated-button";
 import { investmentCards, iconMap } from "data/data";
 import { motion } from "framer-motion";
 import { FiTarget } from "react-icons/fi";
+import { useLanguage } from "contexts/language-context";
 
 export default function StrategicInvestmentSection() {
+  const { t } = useLanguage();
+  
   return (
     <section className="py-12 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,14 +21,13 @@ export default function StrategicInvestmentSection() {
           className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Strategic{" "}
+            {t("business.page.strategicInvestment.title.part1")}
             <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-              Investment Pathways
+              {t("business.page.strategicInvestment.title.investmentPathways")}
             </span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We offer three tailored tracks for participation based on your
-            interest and expertise
+            {t("business.page.strategicInvestment.description")}
           </p>
         </motion.div>
 
@@ -64,12 +66,12 @@ export default function StrategicInvestmentSection() {
                     </motion.div>
                     <div>
                       <h3 className="text-xl sm:text-3xl  font-bold text-gray-900">
-                        {card.title}
+                        {t(card.titleKey)}
                       </h3>
                       <p
                         className={`text-base text-${card.borderColor}-600 font-semibold`}
                       >
-                        {card.subtitle}
+                        {t(card.subtitleKey)}
                       </p>
                     </div>
                   </div>
@@ -77,7 +79,7 @@ export default function StrategicInvestmentSection() {
                   {/* Card Description */}
                   <div className="mb-6 sm:mb-8 lg:mb-10">
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                      {card.description}
+                      {t(card.descriptionKey)}
                     </p>
                   </div>
 
@@ -108,10 +110,10 @@ export default function StrategicInvestmentSection() {
                               <h4
                                 className={`font-bold text-gray-900 mb-2 group-hover:text-${card.borderColor}-600 transition-colors text-sm sm:text-base`}
                               >
-                                {benefit.title}
+                                {t(benefit.titleKey)}
                               </h4>
                               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                {benefit.description}
+                                {t(benefit.descriptionKey)}
                               </p>
                             </div>
                           </div>
@@ -129,7 +131,7 @@ export default function StrategicInvestmentSection() {
                         className={`w-5 h-5 sm:w-6 sm:h-6 text-${card.borderColor}-600`}
                       />
                       <h4 className="text-base sm:text-xl font-bold text-gray-900">
-                        Ideal For:
+                        {t("business.page.strategicInvestment.idealFor")}
                       </h4>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
@@ -139,10 +141,10 @@ export default function StrategicInvestmentSection() {
                             {audience.icon}
                           </div>
                           <h5 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">
-                            {audience.title}
+                            {t(audience.titleKey)}
                           </h5>
                           <p className="text-xs sm:text-sm text-gray-600">
-                            {audience.description}
+                            {t(audience.descriptionKey)}
                           </p>
                         </div>
                       ))}
@@ -157,7 +159,7 @@ export default function StrategicInvestmentSection() {
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900 text-sm sm:text-base">
-                          {card.additionalLink.title}
+                          {t(card.additionalLink.titleKey)}
                         </div>
                         <button
                           className={`text-xs sm:text-sm text-${
@@ -167,7 +169,7 @@ export default function StrategicInvestmentSection() {
                             "700"
                           )} font-medium hover:underline transition-colors`}
                         >
-                          {card.additionalLink.text}
+                          {t(card.additionalLink.textKey)}
                         </button>
                       </div>
                     </div>
@@ -176,10 +178,10 @@ export default function StrategicInvestmentSection() {
                   {/* Call-to-Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center">
                     <AnimatedButton size="md">
-                      {card.cta.primary}
+                      {t(card.cta.primaryKey)}
                     </AnimatedButton>
                     <AnimatedButton size="md" variant="outline">
-                      {card.cta.secondary}
+                      {t(card.cta.secondaryKey)}
                     </AnimatedButton>
                   </div>
                 </div>

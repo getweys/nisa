@@ -5,9 +5,13 @@ import { equalOpportunityGroups, whoCanJoin } from "data/data";
 import { motion } from "framer-motion";
 import { FiHeart } from "react-icons/fi";
 import PinkCard from "./PinkCard";
+import { useLanguage } from "contexts/language-context";
 
 // Who Can Join Section Component
-export const WhoCanJoinSection = () => (
+export const WhoCanJoinSection = () => {
+  const { t } = useLanguage();
+  
+  return (
   <section className="py-24 bg-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
@@ -18,15 +22,14 @@ export const WhoCanJoinSection = () => (
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Who Can Become a{" "}
+          {t("whoCanJoin.title")}{" "}
           <span className="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-            NisaDrive Rider
+            {t("whoCanJoin.titleHighlight")}
           </span>
           ?
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          We believe in creating opportunities for all women, regardless of
-          background or circumstances
+          {t("whoCanJoin.subtitle")}
         </p>
       </motion.div>
 
@@ -43,7 +46,7 @@ export const WhoCanJoinSection = () => (
 
             <div className="relative z-10">
               <h3 className="text-2xl font-bold text-gray-900 mb-8">
-                We welcome:
+                {t("whoCanJoin.welcomeTitle")}
               </h3>
               <div className="space-y-6">
                 {whoCanJoin.map((item, index) => (
@@ -59,7 +62,7 @@ export const WhoCanJoinSection = () => (
                       {item.icon}
                     </div>
                     <p className="text-lg text-gray-700 leading-relaxed pt-2">
-                      {item.text}
+                      {t(item.textKey)}
                     </p>
                   </motion.div>
                 ))}
@@ -84,13 +87,11 @@ export const WhoCanJoinSection = () => (
                   <FiHeart className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">
-                  Equal Opportunity
+                  {t("whoCanJoin.equalOpportunity.title")}
                 </h3>
               </div>
               <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                We especially encourage women from rural or peri-urban areas,
-                single mothers, and students to join us as part of our Equal
-                Opportunity Employment Policy.
+                {t("whoCanJoin.equalOpportunity.description")}
               </p>
               <div className="grid grid-cols-3 gap-4 text-center">
                 {equalOpportunityGroups.map((group, index) => (
@@ -110,7 +111,7 @@ export const WhoCanJoinSection = () => (
                   size="lg"
                   className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold"
                 >
-                  Apply Today
+                  {t("whoCanJoin.cta.applyToday")}
                 </AnimatedButton>
               </motion.div>
             </div>
@@ -120,10 +121,11 @@ export const WhoCanJoinSection = () => (
     </div>
     <div className="pt-12">
       <PinkCard
-        heading="Ready to Start Your Journey?"
-        description="Join thousands of women who have found financial independence and professional growth with NisaDrive"
-        buttonText="Start Application"
+        heading={t("whoCanJoin.cta.readyToStart")}
+        description={t("whoCanJoin.cta.description")}
+        buttonText={t("whoCanJoin.cta.startApplication")}
       />
     </div>
   </section>
-);
+  );
+};
