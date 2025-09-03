@@ -12,6 +12,11 @@ import {
   Car,
   Shield,
   CreditCard,
+  Building2,
+  Heart,
+  Scale,
+  GraduationCap,
+  MapPin,
 } from "lucide-react";
 import { Card, CardContent } from "components/ui/card";
 import { useLanguage } from "contexts/language-context";
@@ -79,10 +84,22 @@ export default function FAQPage() {
       icon: Smartphone,
       color: "from-green-500 to-teal-500",
       questions: [
-        { questionKey: "faq.page.questions.downloadRegister.question" },
-        { questionKey: "faq.page.questions.chooseDriver.question" },
-        { questionKey: "faq.page.questions.geoFencedZones.question" },
-        { questionKey: "faq.page.questions.promoCodes.question" },
+        {
+          questionKey: "faq.page.questions.downloadRegister.question",
+          answerKey: "faq.page.questions.downloadRegister.answer",
+        },
+        {
+          questionKey: "faq.page.questions.chooseDriver.question",
+          answerKey: "faq.page.questions.chooseDriver.answer",
+        },
+        {
+          questionKey: "faq.page.questions.geoFencedZones.question",
+          answerKey: "faq.page.questions.geoFencedZones.answer",
+        },
+        {
+          questionKey: "faq.page.questions.promoCodes.question",
+          answerKey: "faq.page.questions.promoCodes.answer",
+        },
       ],
     },
     {
@@ -92,11 +109,24 @@ export default function FAQPage() {
       questions: [
         {
           questionKey: "faq.page.questions.eligibilityRequirements.question",
+          answerKey: "faq.page.questions.eligibilityRequirements.answer",
         },
-        { questionKey: "faq.page.questions.whatTraining.question" },
-        { questionKey: "faq.page.questions.rideIncome.question" },
-        { questionKey: "faq.page.questions.partTime.question" },
-        { questionKey: "faq.page.questions.costForJoining.question" },
+        {
+          questionKey: "faq.page.questions.whatTraining.question",
+          answerKey: "faq.page.questions.whatTraining.answer",
+        },
+        {
+          questionKey: "faq.page.questions.rideIncome.question",
+          answerKey: "faq.page.questions.rideIncome.answer",
+        },
+        {
+          questionKey: "faq.page.questions.partTime.question",
+          answerKey: "faq.page.questions.partTime.answer",
+        },
+        {
+          questionKey: "faq.page.questions.costForJoining.question",
+          answerKey: "faq.page.questions.costForJoining.answer",
+        },
       ],
     },
     {
@@ -104,10 +134,22 @@ export default function FAQPage() {
       icon: Shield,
       color: "from-red-500 to-pink-500",
       questions: [
-        { questionKey: "faq.page.questions.howEnsureSafety.question" },
-        { questionKey: "faq.page.questions.feelUnsafe.question" },
-        { questionKey: "faq.page.questions.ridesTracked.question" },
-        { questionKey: "faq.page.questions.reportEmergency.question" },
+        {
+          questionKey: "faq.page.questions.howEnsureSafety.question",
+          answerKey: "faq.page.questions.howEnsureSafety.answer",
+        },
+        {
+          questionKey: "faq.page.questions.feelUnsafe.question",
+          answerKey: "faq.page.questions.feelUnsafe.answer",
+        },
+        {
+          questionKey: "faq.page.questions.ridesTracked.question",
+          answerKey: "faq.page.questions.ridesTracked.answer",
+        },
+        {
+          questionKey: "faq.page.questions.reportEmergency.question",
+          answerKey: "faq.page.questions.reportEmergency.answer",
+        },
       ],
     },
     {
@@ -115,10 +157,133 @@ export default function FAQPage() {
       icon: CreditCard,
       color: "from-orange-500 to-red-500",
       questions: [
-        { questionKey: "faq.page.questions.paymentMethods.question" },
-        { questionKey: "faq.page.questions.jazzCashEasypaisa.question" },
-        { questionKey: "faq.page.questions.refundProcess.question" },
-        { questionKey: "faq.page.questions.serviceCharges.question" },
+        {
+          questionKey: "faq.page.questions.paymentMethods.question",
+          answerKey: "faq.page.questions.paymentMethods.answer",
+        },
+        {
+          questionKey: "faq.page.questions.jazzCashEasypaisa.question",
+          answerKey: "faq.page.questions.jazzCashEasypaisa.answer",
+        },
+        {
+          questionKey: "faq.page.questions.refundProcess.question",
+          answerKey: "faq.page.questions.refundProcess.answer",
+        },
+        {
+          questionKey: "faq.page.questions.serviceCharges.question",
+          answerKey: "faq.page.questions.serviceCharges.answer",
+        },
+      ],
+    },
+    {
+      titleKey: "faq.page.categories.franchise.title",
+      icon: Building2,
+      color: "from-indigo-500 to-blue-500",
+      questions: [
+        {
+          questionKey: "faq.page.questions.becomeFranchise.question",
+          answerKey: "faq.page.questions.becomeFranchise.answer",
+        },
+        {
+          questionKey: "faq.page.questions.minimumInvestment.question",
+          answerKey: "faq.page.questions.minimumInvestment.answer",
+        },
+        {
+          questionKey: "faq.page.questions.franchiseSupport.question",
+          answerKey: "faq.page.questions.franchiseSupport.answer",
+        },
+        {
+          questionKey: "faq.page.questions.revenueSharing.question",
+          answerKey: "faq.page.questions.revenueSharing.answer",
+        },
+      ],
+    },
+    {
+      titleKey: "faq.page.categories.corporate.title",
+      icon: Heart,
+      color: "from-pink-500 to-rose-500",
+      questions: [
+        {
+          questionKey: "faq.page.questions.corporateCollaboration.question",
+          answerKey: "faq.page.questions.corporateCollaboration.answer",
+        },
+        {
+          questionKey: "faq.page.questions.sponsorshipScholarships.question",
+          answerKey: "faq.page.questions.sponsorshipScholarships.answer",
+        },
+        {
+          questionKey: "faq.page.questions.ngoPartnership.question",
+          answerKey: "faq.page.questions.ngoPartnership.answer",
+        },
+      ],
+    },
+    {
+      titleKey: "faq.page.categories.legal.title",
+      icon: Scale,
+      color: "from-gray-600 to-gray-700",
+      questions: [
+        {
+          questionKey: "faq.page.questions.dataProtectionPECA.question",
+          answerKey: "faq.page.questions.dataProtectionPECA.answer",
+        },
+        {
+          questionKey: "faq.page.questions.dataSharing.question",
+          answerKey: "faq.page.questions.dataSharing.answer",
+        },
+        {
+          questionKey: "faq.page.questions.privacyPolicy.question",
+          answerKey: "faq.page.questions.privacyPolicy.answer",
+        },
+        {
+          questionKey: "faq.page.questions.backgroundChecks.question",
+          answerKey: "faq.page.questions.backgroundChecks.answer",
+        },
+      ],
+    },
+    {
+      titleKey: "faq.page.categories.careers.title",
+      icon: GraduationCap,
+      color: "from-emerald-500 to-green-500",
+      questions: [
+        {
+          questionKey: "faq.page.questions.applyInternships.question",
+          answerKey: "faq.page.questions.applyInternships.answer",
+        },
+        {
+          questionKey: "faq.page.questions.hiringQuota.question",
+          answerKey: "faq.page.questions.hiringQuota.answer",
+        },
+        {
+          questionKey: "faq.page.questions.internsPaid.question",
+          answerKey: "faq.page.questions.internsPaid.answer",
+        },
+        {
+          questionKey: "faq.page.questions.skillsPreferred.question",
+          answerKey: "faq.page.questions.skillsPreferred.answer",
+        },
+      ],
+    },
+    {
+      titleKey: "faq.page.categories.operational.title",
+      icon: MapPin,
+      color: "from-cyan-500 to-blue-500",
+      questions: [
+        {
+          questionKey: "faq.page.questions.operationalCities.question",
+          answerKey: "faq.page.questions.operationalCities.answer",
+        },
+        {
+          questionKey: "faq.page.questions.ruralAreas.question",
+          answerKey: "faq.page.questions.ruralAreas.answer",
+        },
+        {
+          questionKey: "faq.page.questions.malePassengersEmergency.question",
+          answerKey: "faq.page.questions.malePassengersEmergency.answer",
+        },
+        {
+          questionKey: "faq.page.questions.expandOtherCountries.question",
+          answerKey: "faq.page.questions.expandOtherCountries.answer",
+        },
       ],
     },
   ];
@@ -173,7 +338,9 @@ export default function FAQPage() {
                 {t("faq.page.hero.title.part1")}
               </span>
               <br />
-              <span className="text-gray-800">{t("faq.page.hero.title.part2")}</span>
+              <span className="text-gray-800">
+                {t("faq.page.hero.title.part2")}
+              </span>
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -203,7 +370,9 @@ export default function FAQPage() {
                     className={`inline-flex items-center gap-3 bg-gradient-to-r ${category.color} text-white px-6 py-3 rounded-full mb-4`}
                   >
                     <category.icon className="w-5 h-5" />
-                    <h2 className="text-xl font-bold">{t(category.titleKey)}</h2>
+                    <h2 className="text-xl font-bold">
+                      {t(category.titleKey)}
+                    </h2>
                   </div>
                 </div>
 
@@ -242,7 +411,7 @@ export default function FAQPage() {
                             >
                               <div className="border-t border-gray-200 pt-4">
                                 <p className="text-gray-600 leading-relaxed">
-                                  {faq.answerKey ? t(faq.answerKey) : t("faq.page.placeholder.answer")}
+                                  {t(faq.answerKey)}
                                 </p>
                               </div>
                             </motion.div>
