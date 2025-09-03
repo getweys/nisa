@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "contexts/language-context";
+import { useRouter } from "next/navigation";
 
 export default function PinkCard({
   heading = "Ready to Experience Safe & Empowering Travel?",
@@ -9,6 +10,7 @@ export default function PinkCard({
   buttonText = "Download NisaDrive App",
 }) {
   const { t } = useLanguage();
+  const router = useRouter();
 
   return (
     <div className="mx-2">
@@ -46,6 +48,7 @@ export default function PinkCard({
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-white text-pink-600 font-bold px-4 sm:px-8 py-4 text-base rounded-xl shadow-lg hover:shadow-xl transition-all relative z-10"
+            onClick={() => router.push("/coming-soon")}
           >
             {buttonText}
           </motion.button>

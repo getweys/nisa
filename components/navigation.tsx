@@ -8,11 +8,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatedButton } from "./animated-button";
 import { useLanguage } from "contexts/language-context";
+import { useRouter } from "next/navigation";
 import { LanguageSwitcher } from "./language-switcher";
 import { navigationItems } from "data/data";
 
 export function Navigation() {
   const { t, isRTL } = useLanguage();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] =
@@ -218,6 +220,7 @@ export function Navigation() {
                 className={`flex items-center px-5 py-2 text-sm font-semibold rounded-full bg-pink-500 text-white hover:bg-pink-600 ${
                   isRTL ? "flex-row-reverse" : ""
                 }`}
+                onClick={() => router.push("/coming-soon")}
               >
                 {t("navigation.downloadApp")}
                 <FiArrowRight
@@ -370,6 +373,7 @@ export function Navigation() {
                     className={`w-full flex justify-center px-6 py-4 rounded-full bg-pink-600 text-white hover:bg-pink-700 text-base font-semibold shadow-md ${
                       isRTL ? "flex-row-reverse" : ""
                     }`}
+                    onClick={() => router.push("/coming-soon")}
                   >
                     {t("navigation.downloadApp")}
                     <FiArrowRight

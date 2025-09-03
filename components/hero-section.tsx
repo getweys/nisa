@@ -6,6 +6,7 @@ import type { IconType } from "react-icons";
 import { AnimatedButton } from "./animated-button";
 import { HeroSvg } from "../svgs/heroSvg";
 import { useLanguage } from "contexts/language-context";
+import { useRouter } from "next/navigation";
 
 interface Stat {
   icon: IconType;
@@ -15,6 +16,7 @@ interface Stat {
 
 export function HeroSection() {
   const { t } = useLanguage();
+  const router = useRouter();
 
   const stats: Stat[] = [
     { icon: FiUsers, value: "10,000+", label: t("hero.stats.womenServed") },
@@ -81,6 +83,7 @@ export function HeroSection() {
               <AnimatedButton
                 size="sm"
                 className="px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base"
+                onClick={() => router.push("/coming-soon")}
               >
                 <FiDownload
                   className="w-4 h-4 sm:w-5 sm:h-5 mr-2"

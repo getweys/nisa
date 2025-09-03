@@ -3,11 +3,13 @@ import { destinyFacts, policies } from "data/data";
 import { motion } from "framer-motion";
 import { AnimatedButton } from "./animated-button";
 import { useLanguage } from "contexts/language-context";
+import { useRouter } from "next/navigation";
 
 // Transparency Section Component
 export const TransparencySection = () => {
   const { t } = useLanguage();
-  
+  const router = useRouter();
+
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-gray-50 via-white to-pink-50/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,7 +100,9 @@ export const TransparencySection = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
                 {t("earn.transparency.cta.title.part1")}{" "}
-                <span className="text-pink-100">{t("earn.transparency.cta.title.part2")}</span>
+                <span className="text-pink-100">
+                  {t("earn.transparency.cta.title.part2")}
+                </span>
                 ?
               </motion.h3>
               <motion.p
@@ -137,6 +141,7 @@ export const TransparencySection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.6 }}
+                  onClick={() => router.push("/coming-soon")}
                 >
                   <span className="mr-2">📱</span>
                   {t("earn.transparency.cta.button.downloadApp")}
@@ -151,7 +156,10 @@ export const TransparencySection = () => {
               >
                 <div className="grid sm:grid-cols-3 gap-4 text-center">
                   {destinyFacts.map((fact, index) => (
-                    <div key={index} className="flex flex-col items-center gap-2">
+                    <div
+                      key={index}
+                      className="flex flex-col items-center gap-2"
+                    >
                       <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center text-lg sm:text-xl">
                         {fact.icon}
                       </div>
